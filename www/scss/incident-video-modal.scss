@@ -1,0 +1,307 @@
+
+
+.incident-video-links {
+  &.modal-with-header {
+    .modal-head {
+      .modal-dialog-close,
+      .modal-title {
+        height: 5rem;
+        line-height: 5rem;
+      }
+
+      .modal-dialog-close { width: 5rem }
+
+      .modal-title {
+        display: block;
+        padding: 0 5rem 0 1.5rem;
+        margin: 0;
+        font-size: 1.6rem;
+        font-weight: 600;
+      }
+
+      .back-to-videos {
+        font-size: 1.4rem;
+        font-weight: 600;
+        display: inline-block;
+        margin-left: 1rem;
+
+        span {
+          display: inherit;
+          font-size: 1.2rem;
+          margin-right: 0.2rem;
+          @include prefixer(transform, "rotate(-90deg)");
+        }
+      }
+    }
+    .modal-body {
+      textarea {
+        width: 100%;
+        padding: 0.2rem 0.5rem;
+        resize: vertical;
+      }
+
+      input,
+      textarea {
+        border: 1px solid #ddd;
+
+        &:focus {
+          border-color: #66afe9;
+          outline: 0;
+          @include prefixer(box-shadow, "inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6)");
+        }
+      }
+    }
+  }
+
+  .nav-tabs {
+    border: 0 none;
+    padding: 0 1.5rem;
+    background-color: #f4f6f8;
+    height: 3rem;
+    @include prefixer(box-shadow, "inset 0 -1px 1px 0 rgba(0, 0, 0, 0.05)");
+
+    & > li {
+      & > a {
+        color: #374045;
+        height: 3rem;
+        @include prefixer(transition, "all 0.15s linear");
+
+        &:hover {
+          background-color: #e4e6e8;
+          @include prefixer(box-shadow, "inset 0 -4px 0 #d4d6d8");
+        }
+      }
+
+      &.active > a {
+        font-weight: 700;
+        border: 0 none;
+        @include prefixer(box-shadow, "inset 0 -4px 0 #0382ca");
+
+        &:hover,
+        &:focus { border: 0 none }
+      }
+    }
+  }
+
+  .tab-content { padding: 1.5rem }
+
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+
+    video,
+    .video-js {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .video-js {
+      border: 2px solid #ddd;
+
+      .vjs-control-bar {
+        background-color: #fff;
+        color: #000;
+      }
+
+      .vjs-fullscreen-control { display: none }
+
+      .vjs-time-control { min-width: 6rem }
+
+      .vjs-progress-holder {
+        pointer-events: none;
+        @include prefixer(transition, "none");
+      }
+
+      .vjs-progress-control {
+        &:hover .vjs-play-progress {
+          top: -1.1rem;
+          font-size: 0.9em;
+
+          &:after {
+            font-size: 0.6em;
+            top: -2.5em;
+          }
+
+          &:before { top: 0.1rem }
+        }
+
+        .vjs-play-progress {
+          font-size: 0.9em;
+
+          &:after { right: -2.5em }
+
+          &:before {
+            position: absolute;
+            top: -1.1rem;
+            right: -0.8rem;
+            content: '';
+            width: 0.8rem;
+            height: 2.5rem;
+            background-color: #fff;
+            border-radius: 1rem;
+            font-size: 0;
+            pointer-events: auto;
+            @include prefixer(box-shadow, "0 0 1px 0.05rem #0382ca");
+          }
+        }
+      }
+
+      .vjs-custom-range-slider {
+        position: absolute;
+        left: 0;
+        right: 0;
+        background-color: #b5b5b5;
+
+        .slider-handle {
+          background: #fb9816;
+          color: #fff;
+          border-radius: 0;
+          margin-left: 0;
+          cursor: col-resize;
+          @include icofont-reset();
+
+          &:after {
+            content: "\e613";
+            display: inherit;
+            line-height: 20px;
+            font-weight: bold;
+          }
+
+          &.min-slider-handle {
+            &:after { @include prefixer(transform, "rotate(-90deg)") }
+          }
+
+          &.max-slider-handle {
+            margin-left: -20px;
+
+            &:after { @include prefixer(transform, "rotate(90deg)") }
+          }
+        }
+      }
+
+      .slider.slider-horizontal {
+        width: 100%;
+
+        .slider-track {
+          background: transparent;
+          height: 20px;
+          margin-top: -10px;
+
+          .slider-selection {
+            background: #666;
+            border: 2px solid #fb9816;
+          }
+        }
+      }
+
+      .vjs-slider { margin: 0 }
+    }
+  }
+
+  .video-clip-time-inputs {
+    font-size: 1.2rem;
+    padding: 1.5rem 0 0.5rem;
+
+    label {
+      float: left;
+      margin-bottom: 0;
+      padding: 0 0 1rem;
+      font-weight: 600;
+
+      &:last-child {
+        span { text-align: right }
+
+        input { margin-right: 0 }
+      }
+
+      span,
+      input {
+        display: inline-block;
+        margin-right: 1rem;
+        float: left;
+      }
+
+      span {
+        min-width: 6rem;
+        line-height: 3rem;
+      }
+
+      input { max-width: 11rem }
+    }
+  }
+
+  .request-footage-section {
+    .request-text {
+      margin-bottom: 1.5rem;
+      display: block;
+      font-size: 1.2rem;
+      color: #666;
+    }
+
+    .request-btn {
+      text-align: center;
+      border: none;
+      display: block;
+      width: 100%;
+      height: 4rem;
+      line-height: 4rem;
+      font-size: 1.4rem;
+      font-weight: 400;
+      letter-spacing: 0.034rem;
+    }
+  }
+
+  .request-form {
+    legend {
+      padding: 1rem 1.5rem;
+      font-size: 1.3rem;
+      font-weight: 400;
+      border: 0 none;
+      margin: 0;
+      line-height: 1;
+      text-align: right;
+      font-family: georgia;
+      font-style: italic;
+      color: #db0017;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .request-footage-section { padding: 1.5rem 0 }
+
+    .dd-selector {
+      min-width: 18rem;
+      display: inline-block;
+      width: auto;
+
+      .dd-selector-value { text-transform: capitalize }
+    }
+  }
+
+  .pure-form input.ng-dirty.ng-invalid {
+    border-color: #db0017;
+  }
+
+  .field-message {
+    display: inline-block;
+    color: #db0017;
+    font-size: 90%;
+    margin-bottom: 0.5rem;
+  }
+
+  [ng\:cloak],
+  [ng-cloak],
+  [data-ng-cloak],
+  [x-ng-cloak],
+  .ng-cloak,
+  .x-ng-cloak { display: none !important }
+}

@@ -1,0 +1,13 @@
+<div class="trend-overlay">
+  <div class="search-filters-wrapper filter-pane" ng-class="{'filter-pane-open': trendOverlay.showFilter}">
+    <div class="trends-container">
+      <div ng-if="trendOverlay.trendsListActive">
+        <trend-chart-list historic-data="trendOverlay.historicData" table-data="trendOverlay.tableData"
+                          bar-data="trendOverlay.barData" sex-offenders-count="trendOverlay.sexOffendersCount"
+                          params="trendOverlay.urlParams"
+                          showing-all-crimes="trendOverlay.haveAllCrimeCategory">
+        </trend-chart-list>
+      </div>
+    </div>
+  </div>
+</div>

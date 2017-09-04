@@ -1,0 +1,35 @@
+<div class="crime-type-picker">
+  <div class="person ">
+    <label class="checkbox indeterminate-checkbox">
+      <input id="all_incidents" type="checkbox" data-ng-model="crimeTypePicker.selectAll"> <span>Select all</span>
+    </label>
+  </div>
+  <div class="crime-category"
+       ng-repeat="(crimeCategory,crimeSubCategories)  in crimeTypePicker.crimeCategories">
+    <h5 ng-bind="::crimeCategory | titleCase | stop911:'trends'"></h5>
+    <!-- Sub category -->
+    <ul class="sub-categories" ng-class="crimeCategory">
+      <li ng-repeat="(crimeSubCategory, crimeTypes) in crimeSubCategories">
+        <!-- CRIME -->
+        <ul class="crimes cluster-map">
+          <li ng-repeat="crimeType in crimeTypes">
+            <!-- Icon -->
+            <span class="leaflet-marker-icon category-{{crimeCategory| replace}} checked"
+                  ng-class="::'icon-' + crimeSubCategory"
+                  ng-if="$index == 0"
+                  ng-click="crimeTypePicker.toggleCrimeSubCategory(crimeTypes)"></span>
+            <!-- Checkbox-->
+          <ion-checkbox ng-model="crimeTypePicker.crimeTypes[crimeType]"
+                        ng-true-value="true" ng-false-value="false"
+                        ng-attr-id="{{'crime-type-' + crimeType}}"><span ng-bind="::crimeType"></span>
+          </ion-checkbox>
+          <!-- Checkbox[Ends]-->
+
+      </li>
+    </ul>
+    <!-- CRIME -->
+    </li>
+    </ul>
+    <!-- Sub category[Ends] -->
+  </div>
+</div>

@@ -1,0 +1,136 @@
+<ion-view>
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-buttons side="left">
+      <div class="cancelbt" ng-click="alertModelCtrl.close()">
+        <i class="" ng-class="{'icon-menu-left':isPlatformIos,'ion-arrow-left-c':!isPlatformIos}"> </i>
+      </div>
+      <div class="modal-title" ng-class="{'my-head-title':isPlatformIos,'main_title':!isPlatformIos}">
+        <i ng-bind="alertModelCtrl.modalTitle"></i>
+      </div>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <div class="page-loader" ng-show='alertModelCtrl.ifcreatingAlert === true'>
+    <span class="spinner"></span>
+  </div>
+  <incident-count-header if-explore-agency="ifExploreAgency" current-zoom="currentZoom"
+                         if-loading="dataSource.dataFetching || trendSource.loading"
+                         explore-agency-name="exploreAgencyName" no-of-incidents="no_of_incidents"
+                         incident-header-view="'list-incident-header'"
+                         start_date="dataSource.filters.start_date"
+                         end-date="dataSource.filters.end_date"></incident-count-header>
+  <ion-content id="alertThis" overflow-scroll="false" has-bouncing="false" style="top:44px;margin: 0px;"
+               class="trends-view" on-scroll="alertModelCtrl.scrollStart()"
+               on-scroll-complete="alertModelCtrl.scrollEnd()"
+               ng-class="{ 'top-6': currentZoom >= 12 || ifExploreAgency}">
+    <div class="">
+      <div style="margin: 0.75rem 0;">
+        <div class="modal-body" ng-if="!alertModelCtrl.showAlertModal">
+          <div class="help-text">
+            <p class="header-text">Zoom in to create an alert</p>
+            <p class="info">Please zoom in to the incident level.</p>
+          </div>
+        </div>
+
+        <div class="modal-body custom-filters" ng-if="alertModelCtrl.showAlertModal">
+          <p class="tip"><em>Set the Area:</em></p>
+          <p class="tip">Zoom in or out or move the map to specify the region for which you want alerts</p>
+
+          <div class="alert-name form-group clearfix">
+            <label class="text-box-label" for="name-alert">Name this alert:</label>
+            <input no-cursor autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+                   id="name-alert" type="text" class="form-control" ng-model="alertModelCtrl.alert.name">
+          </div>
+
+          <div class="form-group clearfix alerts-frequency">
+            <label>Frequency</label>
+            <div class="radio-group" ng-if="!isPlatformIos">
+              <ul>
+                <li>
+                  <input type="radio" ng-model="alertModelCtrl.alert.frequency"
+                         id="f-option" name="selector" value="daily"/>
+                  <label for="f-option">Daily</label>
+                  <div class="check"></div>
+                </li>
+
+                <li>
+                  <input type="radio" ng-model="alertModelCtrl.alert.frequency"
+                         id="s-option" name="selector" value="weekly"/>
+                  <label for="s-option">Weekly</label>
+                  <div class="check"></div>
+                </li>
+
+                <li>
+                  <input type="radio" ng-model="alertModelCtrl.alert.frequency"
+                         id="t-option" name="selector" value="monthly"/>
+                  <label for="t-option">Monthly</label>
+                  <div class="check"></div>
+                </li>
+              </ul>
+            </div>
+            <div class="ios-radio-group" ng-if="isPlatformIos">
+              <ul class="clearfix">
+                <li>
+                  <input type="radio" ng-model="alertModelCtrl.alert.frequency"
+                         id="f-option" name="selector" value="daily"/>
+                  <label for="f-option">Daily</label>
+                </li>
+                <li>
+                  <input type="radio" ng-model="alertModelCtrl.alert.frequency"
+                         id="s-option" name="selector" value="weekly"/>
+                  <label for="s-option">Weekly</label>
+                </li>
+                <li>
+                  <input type="radio" ng-model="alertModelCtrl.alert.frequency"
+                         id="t-option" name="selector" value="monthly"/>
+                  <label for="t-option">Monthly</label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="crime-type-filter ">
+            <div class="section-header clearfix for-alert"
+                 ng-click="alertModelCtrl.crimeTypeCollapsedChange();">
+              <div class="type">Incident Type</div>
+              <span class="arrow"
+                    ng-class="{ 'ion-ios-arrow-up': alertModelCtrl.crimeTypeCollapsed, 'ion-ios-arrow-down': !alertModelCtrl.crimeTypeCollapsed}"></span>
+            </div>
+
+            <div class="section-body" ng-if="alertModelCtrl.crimeTypeCollapsed">
+              <crime-type-picker ng-model="alertModelCtrl.incidentTypes"
+                                 prefix="'alert'"></crime-type-picker>
+            </div>
+          </div>
+
+          <div class="form-group include-sex-offender clearfix">
+            <ion-checkbox class="" ng-click="alertModelCtrl.isSexOffendersEnabled($event, alertModelCtrl.include_sex_offenders)" ng-model="alertModelCtrl.include_sex_offenders"
+                          id="include-sex-offenders">
+              Include Registered Sex Offenders?
+            </ion-checkbox>
+          </div>
+          <div class="form-group receive-official-alerts clearfix">
+            <ion-checkbox class="" ng-model="alertModelCtrl.alert.send_official_alerts" id="">
+              Receive official alerts from local law enforcement agencies?
+            </ion-checkbox>
+          </div>
+
+          <p class="hide note">Note: if your local law enforcement agency is not a CrimeReports customer, you
+            will not receive any agency alert</p>
+        </div>
+
+        <div class="modal-footer clearfix" ng-if="alertModelCtrl.showAlertModal">
+          <div class="signInBtn" ng-if="alertModelCtrl.showAlertModal">
+            <button class="button button-crime" ng-hide="alertModelCtrl.auth.user.loggedIn"
+                    ng-click="alertModelCtrl.signIn()">Sign In
+            </button>
+          </div>
+          <button class="button button-crime" ng-show="alertModelCtrl.auth.user.loggedIn"
+                  ng-class="{'disabled' : !(alertModelCtrl.alert.name && alertModelCtrl.alert.frequency) || alertModelCtrl.incidentTypes.length == 0}"
+                  ng-click="!(alertModelCtrl.alert.name && alertModelCtrl.alert.frequency) || alertModelCtrl.submitAlert()">
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+
+</ion-view>

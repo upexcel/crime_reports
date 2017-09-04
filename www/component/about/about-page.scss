@@ -1,0 +1,185 @@
+/*@import "www/services/util";*/
+
+$midnight-blue: #333e49;
+$asbestos: #7f8c8d;
+$peter-river: #5591b9;
+$belize-hole: #45799c;
+$clouds: #ecf0f1;
+$silver: #bdc3c7;
+$font-bold: 900;
+$font-normal: 400;
+$font-light: 400;
+
+@media only screen and (min-width: 250px) {
+  .section-title {
+    font-weight: 800;
+    display: block;
+    padding-bottom: 10px;
+    font-size: 3.5rem;
+  }
+  .about-page {
+    font-size: 16px;
+    height: 100%;
+    /*overflow: auto;*/
+    .ikon-credits {
+      h2 {
+        cursor: pointer;
+        span {
+          display: inline-block;
+          margin-left: 2rem;
+          vertical-align: middle;
+        }
+      }
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      margin-bottom: 1em;
+      color: $midnight-blue;
+      font-weight: $font-bold;
+    }
+    p,
+    li {
+      color: $asbestos;
+      font-weight: 300;
+    }
+
+    p,
+    ul,
+    figure {
+      margin-bottom: 1em
+    }
+    a {
+      color: $peter-river;
+      &:hover {
+        color: $belize-hole;
+        text-decoration: none;
+      }
+    }
+    ul h4 {
+      margin-bottom: 0
+    }
+    figure {
+      padding: 15px;
+      background-color: $clouds;
+      text-align: center;
+    }
+    .img-responsive {
+      display: inline-block;
+    }
+    .heading {
+      padding: 100px 0;
+      background-color: $clouds;
+      h1 {
+        margin: 0
+      }
+    }
+
+    .section-body {
+      background-color: #ffffff;
+      padding-top: 60px;
+      padding-bottom: 100px;
+      .container {
+        .section-title {
+          font-weight: 800;
+          display: block;
+          padding-bottom: 10px;
+          font-size: 3.5rem;
+        }
+      }
+      .table-of-contents {
+        h4 {
+          border-top: $peter-river solid 5px;
+          padding-top: 15px;
+          font-weight: $font-normal;
+          text-transform: uppercase;
+        }
+        ul {
+          list-style-type: none;
+          margin: 0 0 2em 0;
+          padding: 0;
+          li {
+            border-bottom: $silver solid 1px;
+            a {
+              display: block;
+              padding: 5px 15px;
+              font-weight: $font-normal;
+              &:hover {
+                background-color: $clouds
+              }
+            }
+          }
+        }
+      }
+      .content {
+        h2 {
+          margin-top: 2em;
+          &:first-of-type {
+            margin-top: 5px
+          }
+        }
+        table {
+          overflow: auto;
+          &:not(.table-bordered) {
+            :not(th), td {
+              font-size: 16px;
+              font-weight: 300;
+              border: none;
+            }
+          }
+          tbody td {
+            color: $asbestos
+          }
+        }
+        .table.table-bordered tr td:nth-child(0) {
+          text-align: center
+        }
+      }
+    }
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+  .heading h1 {
+    text-align: center
+  }
+}
+
+.table-responsive {
+  overflow-x: auto;
+  min-height: 0.01%;
+}
+
+@media (max-width: 768px) {
+  .hidden-xs {
+    display: none !important;
+  }
+  .container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .table-responsive {
+    width: 100%;
+    margin-bottom: 15.75px;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid #ddd;
+  }
+  .col-sm-8 {
+    width: 100%;
+  }
+  #faq5 {
+    margin-top: 30px;
+  }
+  #faq4 {
+    padding-bottom: 1px;
+  }
+  .table-responsive > .table > thead > tr > th, .table-responsive > .table > thead > tr > td, .table-responsive > .table > tbody > tr > th, .table-responsive > .table > tbody > tr > td, .table-responsive > .table > tfoot > tr > th, .table-responsive > .table > tfoot > tr > td {
+    white-space: nowrap;
+  }
+}

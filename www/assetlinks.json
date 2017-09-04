@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "CrimeReports",
+      "package_name": "com.socrata.crimereports",
+      "sha256_cert_fingerprints": [
+        "20:66:EC:2D:AE:B6:4D:7F:F9:4E:E5:F4:31:FB:59:53:AB:93:CB:68:DD:03:94:0E:70:87:92:0A:16:F2:55:63"
+      ]
+    }
+  }
+]

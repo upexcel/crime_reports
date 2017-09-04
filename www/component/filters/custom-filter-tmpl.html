@@ -1,0 +1,54 @@
+<div class="custom-filters">
+  <div class="date-selectors  clearfix">
+    <h4 class="margin-bottom-0">Date range</h4>
+    <date-range-picker onUpdate="customFilter.filters"
+                       ng-model="customFilter.filters.dateRange"></date-range-picker>
+  </div>
+
+  <div class="day-selector clearfix">
+    <h4>Days of Week</h4>
+    <days-of-week-selector ng-model="customFilter.filters.days"></days-of-week-selector>
+  </div>
+
+  <div class="time-range-selectors clearfix">
+    <h4 class="margin-bottom-0">Time range</h4>
+    <time-range-picker ng-model="customFilter.filters.timeRange"></time-range-picker>
+  </div>
+
+  <div class="cluster-map sex-offenders-filters clearfix">
+
+
+    <label for="filter-include-sex-offenders">
+      <div class="row">
+        <div class="col-marker-icon">
+          <span class="leaflet-marker-icon icon-sex-offender category-sex-offender"></span>
+        </div>
+        <div class="col-marker-label">
+          <ion-checkbox class="" id="filter-include-sex-offenders"
+                        ng-model="customFilter.filters.includeSexOffenders">
+            <span>Show Registered Sex Offenders</span>
+          </ion-checkbox>
+        </div>
+      </div>
+    </label>
+  </div>
+
+  <div class="crime-type-filter">
+    <div class="section-header clearfix" ng-class="{'border-none': customFilter.crimeTypeCollapsed}"
+         ng-click="customFilter.crimeTypeCollapsed = !customFilter.crimeTypeCollapsed">
+      <h4>Incident Type</h4>
+      <span ng-class="{'border-none': customFilter.crimeTypeCollapsed, 'ion-chevron-up': customFilter.crimeTypeCollapsed, 'ion-chevron-down': !customFilter.crimeTypeCollapsed}"></span>
+    </div>
+
+    <div class="section-body" ng-show="customFilter.crimeTypeCollapsed">
+      <crime-type-picker ng-model="customFilter.filters.incidentTypes"></crime-type-picker>
+    </div>
+  </div>
+
+
+  <div class="reset-filters">
+    <button class="button button-crime"
+            ng-class="{'disabled': customFilter.disableResetButton}"
+            ng-click="customFilter.disableResetButton || customFilter.resetFilters()">Reset filters</button>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div>
+  <div class="plus-agency-header {{incidentHeader.incidentHeaderView}}"
+       ng-if="incidentHeader.ifExploreAgency || incidentHeader.currentZoom >= 12"
+       ng-class="{'min-5':incidentHeader.ifExploreAgency && incidentHeader.mapView, 'min-3':!incidentHeader.ifExploreAgency && !incidentHeader.mapView}">
+    <div class="plus-agency-headername clearfix" ng-if="incidentHeader.ifExploreAgency && incidentHeader.mapView">
+      <div class="row pad-0">
+        <div style="min-width: 40px;max-width: 40px;" class="col-10 pad-0"
+             ng-click="incidentHeader.backToDefaultMap(incidentHeader.currentZoom)">
+          <a ng-href="">
+            <i class="icon-back-map"></i>
+          </a>
+        </div>
+        <div class="col pad-0">
+          <span class="title">
+            Data from the {{incidentHeader.exploreAgencyName}}
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row map-trends"
+         ng-class="{'top-35':incidentHeader.ifExploreAgency && incidentHeader.mapView, 'top-0':!incidentHeader.ifExploreAgency || !incidentHeader.mapView}">
+      <div class="col pad-0">
+        <div class="row bottom-border1 incident-count">
+          <strong class="total-incidents" ng-show="incidentHeader.ifLoading">
+            <em ng-show="incidentHeader.ifLoading" class="fa fa-refresh fa-spin"></em>
+          </strong>
+          <strong class="total-incidents" ng-hide="incidentHeader.ifLoading">
+            <span ng-bind="incidentHeader.noOfIncidents"></span>
+            <span ng-bind="incidentHeader.noOfIncidents == 1 ? 'Incident' : 'Incidents'"></span>
+          </strong>
+          <em class="map-date-range" ng-click="incidentHeader.ifFilterview || incidentHeader.openFilters()">{{incidentHeader.startDate|dateformat}} -
+            {{incidentHeader.endDate|dateformat}}</em>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

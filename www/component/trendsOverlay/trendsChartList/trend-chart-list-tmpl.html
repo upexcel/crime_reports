@@ -1,0 +1,53 @@
+<section class="trend-chart-list" ng-class="{'showing-all-crimes': trendChartList.showingAllCrimes}">
+  <div class="inc-count">
+    <table class="incident-wise-counts" width="100%">
+      <tr>
+        <td ng-repeat="historicDatum in trendChartList.historicData"
+            class="items-{{trendChartList.historicData.length}}x">
+          <strong class="{{historicDatum.category| replace}}" ng-bind="::historicDatum.count"></strong>
+          <em ng-bind="::historicDatum.category | titleCase | stop911:'trends'"></em>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="content-block all-incidents" ng-if="trendChartList.incidentsCount">
+    <h3 class="header-text">All Incidents</h3>
+    <line-chart  data="trendChartList.filteredHistoricData" params="trendChartList.params"></line-chart>
+  </div>
+
+
+  <div class="content-block crime-list-trends" ng-repeat="historicDatum in trendChartList.filteredHistoricData">
+    <div class="saperator"></div>
+
+    <h3 class="header-text">
+      <strong><span ng-bind="historicDatum.count"></span> <span
+            ng-bind="::historicDatum.category | titleCase | stop911:'trends'" class="line-chart-header"></span>:</strong>
+      <em>Past <span ng-bind="trendChartList.days"></span> Days</em>
+    </h3>
+    <line-chart data="[historicDatum]" show-only-index="$index" params="trendChartList.params"></line-chart>
+
+    <h3 class="header-text">
+      <strong ng-bind="historicDatum.category | titleCase | stop911:'trends'" class="bar-chart-header"></strong>:
+      <em>Average By Time Of Day</em>
+    </h3>
+    <bar-chart data="trendChartList.barData" params="trendChartList.params"    class-name="{{historicDatum.category}}" show-only-series="historicDatum.category">
+    </bar-chart>
+    <trend-table crime-data="trendChartList.tableData[historicDatum.category]"
+                 crime-name="historicDatum.category" days="trendChartList.days"></trend-table>
+  </div>
+
+  <div class="sex-offender-data" ng-show="trendChartList.sexOffendersCount > 0">
+    <h4>Also displayed on map</h4>
+    <h3>Registered Sex Offenders</h3>
+    <div class="media">
+      <div class="media-left">
+        <strong ng-bind="trendChartList.sexOffendersCount"></strong>
+        <em>Registered Sex Offender</em>
+      </div>
+      <div class="media-body">
+        <span>The number of sex offenders reported to live in this area.</span>
+      </div>
+    </div>
+  </div>
+</section>

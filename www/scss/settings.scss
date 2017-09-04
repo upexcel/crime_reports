@@ -1,0 +1,99 @@
+.settings-modal {
+  color: #374045;
+  .modal-head {
+    padding: 10px;
+  }
+  .modal-body {
+    .form-group label {
+      height: 1.8rem;
+      line-height: 1.8rem;
+      float: left;
+      width: 48%;
+      text-align: center;
+      font-weight: 400;
+      font-size: 0.9rem;
+    }
+    .form-group {
+      input[type="text"], input[type="password"] {
+        width: 100%;
+        border: 1px solid #ccc;
+      }
+      input[type="text"][readonly="readonly"], input[type="password"][readonly="readonly"] {
+        background-color: transparent;
+        border-color: transparent;
+        color: #939598;
+      }
+      .input-value, input[type="text"], input[type="password"] {
+        float: right;
+        width: 50%;
+      }
+    }
+  }
+  .title-txt {
+    padding: 5px 50px 10px 2px;
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: inherit;
+  }
+  .icon-cross {
+    line-height: 1rem !important;
+  }
+  .modal-btn {
+    margin-left: 0rem;
+    margin-right: 0;
+    padding: 2px 10px;
+    border: 1px solid #dcdbdb;
+    text-decoration: none;
+    line-height: 1.6;
+    &.primary {
+      background-color: #0382ca;
+      color: #fff;
+      font-size: 1rem;
+      margin: 0px;
+    }
+    &.plain {
+      margin-right: 5px;
+    }
+  }
+  fieldset {
+    font-size: 1rem;
+    border: none;
+    margin-top: 15px;
+    padding: 0px;
+  }
+  legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 21px;
+    font-size: 16px;
+    line-height: 2rem;
+    color: #333333;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+}
+
+.modal-with-header .modal-body {
+  border-top: 0;
+  background-color: #FFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 100%;
+  padding: 5px;
+  width: 100%;
+}
+
+.my-tab {
+  background-color: #f4f6f8;
+  border-bottom: 1px solid #dfe6ea;
+  padding: 0px;
+  .active-tab {
+    background-color: #dfe6ea;
+    font-weight: 600;
+  }
+  .border-right {
+    border-right: 1px solid #c6cccf;
+  }
+}

@@ -1,0 +1,132 @@
+@import "util";
+@import "cluster-map-variables";
+
+.custom-filters {
+  .reset-button {
+    color: #28566C;
+    width: 70px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0;
+    margin-right: 1rem;
+  }
+  label {
+    font-weight: 400;
+    cursor: pointer;
+    input[type="checkbox"] {
+      cursor: pointer;
+      width: 1.4rem;
+      height: 1.4rem;
+      margin: 0;
+    }
+  }
+  h4 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: 400;
+    em {
+      color: #9B9B9B;
+      font-size: 1rem;
+      font-style: normal;
+    }
+  }
+  .date-selectors,
+  .day-selector,
+  .time-range-selectors {
+    h4 {
+      float: left;
+      width: 80px;
+    }
+  }
+  .time-range-selectors {
+    padding: 1.5rem 1.5rem 0.5rem;
+    border-bottom: 1px solid #DCDBDB;
+  }
+  .date-selectors,
+  .time-range-selectors {
+    h4 {
+      height: 3rem;
+      line-height: 3rem;
+    }
+  }
+  .date-selectors {
+    padding: 1.5rem
+  }
+  .day-selector {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    border-bottom: 1px solid #DCDBDB;
+    h4 {
+      line-height: 1.4
+    }
+  }
+  .neighbourhood-filters {
+    label {
+      font-size: 1.2rem
+    }
+    padding: 1.5rem;
+    border-bottom: 1px solid #DCDBDB;
+    h4 {
+      font-size: 1.2rem;
+      padding-bottom: 1rem;
+      font-weight: 400;
+      margin: 0;
+      color: #000;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  .sex-offenders-filters {
+    height: 4rem;
+    padding: 0.5rem 1.5rem;
+    line-height: 3rem;
+    border-bottom: 1px solid #DCDBDB;
+    .icon-sex-offender {
+      float: left;
+      color: white;
+      margin: 0.3rem 1.3rem 0.3rem 0;
+      background-color: crime-marker-color('sex-offender', 0.9);
+      border-color: crime-marker-color('sex-offender', 0.9);
+      width: 22px;
+      height: 22px;
+      font-size: 1.8rem;
+      text-align: center;
+      border: 1px solid;
+      @include prefixer(border-radius, "11px");
+    }
+    label {
+      float: left;
+      font-size: 1.2rem;
+      margin: 0;
+      input {
+        margin-right: 0.5rem
+      }
+    }
+  }
+  .crime-type-filter {
+    .section-header {
+      cursor: pointer;
+      padding: 1.5rem;
+      h4 {
+        float: left;
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin: 0;
+        color: #000;
+      }
+      [class^="icon-"],
+      [class*=" icon-"] {
+        float: right
+      }
+      span {
+        color: #9B9B9B
+      }
+    }
+    .section-body {
+
+    }
+  }
+}

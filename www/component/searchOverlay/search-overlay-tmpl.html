@@ -1,0 +1,35 @@
+<div class="search-layout">
+  <div class="row pad-0" ng-if="!searchOverlay.isPlatformIos">
+    <div class="back-div col-20 max-5em text-center" ng-click="searchOverlay.closeSearch()">
+      <i class="ion-android-arrow-back"></i>
+    </div>
+    <div class="col pad-0 search-div">
+      <input id="srcTextbox" focus-me ng-keyup="searchOverlay.resolveAddress($event, searchOverlay.searchKey)"
+             ng-model="searchOverlay.searchKey" type="text" placeholder="Search for an address or location"
+             class="srch-textbox">
+    </div>
+    <div class="search col-20 max-5em text-center">
+      <i class="icon-search"></i>
+    </div>
+  </div>
+  <div class="ios-search" ng-if="searchOverlay.isPlatformIos">
+    <div class="row">
+      <div class="back-div col-20 max-5em text-center">
+        <i class="icon-search"></i>
+      </div>
+      <div class="col pad-0 search-div">
+        <input id="srcTextbox" focus-me ng-keyup="searchOverlay.resolveAddress($event, searchOverlay.searchKey)"
+               ng-model="searchOverlay.searchKey" type="text" placeholder="Search for an address or location"
+               class="srch-textbox">
+      </div>
+    </div>
+  </div>
+  <ul class="search-results">
+    <li ng-show="searchOverlay.noResults" class="no-result-found">
+      <a href="javascript:void(0)">No Results Found!</a>
+    </li>
+    <li ng-repeat="result in searchOverlay.results" ng-click="searchOverlay.onResultSelect(result)">
+      <a href="javascript:void(0)" ng-bind="result.place_name"></a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,52 @@
+<ion-view>
+  <div class="page-loader" ng-show='apiCalled === true'>
+    <span class="spinner"></span>
+  </div>
+  <ion-content class="signUp" on-scroll="scrollStart()" on-scroll-complete="scrollEnd()" overflow-scroll="false">
+    <div class="container_mian">
+      <div class="con_signin">
+        <div class="heading">Profile</div>
+        <div class="sign_input">
+          <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+                 class="signinput" type="text" placeholder="First Name" ng-model="user.first_name">
+        </div>
+        <div class="sign_input">
+          <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+                 class="signinput" type="text" placeholder="Last Name" ng-model="user.last_name">
+        </div>
+
+      </div>
+
+      <div class="con_signin">
+        <div class="heading">Email and Password</div>
+        <div class="sign_input">
+          <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+                 class="signinput" type="text" placeholder="Email" ng-model="user.email">
+        </div>
+        <div class="sign_input errmsg" ng-if="error.email" ng-repeat="err in error.email">
+          {{err.startsWith('Please sign up') ? err : 'Email ' + err}}
+        </div>
+        <div class="sign_input">
+          <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+                 class="signinput" type="password" placeholder="Password" ng-model="user.password">
+        </div>
+        <div class="sign_input errmsg" ng-if="user.password == '' && error.password">Password {{error.password[0]}}</div>
+        <div class="sign_input">
+          <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+                 class="signinput" type="password" placeholder="Confirm Password"
+                 ng-model="user.password_confirmation">
+        </div>
+        <div class="sign_input color-matched"
+             ng-if="user.password == user.password_confirmation && user.password != ''">Password matched
+        </div>
+        <div class="sign_input errmsg" ng-if="user.password != user.password_confirmation">{{errmsg}}</div>
+      </div>
+
+      <div class="signup-btn-group">
+
+        <button class="button mybt" on-tap="submit()">Sign up</button>
+        <button class="button mybt" on-tap="back()">Cancel</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

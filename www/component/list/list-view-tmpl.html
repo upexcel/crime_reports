@@ -1,0 +1,462 @@
+<ion-view cache-view="false">
+  <div class="tabs tabs-top" ng-class="{'incident-level':listView.zoomLevel >= 12 || listView.exploreAgencyMode}">
+    <a ng-class="{'listtab-active':listView.agencyActive}" ng-click="listView.showAgency()"
+       class="tab-item list-tab">AGENCIES</a>
+    <a ng-class="{'listtab-active':listView.incidentActive,'hide':listView.zoomLevel < 12 && !listView.exploreAgencyMode}"
+       ng-click="listView.showIncident()" class="tab-item list-tab">INCIDENTS</a>
+  </div>
+  <ion-content delegate-handle="content" class="list-view" ng-class="{
+                  'top-6':listView.zoomLevel >= 12 || listView.exploreAgencyMode}" overflow-scroll='false'>
+    <div class="agency-list-wrapper fill-height" ng-show="listView.agencyActive">
+      <ul class="listing_rw">
+        <!--plus Agencies-->
+        <div ng-show="listView.featuredAgencyPositions.length == 0 && listView.normalAgencyPositions.length == 0 && listView.sortedCrimePositions.length == 0">
+          <h3 class="agency-header-text" ng-if="!item.plus_enabled">0 agencies have data for this area</h3>
+          <div class="featured-agencies">
+            <h5 class="empty-list-message">
+              Departments in this area are not currently sharing data through CrimeReports.
+            </h5>
+            <a href="#!/app/agencySubmission">Click here to learn more.</a>
+          </div>
+        </div>
+        <h6 class="featured-agencies" ng-show="listView.featuredAgencyPositions.length != 0">
+          FEATURED AGENCIES IN THIS AREA
+        </h6>
+        <li class="grp_list plus-list-back"
+            ng-class="{'selected':listView.openPluslist[$index]}"
+            ng-repeat="item in listView.featuredAgencyPositions" ng-if="item.plus_enabled">
+
+        <ion-item class="item-stable" ng-click="listView.togglePlusAgencyList($index, item)">
+          <div class="row">
+            <div class="cluster-map text-center max-5em col-20" ng-if="!item.icon">
+              <div class="leaflet-marker-icon marker-icon"
+                   ng-class="{'plus-customer':item.plus_enabled == true,'selected':listView.openPluslist[$index],
+                                      'icon-agency':item.agency_type == 'Police Dept','icon-sheriff':item.agency_type != 'Police Dept'}">
+              </div>
+            </div>
+            <div class="text-center max-5em col-20" ng-if="item.icon">
+              <img class="plus_img" ng-src="{{item.icon}}">
+            </div>
+            <div class="col-80 pad-0">
+              <h3>
+                <span class="agency-name"> <b ng-bind="::item.agency_name"></b>
+                  <div class="address">
+                    <p>{{item.city| titleCase}}, {{item.state| uppercase}} <span
+                          class="agency-type">{{item.agency_type| titleCase}}</span></p>
+                  </div>
+                </span>
+              </h3>
+            </div>
+          </div>
+        </ion-item>
+
+
+        <ion-item ng-if="listView.openPluslist[$index] && !listView.exploreAgencyMode"
+                  class="item-accordion list_items "
+                  id="isGroupShownAgency{{$index}}"
+                  ng-class='{
+                          "list_open"
+                          :listView.openPluslist[$index]}'>
+          <div class="row">
+            <div class="col col-20 max-5em"></div>
+            <div class="col pad-0">
+              <ul class="list-inline" ng-if="!listView.exploreAgencyMode">
+
+                <li class="highlight" on-tap="listView.exploreAgency(item)">Explore Agency</li>
+
+                <li class="row pad-0" on-tap="listView.ZoomToIncident(item)">
+                  <div ng-click="ZoomToIncident(clickedMarkerData)"
+                       class="col pad-0 zoom-to-incident">
+                    Zoom to Incidents
+                  </div>
+                  <div class="col pad-0 zoom-to-incident" style="padding-left:10px !important;" ng-if="item.tipsoft_id != 0 && item.tipsoft_id !== null" on-tap='submitTipAgency(item.tipsoft_id)'>
+                    Submit a Tip
+                  </div>
+                  <div class="share-icons col">
+                    <span ng-if="item.twitter_url" class="ion-social-twitter"
+                          ng-click="listView.visitTwitterOrFacebookPage(item.twitter_url)"
+                          ></span>
+                    <span ng-if="item.facebook_url" class="ion-social-facebook"
+                          ng-click="listView.visitTwitterOrFacebookPage(item.facebook_url)"
+                          ></span>
+                  </div>
+                </li>
+              </ul>
+              <ul class="list-inline" ng-if="listView.exploreAgencyMode && item.agency_url">
+                <li class="link" on-tap="listView.goToAgencyWebsite(item.agency_url)">
+                  Go to agency website
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </ion-item>
+        </li>
+
+        <div  ng-show="listView.exploreAgencyMode" class="row chief-message" ng-class="{'borderBottom':listView.exploreAgencyModes}">
+          <ul ng-show="listView.exploreAgencyMode" class="chief-message-box">
+            <li class="border-bottom-none" ng-if="listView.plusCustomerMessageData_message">
+            <ion-item class="item-stable" ng-click="listView.toggleChiefMessage()">
+              <i ng-show="listView.showChiefMessage"
+                 class="line-height-1 font16 ion-ios-arrow-up chief-message-arrow"></i>
+              <i ng-hide="listView.showChiefMessage"
+                 class="line-height-1 font16 ion-ios-arrow-down chief-message-arrow"></i>
+              <p><b ng-bind="listView.plusCustomerMessageData_message_title"></b></p>
+            </ion-item>
+
+            <ion-item class="message-container" ng-class='{"list_open":listView.showChiefMessage}'>
+              <img alt="" class="plus-customer-data"
+                   ng-src="{{listView.plusCustomerMessageData_image}}" />
+              {{listView.plusCustomerMessageData_message}}...
+              <a ng-click="modal.show()">Read More</a>
+            </ion-item>
+            </li>
+          </ul>
+        </div>
+
+        <div id="twitter_widget_timeline" ng-show="listView.twitterAppId && listView.exploreAgencyMode">
+          <div id="twitter-section"></div>
+        </div>
+      </ul>
+
+      <div class="normal-agencies ng-scope"
+           ng-if="listView.normalAgencyPositions.length > 0">
+
+        <h3 class="section-title clearfix"
+            ng-click="listView.showNormalAgencies = !listView.showNormalAgencies">
+          <div class="row pad-0">
+            <div class="col pad-0">
+              Additional Data provided by other agencies
+            </div>
+            <em ng-if="!listView.showNormalAgencies" class="ng-scope">Show All</em>
+            <em ng-if="listView.showNormalAgencies" class="ng-scope">Hide</em>
+          </div>
+        </h3>
+        <ul class="listing_rw" ng-hide="!listView.showNormalAgencies">
+          <li class="grp_list" ng-class="{'liselected':listView.openAgencylist[$index]}"
+              ng-repeat="item in listView.normalAgencyPositions"
+              ng-if="!item.plus_enabled">
+          <ion-item class="item-stable" ng-click="listView.toggleAgencyList($index)">
+
+            <div class="row">
+              <div class="cluster-map text-center max-5em col-20" ng-if="!item.icon">
+                <div class="leaflet-marker-icon icon-agency"
+                     ng-class="{'selected':listView.openAgencylist[$index]}">
+                </div>
+              </div>
+              <div class="text-center max-5em col-20" ng-if="item.icon">
+                <img class="plus_img" ng-src="{{item.icon}}">
+              </div>
+              <div class="col pad-0">
+                <h3>
+                  <span class="agency-name"> <b ng-bind="item.agency_name"></b>
+                    <div class="address">
+                      <p>{{item.city| titleCase}}, {{item.state| uppercase}} <span
+                            class="agency-type">{{item.agency_type| titleCase}}</span></p>
+                    </div>
+                  </span>
+                </h3>
+              </div>
+            </div>
+
+          </ion-item>
+
+          <ion-item class="item-accordion list_items " id="isGroupShownAgency{{$index}}" ng-class='{
+                                  "list_open"
+                                  :listView.openAgencylist[$index]}'>
+            <div class="row">
+              <div class="col text-center max-5em col-20">
+              </div>
+              <div class="col">
+                <ul class="list-inline">
+                  <li class="pad_left-10" on-tap="listView.ZoomToIncident(item)">Zoom to
+                    Incidents
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </ion-item>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <script id="modal.html" type="text/ng-template">
+      <div class="modal">
+      <ion-header-bar>
+      <h1 class="title message-title">{{title}}</h1>
+      <div class="button button-clear close-btn" ng-click="modal.hide()"><i
+      class="ion-close-round"></i></div>
+      </ion-header-bar>
+      <ion-content>
+      <div class="message-detailed" ng-bind-html="detailed_message"></div>
+      </ion-content>
+      </div>
+    </script>
+    <div class="reset-partial-filter" ng-show="listView.incidentActive && listView.historicData.length">
+      <div class="row">
+        <div class="col-80">
+          <p class="incident-trends"> Incident trends  <span ng-if="listView.partialCategoryFilter"> >  {{listView.partialCategoryFilter|titleCase}}</span></p>
+        </div>
+        <div class="col-20">
+          <p class="icon-refresh-p"><span ng-if="listView.partialCategoryFilter" class="icon-refresh ng-scope" ng-click="listView.resetPartialCategoryFilter()"></span></p>
+        </div>
+      </div>
+    </div>
+    <div class="incident-list-wrapper fill-height" ng-show="listView.incidentActive">
+      <div class="trends row" ng-show="listView.incidentActive && listView.historicData.length">
+        <div class="mini-trends col " ng-class="{'selected-chart':listView.partialCategoryFilter == historicDatum.category,'opac-5':listView.partialCategoryFilter && (listView.partialCategoryFilter != historicDatum.category)}"
+             ng-repeat="historicDatum in listView.historicData">
+
+          <div class="chart-wrapper center-block">
+            <spark-line-chart data="historicDatum.data" params="listView.urlParams"
+                              on-select="listView.onChartSelect" crime-name="{{historicDatum.category}}"
+                              tipsy-text="{{historicDatum.count}}"
+                              class-name="{{historicDatum.category}}"></spark-line-chart>
+
+            <h5 class="sparkline text-center">
+              <em ng-bind="::historicDatum.category | titleCase | stop911:'list'"></em>
+              <strong ng-bind="::historicDatum.count"></strong>
+            </h5>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div ng-if="listView.crimesType == 'crimes'" class="alert-warning"
+             ng-show="!listView.crimesLoading && listView.sortedCrimePositions.length == 0">
+          <p class="header-text">There are no incidents in this area.</p>
+          <p class="info">Pan or zoom the map, or search for an address to see data</p>
+        </div>
+        <div ng-if="listView.crimesType == 'crimeClusters'" class="alert-warning"
+             ng-show="!listView.crimesLoading">
+          <p class="header-text">Too many incidents to plot.</p>
+          <p class="info">Zoom in or change your filters to see individual incidents.</p>
+        </div>
+        <div class="row list-filter"
+             ng-if="listView.sortedCrimePositions.length > 0 && listView.crimesType != 'crimeClusters'">
+          <div class="col-20 max-5em text-center sort-by">
+            Sort by
+          </div>
+          <div class="col-70">
+            <select ng-options="option as option.name for option in listView.sortOptions"
+                    ng-model="listView.currentSortOption">
+            </select>
+          </div>
+        </div>
+
+        <!--crimes-->
+        <ul class="listing_rw" ng-if="listView.crimesType != 'crimeClusters'">
+          <li class="grp_list" id="{{item.incident_id|| item.sex_offender_id}}"
+              ng-if="item.categorization.category != 'na'"
+              ng-class="{'liselected':listView.openlist[$index]}"
+              ng-repeat="item in listView.sortedCrimePositions track by $index" ng-click="listView.listCrimeClick(item)">
+
+          <ion-item class="item-stable" ng-click="listView.toggleGroup($index)">
+            <div class="row pad-0">
+              <div class="col pad-0 incident-desp">
+                <div class="row pad-0">
+                  <div class="cluster-map text-center  col-icon">
+                    <div ng-if="!item.sex_offender_id"
+                         class="leaflet-marker-icon category-{{item.categorization.category| replace}} icon-{{item.categorization.sub_category}}"
+                         ng-class="{'selected':listView.openlist[$index]}">
+                    </div>
+                    <div ng-if="item.sex_offender_id"
+                         class="leaflet-marker-icon category-sex-offender icon-sex-offender"
+                         ng-class="{'selected':listView.openlist[$index]}"></div>
+                  </div>
+                  <div class="col-80 pad-0" ng-if="!item.sex_offender_id">
+                    <h4 class="media-heading">
+                      <span ng-bind-html="item.parent_incident_type"></span>
+                    </h4>
+                    <div class="row pad-0">
+                      <div class="col-60">
+                        <div class="address">
+                          <p><span
+                                ng-bind="::item.address_1 | titleCase | removetag"></span>
+                          </p>
+                          <p><span
+                                ng-bind="::item.address_2 | titleCase | removetag"></span>
+                          </p>
+                          <p><span ng-bind="::item.incident_type_primary"></span></p>
+                        </div>
+                      </div>
+                      <div class="col-40 text-right pad_right-10">
+                        <div class="address date{{$index}}">
+                          <p>{{(item.incident_datetime| date:'dd MMM yyyy')}}</p>
+                          <p>{{(item.incident_datetime| date:'h:mm a')}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col pad-0" ng-if="item.sex_offender_id">
+                    <h4 class="media-heading">
+                      <span>Registered Sex Offender</span>
+                    </h4>
+                    <div class="row pad-0">
+                      <div class="col-60">
+                        <div class="address">
+                          <p><span ng-bind="::item.name | titleCase"></span></p>
+                          <p><span
+                                ng-bind="::item.address_1 | titleCase | removetag"></span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </ion-item>
+          <!--tail for crime data-->
+          <ion-item ng-if="item.categorization.sub_category" class="item-accordion list_items" ng-class='{
+                                   "list_open"
+                                   :listView.openlist[$index]}'>
+
+            <div class="row">
+              <div class="col-20 max-5em">
+
+              </div>
+              <div class="col pad-0">
+                <ul class="sublist">
+                  <li class="row">
+                    <span class="col col-50"> Description:</span>
+                    <span class="has-external-link" ng-bind-html="item.incident_description"></span>
+                  </li>
+                  <li class="row">
+                    <span class="col col-50"> Incident ID:</span>
+                    <span class="col col-66">{{item.incident_id}}</span>
+                  </li>
+                  <li class="row">
+                    <span class="col col-50"> Case Number:</span>
+                    <span class="col col-66">{{item.case_number}}</span>
+                  </li>
+                  <li class="row" ng-if="item.city">
+                    <span class="col col-50"> City:</span>
+                    <span class="col col-66">{{item.city}}</span>
+                  </li>
+                  <li class="row" ng-if="item.arrest">
+                    <span class="col col-50"> Arrest Made:</span>
+                    <span class="col col-66">Yes</span>
+                  </li>
+                  <li class="row" ng-if="!item.arrest">
+                    <span class="col col-50"> Arrest Made:</span>
+                    <span class="col col-66">No</span>
+                  </li>
+                  <li class="row" ng-if="item.agency_id">
+                    <span class="col col-50"> Agency Id:</span>
+                    <span class="col col-66">{{item.agency_id}}</span>
+                  </li>
+                  <li class="row" ng-if="item.agency_type">
+                    <span class="col col-50"> Agency Type:</span>
+                    <span class="col col-66">{{item.agency_type}}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="row sh_icon">
+              <div style="padding: 5px 8.8px;" on-tap="listView.clickFunction(item)"
+                   class="col text-center col-{{((listView.submit_Tip && item.meta.tipsoft_id != 0 && item.meta.tipsoft_id !== null) || !listView.submit_Tip) ? '33' : '50'}}">
+                <a class="share-icons">Zoom and Center</a>
+              </div>
+
+              <div class="col text-center col-{{((listView.submit_Tip && item.meta.tipsoft_id != 0 && item.meta.tipsoft_id !== null) || !listView.submit_Tip) ? '33' : '50'}}" on-tap="listView.shareTip(item)">
+                <a class="share-icons">Share this Incident</a>
+              </div>
+
+              <div class="col col-33 text-center" on-tap="listView.submitTip(item.meta.tipsoft_id,item.case_number)" ng-if="listView.submit_Tip && item.meta.tipsoft_id != 0 && item.meta.tipsoft_id !== null">
+                <a class="share-icons">Submit a Tip</a>
+              </div>
+
+              <div class="col col-33 text-center" ng-if="!listView.submit_Tip">
+                <a ng-class="{'has-no-video' : listView.incidentVideoLinks.count == 0}"
+
+                   ng-click="listView.incidentVideoLinks.count == 0 || listView.openVideoModal(listView.incidentVideoLinks.links, listView.crimePosition)">
+                  <span class="icon-refresh spin" ng-if="listView.isVidoesLoading">
+                  </span>
+                  <span ng-if="!listView.isVidoesLoading">
+                    <ng-pluralize count="listView.incidentVideoLinks.count"
+                                  when="{'0':'No Videos','1':'1 Video','other': '{{listView.incidentVideoLinks.count}} Videos'}">
+                    </ng-pluralize>
+                  </span></a>
+              </div>
+            </div>
+          </ion-item>
+          <!--// tail for sex offender-->
+          <ion-item ng-if="item.sex_offender_id" class="item-accordion list_items"
+                    id="isGroupShown{{$index}}" ng-class='{
+                                   "list_open"
+                                   :listView.openlist[$index]}'>
+            <div class="row">
+              <div class="col-10 max-5em">
+
+              </div>
+              <div class="col pad-0">
+                <div class="row">
+                  <div>
+                    <span><img ng-src="{{item.photo_url}}"></span>
+                  </div>
+                  <div class="col pad-0">
+                    <ul class="so-sublist">
+                      <li class="row">
+                        <span class="col col-33">Race:</span>
+                        <span class="col col-66">{{item.race}}</span>
+                      </li>
+                      <li class="row">
+                        <span class="col col-33">Gender:</span>
+                        <span class="col col-66">{{item.sex}}</span>
+                      </li>
+                      <li class="row" ng-if="item.age != 0">
+                        <span class="col col-33">Age:</span>
+                        <span class="col col-66">{{item.age}}</span>
+                      </li>
+                      <li class="row">
+                        <span class="col col-33">Height:</span>
+                        <span class="col col-66">{{item.height}}</span>
+                      </li>
+                      <li class="row">
+                        <span class="col col-33">Weight:</span>
+                        <span class="col col-66">{{item.weight}}</span>
+                      </li>
+                      <li class="row" ng-if="item.eye_color">
+                        <span class="col col-33">Eye Color:</span>
+                        <span class="col col-66">{{item.eye_color}}</span>
+                      </li>
+                      <li class="row" ng-if="item.hair_color">
+                        <span class="col col-33">Hair Color:</span>
+                        <span class="col col-66">{{item.hair_color}}</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row sh_icon">
+              <div style="padding: 5px 8.8px;" on-tap="listView.clickFunction(item)"
+                   class="col col-33 text-center">
+                <a class="share-icons">Zoom and Center</a>
+              </div>
+              <div class="col col-33 text-center" on-tap="listView.submitTip(item)" ng-if="item.meta.tipsoft_id">
+                <a class="share-icons" ng-if="item.meta.tipsoft_id != 0 && item.meta.tipsoft_id !== null">Submit a Tip</a>
+              </div>
+              <div class="col col-33 text-center" on-tap="listView.shareTip(item)">
+                <a class="share-icons">Share this Incident</a>
+              </div>
+            </div>
+          </ion-item>
+          </li>
+          <li id="abc"></li>
+        </ul>
+      </div>
+    </div>
+
+    <ion-infinite-scroll
+        on-infinite="listView.loadMore()"
+        distance="10%"
+        ng-if="listView.canLoadmoreData">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

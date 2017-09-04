@@ -1,0 +1,57 @@
+@import "util";
+
+@mixin concentric-circle-with-text($marker-radius, $center: true) {
+  width: $marker-radius;
+  height: $marker-radius;
+  line-height: $marker-radius;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.064rem;
+  text-align: center;
+  @include prefixer(border-radius, $marker-radius / 2);
+  @include prefixer(text-shadow, "0 1px 0px rgba(0, 0, 0, 0.25)");
+
+  @if ($center == true) {
+    margin-top: - $marker-radius / 2;
+    margin-left: - $marker-radius / 2;
+  }
+}
+
+@function crime-marker-color($crime-type, $opacity) {
+  @if ($crime-type == violent) {
+    @return rgba(6, 99, 73, $opacity);
+  }
+  @if ($crime-type == property) {
+    @return rgba(14, 73, 154, $opacity);
+  }
+  @if ($crime-type == quality-of-life) {
+    @return rgba(145, 145, 0, $opacity)
+  }
+  @if ($crime-type == stops---911 or $crime-type == unknown) {
+    @return rgba(77, 50, 121, $opacity)
+  }
+  @if ($crime-type == sex-offender) {
+    @return rgba(181, 116, 38, $opacity)
+  }
+  @if ($crime-type == agency) {
+    @return rgba(125, 143, 158, $opacity)
+  }
+  @if ($crime-type == no-data-agency) {
+    @return rgba(120, 120, 120, $opacity)
+  }
+  @if ($crime-type == plus-agency) {
+    @return rgba(40, 86, 108, $opacity)
+  }
+  @if ($crime-type == crime-cluster) {
+    @return rgba(123, 128, 130, $opacity);
+  }
+  @if ($crime-type == stack) {
+    @return rgba(255, 255, 255, $opacity)
+  }
+  @if ($crime-type == server-cluster) {
+    @return rgba(55, 64, 69, $opacity)
+  }
+  @if ($crime-type == current) {
+    @return rgba(175, 64, 11, $opacity)
+  }
+}

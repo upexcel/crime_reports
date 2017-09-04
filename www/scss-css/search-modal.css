@@ -1,0 +1,242 @@
+.scale-in {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  opacity: 0;
+}
+
+.scale-in.ng-enter,
+.scale-in > .ng-enter {
+  -webkit-transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 650ms;
+  transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 650ms;
+}
+
+.scale-in.ng-enter-active,
+.scale-in > .ng-enter-active {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+
+.scale-in.ng-leave,
+.scale-in > .ng-leave {
+  -webkit-transition: all ease-in-out 300ms;
+  transition: all ease-in-out 300ms;
+}
+
+.search-header.bar-header {
+  background-color: transparent;
+}
+
+.search-layout {
+  position: inherit;
+  width: 100%;
+  color: #58585b;
+}
+
+.search-layout .back-div {
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+.search-layout .back-div .icon-search {
+  line-height: 34px;
+}
+
+.search-layout .search-div {
+  background-color: #fff;
+}
+
+.search-layout .search-div #srcTextbox {
+  width: 100%;
+}
+
+.search-layout .search i {
+  height: 20px;
+  line-height: 32px;
+  font-size: 1.8rem;
+}
+
+.search-layout .ios-search {
+  padding: 5px;
+  background-color: #f1f1f1;
+}
+
+.search-layout .ios-search .back-div.text-center {
+  max-width: 2.1rem;
+  text-align: right;
+  margin-right: 2px;
+}
+
+.search-layout .ios-search icon-search {
+  line-height: 2rem;
+}
+
+.search-layout .ios-search .row {
+  padding: 2px;
+  box-shadow: 0 0 0 1px #dcdcdc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.ios-back {
+  font-size: 2rem !important;
+  line-height: 1.5rem !important;
+  z-index: 1;
+}
+
+.ios-back .icon-menu-left {
+  line-height: 34px;
+}
+
+.my-head-title {
+  text-align: center;
+  position: absolute;
+  top: 0px !important;
+  left: 0px;
+  width: 100%;
+  padding: 12px;
+  font-weight: 500;
+  font-size: 1.2em;
+  letter-spacing: 0.064rem;
+}
+
+.search-results {
+  max-height: 333px;
+  position: absolute;
+  left: 0px;
+  top: 48px;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+  background-color: #fff;
+  z-index: 1111;
+  font-size: 0.9rem;
+}
+
+.search-results li {
+  border-top: 1px solid #e6e6e6;
+}
+
+.search-results li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  outline: 0 none;
+  color: #58585b;
+  box-shadow: inset 0 1px 0px #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-decoration: inherit;
+}
+.search-results li a:active {
+  background-color: #f9f9f9;
+  -webkit-transition: all ease-in-out 0.3ms;
+  transition: all ease-in-out 0.3ms;
+}
+
+/*headers scsss*/
+.cancelbt {
+  text-align: center;
+  width: 10%;
+  font-size: 24px;
+  color: #fff;
+  padding: 6px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 111111;
+}
+
+.main_title {
+  width: 100%;
+  font-size: 1.2em;
+  color: #fff;
+  font-weight: 600;
+  padding: 5px 10px;
+  line-height: 1.6;
+}
+
+.buttons.buttons-left.header-item {
+  width: 100%;
+  margin-left: 5px;
+}
+
+.bar .buttons-left span {
+  width: 100%;
+}
+
+/*side-menu scss*/
+.navbar-collapse .partner-logos {
+  height: 50px;
+  padding: 0 0.75rem;
+  background-color: #e6e7e8;
+  color: #28566C;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-collapse .partner-logos .motorola-logo {
+  float: left;
+  max-width: 48%;
+  height: 30px;
+  margin: 10px 0;
+}
+
+.navbar-collapse .partner-logos .powered-by-socrata {
+  float: right;
+  width: 50%;
+}
+
+.navbar-collapse .partner-logos .socrata-logo {
+  float: right;
+  height: 2rem;
+  margin: 10px 0;
+  max-width: 46%;
+}
+
+.navbar-collapse .partner-logos .powered-by-text {
+  float: right;
+  height: 30px;
+  line-height: 30px;
+  font-size: 0.8rem;
+  max-width: 50%;
+  margin: 10px 3px 10px 0;
+}
+
+.navbar-collapse .item {
+  border-bottom: 1px solid #ccc;
+  color: #58595b;
+}
+
+.navbar-collapse .item.share-link {
+  border-top: 0 none;
+  width: -webkit-calc(100% + 2px);
+  width: calc(100% + 2px);
+}
+
+.navbar-collapse .item .item-content {
+  padding: 16px;
+  cursor: pointer;
+}
+.navbar-collapse .item .item-content:active {
+  background-color: #f9f9f9;
+}
+
+.navbar-collapse .item i {
+  padding-right: 15px;
+  min-width: 40px;
+  display: inline-block;
+}
+
+.navbar-collapse .item-account {
+  background-color: #e6e7e8;
+  padding: 10px 16px;
+}
+
+.navbar-collapse .item-account .account-icon {
+  font-size: 22px;
+  line-height: initial;
+  float: right;
+}
+
+/*# sourceMappingURL=search-modal.css.map */

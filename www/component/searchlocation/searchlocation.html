@@ -1,0 +1,24 @@
+<ion-view>
+  <ion-header-bar>
+    <div class="cancelbt init-back">
+      <i class="ion-arrow-left-c" ng-class="{'icon-menu-left':isPlatformIos,'ion-arrow-left-c':!isPlatformIos}"
+         style="" ng-click="searchlocationCtrl.goBack();"> </i>
+    </div>
+    <h1 class="title-left title init-title">Search</h1>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search" style="font-size:24px;"></i>
+        <input id="srcTextbox" focus-me
+               ng-keyup="searchlocationCtrl.resolveAddress($event, searchlocationCtrl.searchKey)"
+               ng-model="searchlocationCtrl.searchKey" type="text"
+               placeholder="Search for an address or location" class="srch-textbox" style="font-size: 14px;">
+      </label>
+      <div class="item" ng-repeat="result in searchlocationCtrl.results"
+           ng-click="searchlocationCtrl.onResultSelect(result)">
+        <p ng-bind="result.place_name"></p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

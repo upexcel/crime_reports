@@ -1,0 +1,14 @@
+<div class="trend-table">
+  <h3 class="clearfix">
+    <strong>Top {{trendTable.tableData.length}} <span ng-bind="trendTable.crimeName | titleCase"></span> by
+      Type</strong>
+    <em>Past <span ng-bind="trendTable.days"></span> Days</em>
+  </h3>
+  <ul>
+    <li class="clearfix" ng-repeat='datum in trendTable.tableData'>
+      <span class="crime-ikon " ng-class="[datum.category, 'icon-' + datum.subCategory]"></span>
+      <strong ng-bind="datum.incident_type"></strong>
+      <em ng-bind="datum.count"></em>
+    </li>
+  </ul>
+</div>

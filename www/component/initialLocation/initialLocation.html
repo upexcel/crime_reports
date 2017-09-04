@@ -1,0 +1,131 @@
+<ion-view>
+  <ion-header-bar>
+    <div class="cancelbt init-back" ng-show="initialLocationCtrl.editBox == -1">
+      <i class="ion-arrow-left-c" ng-class="{'icon-menu-left':isPlatformIos,'ion-arrow-left-c':!isPlatformIos}" ng-click="initialLocationCtrl.goBack();"> </i>
+    </div>
+    <h1 class="title-left title init-title" ng-show="initialLocationCtrl.editBox == -1"
+        ng-click="initialLocationCtrl.goBack();">Set Location</h1>
+    <div class="row" ng-if="initialLocationCtrl.editBox != -1">
+      <div class="col" ng-click="initialLocationCtrl.renameLocationCancel()"><p class="header-button">CANCEL</p>
+      </div>
+      <div class="col" ng-click="initialLocationCtrl.renameLocation(-1)"><p class="header-button">SAVE</p></div>
+    </div>
+  </ion-header-bar>
+  <ion-content class="full-height">
+    <div class=' bottom-border-init'>
+      <div class="row">
+        <div class="col">
+          <p class='init-info'>
+            You can set different locations for places where you spend the most time.
+            Once you've set your locations, you can set a default preference,
+            like Incident type and Alerts.
+          </p>
+          <button class='btn-loc searchlocation' ui-sref="searchlocation" ng-if="initialLocationCtrl.autoSavedLocations.length == 0">Search For Location
+          </button>
+
+          <h4 ng-if="initialLocationCtrl.autoSavedLocations.length > 0" class="saved_location">
+            Saved Location</h4>
+          <div class="card" ng-repeat="locationData in initialLocationCtrl.autoSavedLocations">
+            <span ng-if="!locationData.agency">
+              <div ng-if="initialLocationCtrl.editBox != $index" class="item item-text-wrap padding-left"
+                   ng-click="initialLocationCtrl.openLocation(locationData)">
+                <span>{{locationData.search_name}}</span>
+                <span ng-if="!locationData.search_name">{{locationData.place_name}}</span>
+                <span class="place-bracs"
+                      ng-if="locationData.search_name">({{locationData.place_name}})</span>
+              </div>
+              <div class="item item-text-wrap padding-left" ng-if="initialLocationCtrl.editBox == $index">
+                <form ng-submit="initialLocationCtrl.renameLocation(-1)">
+                  <input type="text" class="set-rename-input" focus ng-model="locationData.search_name"/>
+                </form>
+              </div>
+              <div class="row" id="place">
+                <div class="col">
+                  <button ng-click="initialLocationCtrl.setDefault($index, locationData.default)"
+                          class="button button-clear button-dark default_btn">
+                    <i ng-class="locationData.default?'fa-star':'fa-star-o'" class="fa no-mar"></i> Default
+                  </button>
+                </div>
+                <div class="col">
+                  <button ng-click="initialLocationCtrl.renameLocation($index)"
+                          ng-disabled="initialLocationCtrl.editBox == $index" class="button button-outline button-dark rename-delete-btn">
+                    Rename
+                  </button>
+                </div>
+                <div class="col">
+                  <button class="button button-outline button-dark pull-right rename-delete-btn" ng-click="initialLocationCtrl.deleteLocation(locationData, $index)">
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </span>
+            <span ng-if="locationData.agency">
+              <div ng-if="initialLocationCtrl.editBox != $index" class="item item-text-wrap padding-left"
+                   ng-click="initialLocationCtrl.openLocation(locationData)">
+                <span>{{locationData.search_name}}</span>
+                <span ng-if="!locationData.search_name">{{locationData.agency_name}}</span>
+                <span class="place-bracs"
+                      ng-if="locationData.search_name">({{locationData.agency_name}})</span>
+              </div>
+              <div class="item item-text-wrap padding-left" ng-if="initialLocationCtrl.editBox == $index">
+                <form ng-submit="initialLocationCtrl.renameLocation(-1)">
+                  <input type="text" class="set-rename-input" focus ng-model="locationData.search_name"/>
+                </form>
+              </div>
+              <div class="row height50">
+                <div class="col">
+                  <button ng-click="initialLocationCtrl.setDefault($index, locationData.default)"
+                          class="button button-clear button-dark default_btn">
+                    <i ng-class="locationData.default?'fa-star':'fa-star-o'" class="fa no-mar"></i> Default
+                  </button>
+                </div>
+                <div class="col">
+                  <button ng-click="initialLocationCtrl.renameLocation($index)"
+                          class="button button-outline button-dark rename-delete-btn">
+                    Rename
+                  </button>
+                </div>
+                <div class="col">
+                  <button class="button button-outline button-dark pull-right rename-delete-btn" ng-click="initialLocationCtrl.deleteLocation(locationData, $index)">
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+      <button class='btn-loc add-another-location' ui-sref="searchlocation" ng-if="initialLocationCtrl.autoSavedLocations.length > 0">Add Another Location
+      </button>
+      <div class="row">
+        <div class="col">
+          <p class='init-info'>
+            Or, choose a featured agencies in your area below. Featured agencies offer citizens additional capabilities including incident trends and the ability to analyze data by neighborhood.
+          </p>
+        </div>
+      </div>
+    </div>
+    <ion-list class=''>
+      <ion-item class='init-item bottom-border-init'
+                ng-repeat="plusAgency in initialLocationCtrl.plusagenciesData track by $index"
+                ng-if="plusAgency.agency_name">
+        <div class='row' ng-click="initialLocationCtrl.addInBookMark(plusAgency, $index)">
+          <div class='col-image'>
+          </div>
+          <div class='col-content'>
+            <p class='init-item-head'> {{plusAgency.agency_name}}</p>
+            <div class='row no-padding '>
+              <div class='col-60 no-padding text-left'>
+                <p class='init-item-des'> {{plusAgency.city}}</p>
+              </div>
+              <div class='col-40 text-right '>
+                <p class='init-item-des'>{{plusAgency.agency_type}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+    <div id="mapInit" ng-hide="true"></div>
+  </ion-content>
+</ion-view>

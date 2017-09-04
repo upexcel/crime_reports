@@ -1,0 +1,195 @@
+.container_mian {
+  width: 95%;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+.container_mian .con_signup {
+  margin-bottom: 25px;
+}
+
+.container_mian .clbt1 {
+  border: 2px solid #0382ca;
+  color: #0382ca;
+  background-color: #fff;
+}
+
+.container_mian .clbt2 {
+  background-color: #d84930;
+  color: #fff;
+}
+.container_mian .clbt2:active {
+  background-color: #c43d25;
+}
+
+.container_mian .clbt3 {
+  background-color: #507bb9;
+  color: #fff;
+}
+.container_mian .clbt3:active {
+  background-color: #426ca7;
+}
+
+.container_mian .clbt4 {
+  background-color: #64c5ea;
+  color: #fff;
+}
+.container_mian .clbt4:active {
+  background-color: #46b8e6;
+}
+
+.container_mian .clbt5 {
+  background-color: #4b7184;
+  color: #fff;
+  font-weight: 600;
+}
+.container_mian .clbt5:active {
+  background-color: #406171;
+}
+
+.container_mian .bt1 {
+  border-radius: 0px !important;
+  font-size: 1.1em !important;
+  height: 45px;
+}
+.container_mian .clbt1:active {
+  background-color: #f9f9f9;
+}
+
+.container_mian .platform-ios .bt1 {
+  border-radius: 20px !important;
+  font-size: 1.1em !important;
+  height: 45px;
+}
+
+.container_mian .con_signin .sign_input {
+  margin-top: 10px;
+}
+
+.container_mian .con_signin .sign_input .state {
+  width: 63%;
+  float: left;
+  margin-right: 2%;
+}
+
+.container_mian .con_signin .sign_input .zip {
+  width: 35%;
+}
+
+.container_mian .con_signin a {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.container_mian .heading {
+  color: #374045;
+  padding-top: 5px;
+  font-size: 1rem;
+}
+
+.container_mian .heading .icon-cross {
+  line-height: 1rem !important;
+}
+
+.container_mian .errmsg {
+  color: red;
+}
+
+.container_mian .color-matched {
+  color: green;
+}
+
+.container_mian input[type="text"], .container_mian input[type="password"] {
+  border: 1px solid #B5B4B4;
+  border-radius: 0px;
+  box-shadow: none;
+  padding-left: 5px;
+  height: 45px;
+  width: 100%;
+}
+
+.forgot-password .modal-body {
+  width: 95%;
+  margin: 10px;
+  color: #374045;
+}
+
+.forgot-password .modal-body p {
+  margin: 0 0 20px;
+}
+
+.forgot-password input {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.signup-btn-group {
+  margin-bottom: 30px;
+}
+
+button.button.mybt {
+  background-color: #0372b1;
+  color: #fff;
+  margin-right: 6px;
+  min-height: 0px !important;
+  height: 30px;
+  width: 88px;
+  line-height: 0px;
+  border-radius: 0px;
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+button.button.mybt:active {
+  background-color: #025c90;
+}
+
+.modal-btn {
+  padding: 0 1.5rem;
+  float: right;
+  height: 2rem;
+  line-height: 2rem;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.modal-btn.pull-left {
+  float: left;
+}
+
+.modal-btn.disabled {
+  cursor: default;
+  opacity: .5;
+}
+
+.modal-btn.primary {
+  background-color: #0382ca;
+  color: #fff;
+  font-size: 1rem;
+  margin: 10px 0px;
+  text-decoration: inherit;
+}
+
+i.italic {
+  font-style: italic;
+  color: #444;
+  font-size: 0.8em;
+  line-height: 0;
+}
+
+.btsignup {
+  margin-top: 2px;
+}
+
+.captcha {
+  margin: 20px 0 0 0;
+}
+.spinner-signin{
+    position: absolute;
+}
+.spinner-signin svg{
+    padding: 4px;
+    margin: 0px 4px;
+}
+/*# sourceMappingURL=sign-in-up.css.map */

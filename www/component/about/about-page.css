@@ -1,0 +1,262 @@
+/*@import "www/services/util";*/
+@media only screen and (min-width: 250px) {
+  .about-page {
+    font-size: 16px;
+    height: 100%;
+    /*overflow: auto;*/
+  }
+
+  .about-page .ikon-credits h2 {
+    cursor: pointer;
+  }
+
+  .about-page .ikon-credits h2 span {
+    display: inline-block;
+    margin-left: 2rem;
+    vertical-align: middle;
+  }
+
+  .about-page h1,
+  .about-page h2,
+  .about-page h3,
+  .about-page h4,
+  .about-page h5 {
+    margin-bottom: 1em;
+    color: #333e49;
+    font-weight: 900;
+  }
+
+  .about-page p,
+  .about-page li {
+    color: #7f8c8d;
+    font-weight: 300;
+  }
+
+  .about-page p,
+  .about-page ul,
+  .about-page figure {
+    margin-bottom: 1em;
+  }
+
+  .about-page a {
+    color: #5591b9;
+  }
+
+  .about-page a:hover {
+    color: #45799c;
+    text-decoration: none;
+  }
+
+  .about-page ul h4 {
+    margin-bottom: 0;
+  }
+
+  .about-page figure {
+    padding: 15px;
+    background-color: #ecf0f1;
+    text-align: center;
+  }
+
+  .about-page .img-responsive {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+  }
+
+  .about-page .heading {
+    padding: 100px 0;
+    background-color: #ecf0f1;
+  }
+
+  .about-page .heading h1 {
+    margin: 0;
+  }
+
+  .about-page .section-body {
+    background-color: #ffffff;
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+
+  .about-page .section-body .table-of-contents h4 {
+    border-top: #5591b9 solid 5px;
+    padding-top: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .about-page .section-body .table-of-contents ul {
+    list-style-type: none;
+    margin: 0 0 2em 0;
+    padding: 0;
+  }
+
+  .about-page .section-body .table-of-contents ul li {
+    border-bottom: #bdc3c7 solid 1px;
+  }
+
+  .about-page .section-body .table-of-contents ul li a {
+    display: block;
+    padding: 5px 15px;
+    font-weight: 400;
+  }
+
+  .about-page .section-body .table-of-contents ul li a:hover {
+    background-color: #ecf0f1;
+  }
+
+  .about-page .section-body .content h2 {
+    margin-top: 2em;
+  }
+
+  .about-page .section-body .content h2:first-of-type {
+    margin-top: 5px;
+  }
+
+  .about-page .section-body .content table {
+    overflow: auto;
+  }
+
+  .about-page .section-body .content table:not(.table-bordered) :not(th), .about-page .section-body .content table:not(.table-bordered) td {
+    font-size: 16px;
+    font-weight: 300;
+    border: none;
+  }
+
+  .about-page .section-body .content table tbody td {
+    color: #7f8c8d;
+  }
+
+  .about-page .section-body .content .table.table-bordered tr td:nth-child(0) {
+    text-align: center;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+  .heading h1 {
+    text-align: center;
+  }
+}
+
+.table-responsive {
+  overflow-x: auto;
+  min-height: 0.01%;
+}
+
+@media (max-width: 768px) {
+  .hidden-xs {
+    display: none !important;
+  }
+
+  .container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .table-responsive {
+    width: 100%;
+    margin-bottom: 15.75px;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid #ddd;
+  }
+
+  .col-sm-8 {
+    width: 100%;
+  }
+
+  #faq5 {
+    margin-top: 30px;
+  }
+
+  #faq4 {
+    padding-bottom: 1px;
+  }
+
+  .table-responsive > .table > thead > tr > th, .table-responsive > .table > thead > tr > td, .table-responsive > .table > tbody > tr > th, .table-responsive > .table > tbody > tr > td, .table-responsive > .table > tfoot > tr > th, .table-responsive > .table > tfoot > tr > td {
+    white-space: nowrap;
+  }
+}
+
+/*# sourceMappingURL=about-page.css.map */
+.section-title {
+  font-weight: 800;
+  display: block;
+  padding-bottom: 10px;
+  font-size: 36px;
+
+  line-height: 1.563;
+  color: #374045;
+}
+
+.about-page ul, .about-page figure {
+  margin-bottom: 1.63em;
+  margin-left: 36px;
+}
+
+.about-page li {
+  list-style: disc;
+}
+
+.about-page .img-figure {
+  margin-left: 0;
+}
+
+.table-bordered {
+  border: 1px solid #ddd;
+}
+
+.about-page .section-body .container .url-table thead th {
+  text-align: center;
+  font-weight: 800;
+  padding: 5px;
+  border: 1px solid #ddd;
+}
+
+.about-page .section-body .container .url-table tbody tr td {
+  text-align: center;
+  font-weight: 300;
+  padding: 10px;
+  color: #7f8c8d;
+  border: 1px solid #ddd;
+}
+
+.about-page a {
+  color: #5591b9;
+  text-decoration: none;
+}
+
+.scroll-table {
+  height: 278px;
+  width: 670px;
+}
+
+.table-scroll {
+  width: 100%;
+  height: 294px;
+}
+
+.about-page .section-body .content table:not(.table-bordered) :not(th), .about-page .section-body .content table:not(.table-bordered) td {
+  text-align: left;
+}
+
+.credits-th {
+  padding: 5px;
+  line-height: 1.563;
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+}
+
+.credits-tbody td {
+  padding: 5px;
+  line-height: 1.563;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+
+.credits-table {
+  width: 100%;
+}

@@ -1,0 +1,124 @@
+$midnight-blue: #333e49;
+$asbestos: #7f8c8d;
+$peter-river: #5591b9;
+$belize-hole: #45799c;
+$clouds: #ecf0f1;
+$silver: #bdc3c7;
+$font-bold: 900;
+$font-normal: 400;
+$font-light: 400;
+
+@media only screen and (min-width: 280px) {
+  .terms-and-policies {
+    font-size: 16px;
+    background-color: #ffffff;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      color: $midnight-blue;
+      font-weight: $font-bold;
+    }
+    p,
+    li {
+      color: darken($asbestos, 10%);
+      font-weight: 300;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    p,
+    ul,
+    figure {
+      margin-bottom: 1.63em
+    }
+    a {
+      color: $peter-river
+    }
+    a:hover {
+      color: $belize-hole;
+      text-decoration: none;
+    }
+    ul h4 {
+      margin-bottom: 0
+    }
+    figure {
+      padding: 15px;
+      background-color: $clouds;
+      text-align: center;
+    }
+    .img-responsive {
+      display: inline-block
+    }
+    .heading {
+      padding: 20px 0;
+      margin-bottom: 30px;
+      background-color: $clouds;
+      h1 {
+        margin: 0
+      }
+    }
+    .main {
+      padding-bottom: 10px;
+      width: 100%;
+      .table-of-contents {
+        h4 {
+          border-top: $peter-river solid 5px;
+          padding-top: 15px;
+          font-weight: $font-normal;
+          text-transform: uppercase;
+        }
+        ul {
+          list-style-type: none;
+          margin: 0 0 2em 0;
+          padding: 0;
+          li {
+            border-bottom: $silver solid 1px;
+            a {
+              display: block;
+              padding: 5px 15px;
+              font-weight: $font-normal;
+            }
+            a:hover {
+              background-color: $clouds
+            }
+          }
+        }
+      }
+      .content {
+        h2 {
+          margin-top: 2em;
+          &:first-of-type {
+            margin-top: 5px
+          }
+        }
+        ol {
+          padding: 10px;
+          ul {
+            padding-left: 0;
+            list-style-type: none;
+            ul {
+              padding-left: 15px
+            }
+          }
+        }
+
+        li {
+          margin-bottom: 1.63em
+        }
+      }
+    }
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+  .terms-and-policies {
+    .heading h1 {
+      text-align: center
+    }
+  }
+}

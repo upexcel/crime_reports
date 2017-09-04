@@ -1,0 +1,43 @@
+<ion-view>
+  <ion-content class="pad-10" on-scroll="alertModelCtrl.scrollStart()" on-scroll-complete="alertModelCtrl.scrollEnd()"
+               overflow-scroll="false">
+    <div class="agency-submission-modal modal-with-header">
+      <div class="modal-content">
+        <div class="modal-head">
+          <span class="title-txt">Agency Submission</span>
+          <span ng-click="agencySubmissionCtrl.close()" class="icon-cross cross"></span>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <p>The data on CrimeReports comes from a national coalition of police departments and sheriff's offices
+          which choose to proactively share data with their communities.</p>
+        <p> If you would like to see data for your neighborhood on CrimeReports, the best way to do so is to
+          contact your local police or sheriff department to encourage them to join.</p>
+        <p>Or, if you prefer, you can use the form below to tell us a little bit about how you would like to use
+          this information, and we will reach out to your local department to encourage them to
+          participate.</p>
+
+        <div class="form-group">
+          <label class="text-box-label" for="name">Name (Optional)</label>
+          <input id="name" type="text" class="form-control" ng-model="agencySubmissionCtrl.name">
+        </div>
+
+        <div class="form-group">
+          <label class="text-box-label" for="subject">Why would you like this department to share data through
+            CrimeReports?</label>
+          <input id="subject" type="text" class="form-control" ng-model="agencySubmissionCtrl.message">
+        </div>
+      </div>
+
+      <div class="modal-footer no-border clearfix">
+        <a href class="modal-btn primary pull-left"
+           ng-class="{'disabled':!agencySubmissionCtrl.message}"
+           ng-click="!agencySubmissionCtrl.message || agencySubmissionCtrl.submit()">Submit <i
+              ng-if="agencySubmissionCtrl.submissionSpinner" class="fa fa-spin fa-spinner"></i></a>
+
+        <a href class="modal-btn plain link pull-left" ng-click="agencySubmissionCtrl.close()">Cancel</a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src &apos;self&apos; https://socrata-crimereports.herokuapp.com gap://ready https://staging-crimereports-refactor.herokuapp.com/ http://socrata-crimereports.herokuapp.com http://a.tiles.mapbox.com api.branch.io; style-src &apos;self&apos; https://maxcdn.bootstrapcdn.com &apos;unsafe-inline&apos;; script-src https://cdnjs.cloudflare.com &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos;; img-src &apos;self&apos; http://a.tiles.mapbox.com http://b.tiles.mapbox.com http://photo.familywatchdog.us;font-src &apos;self&apos; https://maxcdn.bootstrapcdn.com "> -->
+    <title></title>
+    <allow-navigation href="*">
+
+        <!--/*font awesome*/-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+        <!--<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">-->
+        <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+        <!-- <link href="css/new-style.css" rel="stylesheet" type="text/css"> -->
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/leaflet/MarkerCluster.css">
+        <link rel="stylesheet" href="css/leaflet/MarkerCluster.Default.css">
+
+        <!--new css-->
+        <link href="scss-css/map-cluster.css" rel="stylesheet" type="text/css">
+        <link href="scss-css/cluster-map.icons.css" rel="stylesheet" type="text/css">
+        <link href="scss-css/pie-chart-cluster.css" rel="stylesheet" type="text/css">
+        <link href="scss-css/socrata-icons.css" rel="stylesheet" type="text/css">
+        <link href="scss-css/map-card.css" rel="stylesheet" type="text/css">
+        <link href="scss-css/incident-count.css" rel="stylesheet" type="text/css">
+        <link href="scss-css/list-view.css" rel="stylesheet" type="text/css">
+        <link href="scss-css/search-modal.css" rel="stylesheet" type="text/css">
+        <link href="scss-css/modals.css" rel="stylesheet" type="text/css">
+        <link href="scss-css/sparkline-chart.css" rel="stylesheet" type="text/css">
+        <link href="scss-css/line-chart.css" rel="stylesheet" type="text/css">
+        <link href="scss-css/bar-chart.css" rel="stylesheet" type="text/css">
+        <link href="scss-css/trends-chartlist.css" rel="stylesheet" type="text/css">
+        <link href="scss-css/custom-filter.css" rel="stylesheet" type="text/css">
+        <link href="scss-css/sign-in-up.css" rel="stylesheet" type="text/css">
+        <link href="scss-css/settings.css" rel="stylesheet" type="text/css">
+        <link href="scss-css/cluster-map.css" rel="stylesheet" type="text/css">
+        <link href="scss-css/set-location.css" rel="stylesheet" type="text/css">
+        <link href="scss-css/initial-location.css" rel="stylesheet" type="text/css"/>
+        <link href="scss-css/ios-radio-group.css" rel="stylesheet" type="text/css"/>
+        <link href="scss-css/maintenance.css" rel="stylesheet" type="text/css"/>
+        <!--twitter widgets cdn-->
+        <script src="lib/twitter.widgets.js" type="text/javascript"></script>
+        <script src="lib/mixpanel.js" type="text/javascript"></script>
+        <!--ionic bundle-->
+        <script src="lib/ionic/js/ionic.bundle.js"></script>
+        <script src="lib/angular-resource.js" type="text/javascript"></script>
+        <!--map-box cdn-->
+        <script src='lib/mapbox/mapbox2.4.0.js' type="text/javascript"></script>
+        
+        <link href="lib/mapbox/mapbox.css" rel="stylesheet" type="text/css">
+
+        <!--leaflets cdn-->
+      
+        <script src="lib/leaflet/leaflet.markercluster-src.js"></script>
+        <link rel="stylesheet" href="css/angular-chart.css">
+
+        <link href="lib/datePicker/better-time-picker.css" rel="stylesheet" type="text/css">
+        <script src="lib/datePicker/betterTimePicker.js" type="text/javascript"></script>
+
+        <!-- angular-recaptcha.js -->
+        <script
+                src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit"
+                async defer
+        ></script>
+        <script src="lib/angular-recaptcha.js"></script>
+        <!-- your app's js -->
+        <script src="lib/ui.bootstrap.min.js" type="text/javascript"></script>
+        <script src="lib/chart/Chart.js"></script>
+        <script src="lib/chart/angular-chart.js"></script>
+        <script src="lib/chart/chartlist.js" type="text/javascript"></script>
+        <link href="lib/chart/chartlist.min.css" rel="stylesheet" type="text/css">
+        <script src="lib/moment.min.js" type="text/javascript"></script>
+
+        <!-- angular date picker js-->
+        <script src="lib/datePicker/js/angular-pickadate.js"></script>
+
+        <!-- angular date picker css-->
+        <link href="lib/datePicker/css/angular-pickadate.css" rel="stylesheet">
+
+        <!-- app.js -->
+        <script src="lib/ionic.native.min.js" type="text/javascript"></script>
+        <script src="app.module.js"></script>
+        <script src="app.route.js"></script>
+        <script src="app.config.js"></script>
+        <script src="app.constants.js"></script>
+        <script src="services/interceptor.js" type="text/javascript"></script>
+        <!--Spark-line chart-->
+        <script src="component/trendsOverlay/sparkLineChart/sparkLineChart.js" type="text/javascript"></script>
+
+        <!-- // -->
+        <script src="lib/ng-storage.js"></script>
+        <script src="lib/ng-cordova/ng-cordova.min.js" type="text/javascript"></script>
+        <!--<script src="lib/ng-cordova/sha1.js" type="text/javascript"></script>-->
+        <script src="lib/ios9uiwebview.js" type="text/javascript"></script>
+        <!--<script src="services/googlelogin.js" type="text/javascript"></script>-->
+        <script src="lib/TimeStorage.js" type="text/javascript"></script>
+        <script src="lib/checklist-model.js"></script>
+
+        <script src="services/geometry.js" type="text/javascript"></script>
+        <script src="services/logout.service.js" type="text/javascript"></script>
+
+        <!--side menu-->
+        <script src="component/menu/menu.module.js" type="text/javascript"></script>
+        <script src="component/menu/menu.controller.js" type="text/javascript"></script>
+
+        <!--incident-count-header-->
+        <script src="component/incident-count/incident-count.js" type="text/javascript"></script>
+
+        <!--//map-->
+        <script src="component/map/map.module.js"></script>
+        <script src="component/map/map.controller.js"></script>
+        <!--<script src="component/map/mapLayers.js" type="text/javascript"></script>-->
+
+        <script src="component/gps/gps.js" type="text/javascript"></script>
+        <!--//list-->
+        <script src="component/list/list.module.js"></script>
+        <script src="component/list/list.controller.js"></script>
+        <script src="component/list/listView.js" type="text/javascript"></script>
+
+        <!--//trends-->
+        <script src="component/trends/trends.module.js"></script>
+        <script src="component/trends/trends.controller.js"></script>
+
+        <!--api filters-->
+        <script src="component/filters/filter.module.js" type="text/javascript"></script>
+        <script src="component/filters/filter.controller.js" type="text/javascript"></script>
+        <script src="component/filters/customFilterParamsAdapter.js" type="text/javascript"></script>
+        <script src="component/filters/customFilter.js" type="text/javascript"></script>
+
+        <!--search overlay-->
+        <script src="component/searchOverlay/search-overlay.js" type="text/javascript"></script>
+
+        <script src="component/ui/daysOfWeekSelector/days-of-week-selector.js" type="text/javascript"></script>
+        <script src="component/ui/timeRangePicker/time-range-picker.js" type="text/javascript"></script>
+        <script src="component/ui/crimeTypePicker/crime-type-picker.js" type="text/javascript"></script>
+        <script src="component/ui/dateRangePicker/date-range-picker.js" type="text/javascript"></script>
+
+        <script src="services/directive.js" type="text/javascript"></script>
+        <script src="services/services.js" type="text/javascript"></script>
+        <script src="services/factory.js"></script>
+        <script src="services/filter.js"></script>
+
+        <!--//signin-->
+        <script src="component/signin/signin.module.js" type="text/javascript"></script>
+        <script src="component/signin/signin.controller.js" type="text/javascript"></script>
+
+        <!--signup-->
+        <script src="component/signup/signup.module.js" type="text/javascript"></script>
+        <script src="component/signup/signup.controller.js" type="text/javascript"></script>
+
+        <!--alert-->
+        <script src="component/alerts/alert.module.js" type="text/javascript"></script>
+        <script src="component/alerts/alert.controller.js" type="text/javascript"></script>
+        <script src="component/alerts/alert.directive.js" type="text/javascript"></script>
+        <!--Agency Submission -->
+        <script src="component/agencySubmission/submission.module.js" type="text/javascript"></script>
+        <script src="component/agencySubmission/submission.controller.js" type="text/javascript"></script>
+
+        <!--static map-->
+        <script src="component/alerts/staticMap/static.map.js" type="text/javascript"></script>
+
+        <!--settings-->
+        <script src="component/settings/setting.module.js" type="text/javascript"></script>
+        <script src="component/settings/setting.controller.js" type="text/javascript"></script>
+
+        <!--trends charts-->
+        <script src="component/trendsOverlay/trendsOverlay.js" type="text/javascript"></script>
+        <script src="component/trendsOverlay/trendsChartList/trendChartList.js" type="text/javascript"></script>
+        <script src="component/trendsOverlay/lineChart/lineChart.js" type="text/javascript"></script>
+        <script src="component/trendsOverlay/barChart/barChart.js" type="text/javascript"></script>
+        <script src="component/trendsOverlay/trendTable/trendTable.js" type="text/javascript"></script>
+
+        <!--about page-->
+        <link href="component/about/about-page.css" rel="stylesheet" type="text/css">
+        <script src="component/about/about-page-module.js" type="text/javascript"></script>
+        <script src="component/about/aboutPageController.js" type="text/javascript"></script>
+
+        <!--terms and services-->
+        <link href="component/terms-condition/terms-and-privacy.css" rel="stylesheet" type="text/css">
+        <script src="component/terms-condition/terms-service.module.js" type="text/javascript"></script>
+        <script src="component/terms-condition/termsAndPrivacyController.js" type="text/javascript"></script>
+
+        <!--set location page-->
+        <script src="component/setlocation/setlocation.module.js" type="text/javascript"></script>
+        <script src="component/setlocation/setlocation.controller.js" type="text/javascript"></script>
+        <script src="component/setlocation/setLocationDirective.js" type="text/javascript"></script>
+        <!-- initial location -->
+        <script src="component/initialLocation/initialLocation.module.js" type="text/javascript"></script>
+        <script src="component/initialLocation/initialLocation.controller.js" type="text/javascript"></script>
+        <script src="component/initialLocation/focus.directive.js" type="text/javascript"></script>
+        <!-- search location -->
+        <script src="component/searchlocation/searchlocation.module.js" type="text/javascript"></script>
+        <script src="component/searchlocation/searchlocation.controller.js" type="text/javascript"></script>
+        <!-- maintenance-->
+        <script src="component/maintenance/maintenance.module.js" type="text/javascript"></script>
+        <script src="component/maintenance/maintenance.controller.js" type="text/javascript"></script>
+
+      
+        <script src="component/search/searchCtrl.js" type="text/javascript"></script>
+        <script src="lib/loDash.js" type="text/javascript"></script>
+
+        <script src="services/smartHttp.js" type="text/javascript"></script>
+        <script src="services/constant.factory.js" type="text/javascript"></script>
+        <script src="services/newApi.js" type="text/javascript"></script>
+        <script src="services/dataSource.js" type="text/javascript"></script>
+        <script src="services/ClosePopupService.js" type="text/javascript"></script>
+        <script src="services/clusterMapConfig.js" type="text/javascript"></script>
+        <script src="services/zoomhelper.js" type="text/javascript"></script>
+        <script src="services/position.js" type="text/javascript"></script>
+        <script src="services/utill.js" type="text/javascript"></script>
+        <script src="services/newAgencySource.js" type="text/javascript"></script>
+        <script src="services/newTrendsSource.js" type="text/javascript"></script>
+        <script src="services/urlParamsAdapter.js" type="text/javascript"></script>
+        <script src="services/safeApply.js" type="text/javascript"></script>
+        <script src="services/mapState.js" type="text/javascript"></script>
+        <script src="services/mixpanelHelper.js" type="text/javascript"></script>
+        <script src="services/mixpanel.js" type="text/javascript"></script>
+        <script src="services/validater.js" type="text/javascript"></script>
+        <script src="services/errorHelper.js" type="text/javascript"></script>
+        <script src="services/removeMap.js" type="text/javascript"></script>
+        <script src="services/reorderCategory.js" type="text/javascript"></script>
+        
+        <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=true"></script>-->
+        <script src="lib/jquery.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
+        <script src="app.run.js"></script>
+
+        <!-- cordova script (this will be a 404 during development) -->
+        <script src="cordova.js"></script>
+        <link href="scss-css/video-css.css" rel="stylesheet" type="text/css"/>
+        <link href="component/ui/video/bootsttrap-slider.css" rel="stylesheet" type="text/css"/>
+        <link href="component/ui/video/video-js.css" rel="stylesheet" type="text/css"/>
+    </allow-navigation>
+</head>
+<body ng-app="crimeApp">
+
+<ion-nav-view></ion-nav-view>
+<div id="fb-root"></div>
+  <!--<script src="http://vjs.zencdn.net/5.12.6/video.js"></script>-->
+  <script src="component/ui/video/video.js" type="text/javascript"></script>
+  <script src="component/ui/video/bootstrap-slider.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.1/ui-bootstrap-tpls.min.js"></script>
+
+</body>
+</html>

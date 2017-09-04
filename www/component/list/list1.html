@@ -1,0 +1,29 @@
+<ion-view>
+  <div class="page-loader" ng-show='dataSource.dataFetching === true'>
+    <span class="spinner"></span>
+  </div>
+  <incident-count-header if-explore-agency="ifExploreAgency" current-zoom="currentZoom"
+                         if-loading="dataSource.dataFetching || trendSource.loading"
+                         explore-agency-name="exploreAgencyName" no-of-incidents="no_of_incidents"
+                         incident-header-view="'list-incident-header'"
+                         start_date="dataSource.filters.start_date"
+                         end-date="dataSource.filters.end_date"></incident-count-header>
+
+  <list-view
+      agency-data="agencySource"
+      viewport-data="dataSource.partialViewportData"
+      involved-agencies="involvedAgencies"
+      agency-involved='agencySource.agenciesInvolved'
+      crimes-type="dataSource.dataType"
+      explore-agency-mode="dataSource.exploreAgencyMode"
+      crimes-loading='dataSource.dataLoading'
+      zoom-level='currentZoom'
+      user-selection="userSelection"
+      plus-customer-message-data="plusCustomerMessageDetails"
+      is-trends-loading="trendSource.loading"
+      historic-data="trendSource.historicData"
+      url-params="dataSource.filters"
+      incid="incidentid"
+      >
+  </list-view>
+</ion-view>

@@ -1,0 +1,45 @@
+<ion-side-menus enable-menu-with-back-views="true" class="topped-nav">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-light" align-title="left">
+      <ion-nav-buttons side="right">
+        <div class="list header-search">
+          <div class="item item-input-inset">
+            <div class="col pad-0">
+              <label class="brand_logo">
+                <img style="height:30px" src="img/images/crimereports.svg" alt="chicago police">
+              </label>
+              <span class="brand-logo1" ng-hide="ifExploreAgency">CrimeReports<sup>™</sup></span>
+              <span class="brand-logo1" ng-show="ifExploreAgency">{{exploreAgencyName}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="toggle-button" style="float: right;">
+          <button class="button button-clear icon-menu" ng-click="toggleSideMenu()"></button>
+        </div>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <ion-tabs class="tabs-icon-top tabs-color-active-positive header-tabs" ng-hide="hideTabs == true">
+      <ion-tab ng-click="goToMapView()" class="text-center" icon-off="icon-map" icon-on="icon-map" title="map"
+               href="#/app/map">
+      </ion-tab>
+      <ion-tab ng-click="goToListView()" class="text-center" icon-off="icon-list" icon-on="icon-list" title="list"
+               href="#/app/list">
+      </ion-tab>
+      <ion-tab ng-click="goToTrendsView()" hidden="{{!ifExploreAgency}}" class="text-center"
+               icon-off="icon-trends" icon-on="icon-trends" title="trends" href="#/app/trends">
+      </ion-tab>
+      <ion-tab ng-click="goToSearchView()" class="text-center " icon-off="icon-search" icon-on="icon-search"
+               title="search" href="#/app/search">
+      </ion-tab>
+      <ion-tab ng-click="openFilters()" hidden="{{!showFilters}}" class="text-center" icon-off="icon-filter"
+               icon-on="icon-filter" title="filter" href="#/app/filter">
+      </ion-tab>
+    </ion-tabs>
+    <ion-nav-view animation="no-animation"></ion-nav-view>
+
+  </ion-side-menu-content>
+</ion-side-menus>
+
+
+

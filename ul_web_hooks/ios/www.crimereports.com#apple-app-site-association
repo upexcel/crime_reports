@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "49R7W276F2.com.socrata.crimereports",
+        "paths": [
+          "*",
+          "/"
+        ]
+      }
+    ]
+  }
+}

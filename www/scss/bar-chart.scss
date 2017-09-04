@@ -1,0 +1,30 @@
+@import "util";
+@import "cluster-map-variables";
+
+.bar-chart {
+  -webkit-overflow-scrolling: auto;
+  margin-right: 1rem;
+  .ct-chart {
+    height: 200px;
+
+    .ct-bar {
+      stroke-width: 8px
+    }
+
+    .ct-labels {
+      span.ct-label {
+        font-size: 9px;
+        white-space: nowrap;
+        letter-spacing: -0.034rem;
+      }
+    }
+  }
+
+  @each $category in (property, violent, quality-of-life, stops---911, sex-offender) {
+    .#{$category} {
+      .ct-series-a .ct-bar {
+        stroke: crime-marker-color($category, 1)
+      }
+    }
+  }
+}

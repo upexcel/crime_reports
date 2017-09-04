@@ -1,0 +1,95 @@
+<div class="map-layers">
+  <div class="show-layers-btn" ng-click="mapLayers.toggleOverlay()">Map Views</div>
+
+  <section class="map-layers-overlay" ng-show="mapLayers.showOverlay">
+    <div class="map-layers-container">
+      <div class="map-layers-header">
+        Map Views
+        <a href="" ng-click="mapLayers.showOverlay = false"><span class="icon-close4"></span></a>
+      </div>
+
+      <!-- MAP TILES SELECTION -->
+      <div class="map-view-selection">
+        <h6>Choose a map view:</h6>
+
+        <ul class="map-view clearfix">
+          <li ng-click="mapLayers.mapLayerChanged('map-view')"
+              ng-class="{'active': mapLayers.layerType == 'map-view'}">
+            <img ng-src="{{::mapLayers.mapViewImgUrl}}" class="map-view-item-preview" alt="Map View"/>
+            <strong>Map View</strong>
+          </li>
+
+          <li ng-click="mapLayers.mapLayerChanged('satellite-view')"
+              ng-class="{'active': mapLayers.layerType == 'satellite-view'}">
+            <img ng-src="{{::mapLayers.satViewImgUrl}}" class="map-view-item-preview" alt="Satellite View"/>
+            <strong>Satellite View</strong>
+          </li>
+
+          <li ng-click="mapLayers.mapLayerChanged('terrain-view')"
+              ng-class="{'active': mapLayers.layerType == 'terrain-view'}">
+            <img ng-src="{{::mapLayers.terrainViewImgUrl}}" class="map-view-item-preview"
+                 alt="Terrain View"/>
+            <strong>Terrain View</strong>
+          </li>
+        </ul>
+      </div>
+      <!-- MAP TILES SELECTION -->
+
+      <!-- SHAPE FILTERS -->
+      <div class="shape-filters" ng-if="mapLayers.shapeGroupNames.length > 0">
+        <h3>Map Regions</h3>
+        <ul>
+          <li class="clearfix" ng-repeat="shapeGroupName in mapLayers.shapeGroupNames">
+            <!--Shape group -->
+            <label ng-attr-for="{{'shape-group-name-' + (shapeGroupName | className)}}">
+              <input type="checkbox" name="showLayersSelection"
+                     class="shape-group-selector"
+                     ng-attr-id="{{'shape-group-name-' + (shapeGroupName | className)}}"
+                     ng-click="mapLayers.selectShapeGroup(shapeGroupName)"
+                     ng-checked="mapLayers.currentShapeGroupName == shapeGroupName && !mapLayers.currentShapeGroupIndeterminate"/>
+              <span ng-bind="shapeGroupName"></span>
+            </label>
+
+            <!--Individual shapes-->
+            <div class="shape-groups" ng-if="mapLayers.showShapeGroup(shapeGroupName)">
+              <label ng-repeat="shapeObj in mapLayers.getShapeObjects(shapeGroupName)"
+                     ng-attr-for="{{'shapeOption' + $index}}">
+                <input ng-attr-id="{{'shapeOption' + $index}}" type="checkbox"
+                       ng-true-value="true" ng-false-value="false"
+                       ng-model="mapLayers.currentShapeIds[shapeObj.shape_id]"/>
+                <span ng-bind="::shapeObj.name"></span>
+              </label>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- MARKERS KEY -->
+      <div class="markers-key">
+        <h3>Map Key</h3>
+        <ul class="crime-list-wrapper">
+          <li class="crime-category crime-spl-icons"
+              ng-repeat="(crimeCategory, crimeSubCategories)  in mapLayers.crimeCategories track by $index">
+            <h5 ng-bind="::crimeCategory | titleCase"></h5>
+            <div class="media" id="incident_{{ crimeCategory | className }}"
+                 ng-class="crimeCategory | className"
+                 ng-repeat="(crimeSubCategory, crimeTypes) in crimeSubCategories">
+              <div class="media-left">
+                <span class="crime-ikon checked" ng-class="::'icon-' + crimeSubCategory"></span>
+              </div>
+              <div class="details media-body">
+                <p ng-repeat="crimeType in crimeTypes" ng-attr-id="{{crimeType| className}}">
+                  <span>
+                    <strong ng-bind="::crimeType"></strong>
+                    <em class="description"
+                        ng-bind="mapLayers.getDescription(crimeType).type_description | handleUndefined"></em>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,75 @@
+.spark-line-chart {
+    width: 100%;
+    max-width: 100px;
+    /*max-width: 200px;*/
+    margin: 0px auto;
+    height:  36px;
+}
+
+.spark-line-chart .ct-chart {
+    height: 100%;
+    cursor: pointer;
+}
+
+.spark-line-chart .ct-chart .ct-area {
+    fill-opacity: 0.5;
+}
+
+.spark-line-chart .ct-chart .ct-line {
+    stroke-width: 2px;
+}
+
+.spark-line-chart .ct-chart svg {
+    overflow: auto;
+}
+
+.spark-line-chart .ct-chart .property .ct-area {
+    fill: rgba(14, 73, 154, 0.5);
+}
+
+.spark-line-chart .ct-chart .property.ct-series-a .ct-line {
+    stroke: #0e499a;
+}
+
+.spark-line-chart .ct-chart .violent .ct-area {
+    fill: rgba(6, 99, 73, 0.5);
+}
+
+.spark-line-chart .ct-chart .violent.ct-series-a .ct-line {
+    stroke: #066349;
+}
+
+.spark-line-chart .ct-chart .quality-of-life .ct-area {
+    fill: rgba(145, 145, 0, 0.5);
+}
+
+.spark-line-chart .ct-chart .quality-of-life.ct-series-a .ct-line {
+    stroke: #919100;
+}
+
+.spark-line-chart .ct-chart .stops---911 .ct-area {
+    fill: rgba(77, 50, 121, 0.5);
+}
+
+.spark-line-chart .ct-chart .stops---911.ct-series-a .ct-line {
+    stroke: #4d3279;
+}
+
+.sparkline em {
+    display: block;
+    color: #878c8f;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.8rem;
+    letter-spacing: -0.034rem;
+}
+
+.sparkline strong {
+    display: block;
+    color: #374045;
+    font-weight: 700;
+    font-size: 0.8rem;
+    line-height: 1.543;
+}
+
+/*# sourceMappingURL=sparkline-chart.css.map */

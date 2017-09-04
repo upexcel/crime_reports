@@ -1,0 +1,45 @@
+.ios-radio-group {
+  margin-top: 10px;
+}
+
+.ios-radio-group ul li {
+  color: inherit;
+  display: inline-block;
+  position: relative;
+  float: left;
+  width: 33.33%;
+  -moz-width: calc(100% / 3);
+  -webkit-width: calc(100% / 3);
+  width: calc(100% / 3);
+  text-align: center;
+}
+
+.ios-radio-group ul li:nth-child(even) {
+  border-bottom: 1px solid #28566c;
+  border-top: 1px solid #28566c;
+}
+
+.ios-radio-group ul li:nth-child(odd) {
+  border: 1px solid #28566c;
+  border-radius: 4px 0px 0px 4px;
+}
+
+.ios-radio-group ul li:nth-child(3) {
+  border-radius: 0px 4px 4px 0px;
+}
+
+.ios-radio-group ul li label {
+  display: block;
+  height: 33px;
+  line-height: 33px;
+}
+
+.ios-radio-group ul li input[type=radio] {
+  position: absolute;
+  visibility: hidden;
+}
+
+.ios-radio-group input[type=radio]:checked ~ label {
+  color: #fff;
+  background-color: #28566c;
+}

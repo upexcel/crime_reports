@@ -1,0 +1,58 @@
+<ion-view>
+  <div class="page-loader" ng-show='ifSigningIn === true'>
+    <span class="spinner"></span>
+  </div>
+  <ion-content style="top:44px;margin: 0px;" class="page-view" on-scroll="scrollStart()"
+               on-scroll-complete="scrollEnd()" overflow-scroll="false">
+
+
+    <div class="container_mian">
+      <div class="con_signup">
+        <div class="heading">
+          <span>Sign Up</span>
+          <span ng-click="goBack()" class="icon-cross cross"></span>
+        </div>
+        <div class="btsignup">
+          <button class="button button-block button-small bt1 clbt1" ng-click="signUp()">Sign up with Email
+          </button>
+          <button class="button button-block button-small bt1 clbt2" ng-click="googlelogin()">Sign up with
+            Google <ion-spinner icon="spiral" class="spinner-signin" ng-show="spinner == 'google'"></ion-spinner>
+          </button>
+          <button class="button button-block button-small bt1 clbt3" ng-click="facebookLogin()">Sign up with
+            Facebook 
+          </button>
+          <button class="button button-block button-small bt1 clbt4" ng-click="twitterLogin()">Sign up with
+            Twitter <ion-spinner icon="spiral" class="spinner-signin" ng-show="spinner == 'twitter'"></ion-spinner>
+          </button>
+
+          <em class="italic"> By&nbsp;signing up you indicate that you have read and agree to the Terms of
+            Service and Privacy Policy.</em>
+        </div>
+      </div>
+      <div class="con_signin">
+        <div class="heading">Sign In</div>
+        <div class="sign_input">
+          <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+                 ng-change="log.errorMsg = ''" class="signinput" type="text" placeholder="Email"
+                 ng-model="user.email">
+        </div>
+        <div class="sign_input errmsg" ng-if="user.email == '' && loginClicked">please fill email</div>
+        <div class="sign_input">
+          <input ng-change="log.errorMsg = ''" class="signinput" type="password" placeholder="Password"
+                 ng-model="user.password">
+        </div>
+        <a href="javascript:void(0)" ng-click="forgotPassword()">Forgot password?</a>
+        <div>
+          <a  ng-click="resendConfirmation()" class="" ng-show="userUnconfirmed">
+            Resend Confirmation Email
+          </a>
+        </div>
+        <div class="sign_input errmsg" ng-if="user.password == '' && loginClicked">please fill password</div>
+        <div class="sign_input errmsg">{{log.errorMsg}}</div>
+        <button ng-disabled="!user.email || !user.password" class="button button-block button-small bt1 clbt5"
+                ng-click="submit()">Sign In <i ng-if="signInSpinner" class="fa fa-spin fa-spinner"></i></button>
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>

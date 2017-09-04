@@ -1,0 +1,149 @@
+<ion-modal-view>
+  <ion-content>
+    <div class="incident-video-links modal-with-header modal-with-tabs">
+      <div class="modal-content">
+        <div class="modal-head">
+          <span class="modal-title">
+            <span ng-if="!listView.showReqestForm">Over-redacted Preview of</span>
+            <a href="javascript:void(0)" class="back-to-videos" ng-if="listView.showReqestForm"
+               ng-click="listView.backToVideos()"><span class="icon-arrow-up"></span>Back to Videos</a>
+          </span>
+
+          <a class="modal-dialog-close" href="javascript:void(0)" ng-click="listView.close()"><span class="icon-close4"></span></a>
+        </div>
+      </div>
+
+      <div class="modal-body" ng-show="!listView.showReqestForm">
+        <uib-tabset class="row-fluid" active="0">
+          <uib-tab ng-click="listView.LoadVideoPlayer($index + 1)" index="$index" heading="Video {{$index + 1}}" class="clearfix"
+                   ng-repeat="link in listView.incidentVideoLinks track by $index">
+            <div class="video-wrapper">
+              <video id="my-video{{$index + 1}}" class="video-js vjs-default-skin vjs-big-play-centered" >
+                <source ng-attr-src="{{link.trustedResourceUrl}}" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="video-clip-time-inputs clearfix">
+              <label>
+                <span>Start Time</span>
+                <input type="text" class="form-control" ng-model="link.timer[$index].video_start_time">
+              </label>
+
+              <label>
+                <span style="margin-right:23px;">End Time</span>
+                <input type="text" class="form-control" ng-model="link.timer[$index].video_end_time">
+              </label>
+            </div>
+
+            <div class="row request-footage-section">
+              <em class="request-text">You can request a full fidelity version of the entire video or select a range of the footage by adjusting the end points, then press Request Footage to submit a public records request to the {{::listView.agencyName}}</em>
+            </div>
+            <div class="row request-footage-section">
+              <span style="width:100%">
+                <button href="javascript:void(0)" class="modal-btn primary pull-right request-btn loc-button"
+                        ng-click="listView.openRequestForm(link.videoUrl)">Request Footage</button>
+              </span>
+            </div>
+          </uib-tab>
+        </uib-tabset>
+      </div>
+
+      <div class="modal-body" ng-if="listView.showReqestForm">
+        <form class="pure-form request-form clearfix" ng-submit="listView.submitFootageRequest()" name="reqFrm" novalidate>
+
+          <div class="row-fluid pure-control-group clearfix">
+            <label class="col-xs-12">
+              <span>First Name</span>
+              <input type="text" name="first_name" ng-model="listView.userDetails.first_name"
+                     placeholder="First Name" required>
+            </label>
+          </div>
+          <div class="row-fluid pure-control-group clearfix">
+            <label class="col-xs-12">
+              <span>Last Name</span>
+              <input type="text" name="last_name" ng-model="listView.userDetails.last_name"
+                     placeholder="Last Name" required>
+            </label>
+          </div>
+
+          <div class="row-fluid pure-control-group clearfix">
+            <label class="col-xs-12">
+              <span>Address</span>
+              <input name="address" type="text" ng-model="listView.userDetails.address"
+                     placeholder="Address" required>
+            </label>
+          </div>
+
+          <div class="row-fluid pure-control-group clearfix">
+            <label class="col-xs-12">
+              <span>City</span>
+              <input name="city" type="text" ng-model="listView.userDetails.city"
+                     placeholder="City" required>
+            </label>
+          </div>
+          <div class="row-fluid pure-control-group clearfix">
+            <label class="col-xs-12">
+              <span>State</span>
+              <input name="state" type="text" ng-model="listView.userDetails.state"
+                     placeholder="State" required>
+            </label>
+          </div>
+          <div class="row-fluid pure-control-group clearfix">
+            <label class="col-xs-12">
+              <span>Zip Code</span>
+              <input name="zip" type="text" ng-model="listView.userDetails.zip"
+                     placeholder="Zip Code" required>
+            </label>
+          </div>
+
+          <div class="row-fluid pure-control-group clearfix">
+            <label class="col-xs-12">
+              <span>Email</span>
+              <input name="email" type="email" ng-model="listView.userDetails.email"
+                     placeholder="Email" required>
+            </label>
+          </div>
+          <div class="row-fluid pure-control-group clearfix">
+            <label class="col-xs-12">
+              <span>Phone Number</span>
+              <input name="phone" type="tel" ng-model="listView.userDetails.phone"
+                     placeholder="Phone Number" required>
+            </label>
+          </div>
+          <div class="row-fluid pure-control-group clearfix">
+            <label class="col-xs-12">
+              <span>Request Description</span>
+              <textarea name="message" rows="3" ng-model="listView.userDetails.message" placeholder="Request Description"
+                        required></textarea>
+            </label>
+          </div>
+
+          <div class="row-fluid pure-control-group clearfix">
+            <div class="col-xs-12">
+              <span>Preferred Response Method</span>
+
+              <div class="dd-selector">
+                <select ng-model="listView.userDetails.preferred_response_method">
+                  <option ng-repeat="option in listView.responseMethods" value="{{option.value}}" ng-bind="option.name"></option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="row-fluid pure-control-group clearfix request-footage-section">
+            <em class="request-text col-sm-9">You can request a full fidelity version of the entire video or select a range of the footage by adjusting the end points, then press Request Footage to submit a public records request to the {{::listView.agencyName}}</em>
+
+            <span class="col-xs-12 col-sm-3">
+              <div class="field-message" ng-messages="reqFrm.first_name.$error || reqFrm.last_name.$error || reqFrm.address.$error || reqFrm.city.$error || reqFrm.state.$error || reqFrm.zip.$error || reqFrm.email.$error || reqFrm.phone.$error || reqFrm.message.$error" ng-if='reqFrm.first_name.$dirty || reqFrm.last_name.$dirty || reqFrm.address.$dirty || reqFrm.city.$dirty || reqFrm.state.$dirty || reqFrm.zip.$dirty || reqFrm.email.$dirty || reqFrm.phone.$dirty || reqFrm.message.$dirty' ng-cloak>
+                <div ng-message="required" ng-if="reqFrm.$invalid">Fill in the missing fields</div>
+              </div>
+
+              <button type="submit" class="request-btn modal-btn primary pull-right" ng-style="reqFrm.$invalid && {'background-color':'#ddd'}" 
+                      ng-disabled="listView.disableFootageReq || reqFrm.$invalid">Request Footage</button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

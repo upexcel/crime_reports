@@ -1,0 +1,846 @@
+@charset "UTF-8";
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.donut-marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency) {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1.2;
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0;
+  font-weight: normal;
+  -webkit-text-shadow: 0 0 transparent;
+  -moz-text-shadow: 0 0 transparent;
+  -ms-text-shadow: 0 0 transparent;
+  -o-text-shadow: 0 0 transparent;
+  text-shadow: 0 0 transparent;
+  font-size: 1.2rem;
+  -webkit-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -moz-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -ms-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -o-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  box-shadow: 0 0 0 4px rgba(77, 50, 121, 0.4);
+}
+
+.cluster-map .leaflet-marker-icon.selected:not(.marker-cluster):not(.donut-marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency) {
+  color: #fff;
+  background-color: rgba(175, 64, 11, 0.85);
+  -webkit-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.donut-marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency):not(.selected).category-property {
+  color: #0e499a;
+  background-color: #fff;
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.donut-marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency):not(.selected).category-property:hover {
+  color: rgba(14, 73, 154, 0.8);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.donut-marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency).selected.category-property {
+  color: #fff;
+  background-color: rgba(175, 64, 11, 0.85);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.donut-marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency) {
+  color: rgba(77, 50, 121, 0.9);
+  background-color: #fff;
+  box-shadow: 0 0 0 1px #4d3279, 0 0 0 4px rgba(77, 50, 121, 0.1);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.donut-marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency):not(.selected).category-violent {
+  color: #066349;
+  background-color: #fff;
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.donut-marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency):not(.selected).category-violent:hover {
+  color: rgba(6, 99, 73, 0.8);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.donut-marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency).selected.category-violent {
+  color: #fff;
+  background-color: rgba(175, 64, 11, 0.85);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.donut-marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency):not(.selected).category-quality-of-life {
+  color: #919100;
+  background-color: #fff;
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.donut-marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency):not(.selected).category-quality-of-life:hover {
+  color: rgba(145, 145, 0, 0.8);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.donut-marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency).selected.category-quality-of-life {
+  color: #fff;
+  background-color: rgba(175, 64, 11, 0.85);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.donut-marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency):not(.selected).category-stops---911 {
+  color: #4d3279;
+  background-color: #fff;
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.donut-marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency):not(.selected).category-stops---911:hover {
+  color: rgba(77, 50, 121, 0.8);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.donut-marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency).selected.category-stops---911 {
+  background-color: rgba(175, 64, 11, 0.85);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.donut-marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency):not(.selected).category-sex-offender {
+  color: #b57426;
+  background-color: #fff;
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.donut-marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency):not(.selected).category-sex-offender:hover {
+  color: rgba(181, 116, 38, 0.8);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.donut-marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency).selected.category-sex-offender {
+  color: #fff;
+  background-color: rgba(175, 64, 11, 0.85);
+}
+
+.cluster-map .leaflet-marker-icon.marker-cluster.type-agency:not(.selected) {
+  background-color: #7d8f9e;
+}
+
+.cluster-map .leaflet-marker-icon.marker-cluster.type-crime:not(.selected), .cluster-map .leaflet-marker-icon.marker-cluster.type-sex-offender:not(.selected) {
+  background-color: white;
+  color: #7b8082;
+  -webkit-text-shadow: 0 0 0 transparent;
+  -moz-text-shadow: 0 0 0 transparent;
+  -ms-text-shadow: 0 0 0 transparent;
+  -o-text-shadow: 0 0 0 transparent;
+  text-shadow: 0 0 0 transparent;
+}
+
+.cluster-map .leaflet-marker-icon.marker-cluster.type-cluster:not(.selected) {
+  background-color: rgba(55, 64, 69, 0.55);
+}
+
+.cluster-map .leaflet-marker-icon.marker-cluster.selected {
+  background-color: rgba(175, 64, 11, 0.85);
+}
+
+.cluster-map .leaflet-marker-icon.marker-cluster:not(.type-crime):not(.type-sex-offender).density-high {
+  font-weight: 600;
+  letter-spacing: -0.03rem;
+}
+
+.cluster-map .leaflet-marker-icon.marker-cluster:not(.type-crime):not(.type-sex-offender).density-medium {
+  font-weight: 600;
+  letter-spacing: -0.03rem;
+}
+
+.cluster-map .leaflet-marker-icon.marker-cluster:not(.type-crime):not(.type-sex-offender).density-low {
+  font-weight: 600;
+}
+
+.cluster-map .leaflet-marker-icon.marker-cluster.type-crime, .cluster-map .leaflet-marker-icon.marker-cluster.type-sex-offender {
+  font-weight: 600;
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency) {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.064rem;
+  text-align: center;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  border-radius: 12px;
+  -webkit-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -moz-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -ms-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -o-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  margin-top: -12px;
+  margin-left: -12px;
+  font-size: 1.4rem;
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency):not(.selected).category-property {
+  -webkit-box-shadow: 0 0 0 1px #0e499a, 0 0 0 4px rgba(14, 73, 154, 0.2);
+  -moz-box-shadow: 0 0 0 1px #0e499a, 0 0 0 4px rgba(14, 73, 154, 0.2);
+  -ms-box-shadow: 0 0 0 1px #0e499a, 0 0 0 4px rgba(14, 73, 154, 0.2);
+  -o-box-shadow: 0 0 0 1px #0e499a, 0 0 0 4px rgba(14, 73, 154, 0.2);
+  box-shadow: 0 0 0 1px #0e499a, 0 0 0 4px rgba(14, 73, 154, 0.2);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency):not(.selected).category-property:hover {
+  -webkit-box-shadow: 0 0 0 1px #0e499a, 0 0 0 4px rgba(14, 73, 154, 0.2);
+  -moz-box-shadow: 0 0 0 1px #0e499a, 0 0 0 4px rgba(14, 73, 154, 0.2);
+  -ms-box-shadow: 0 0 0 1px #0e499a, 0 0 0 4px rgba(14, 73, 154, 0.2);
+  -o-box-shadow: 0 0 0 1px #0e499a, 0 0 0 4px rgba(14, 73, 154, 0.2);
+  box-shadow: 0 0 0 1px #0e499a, 0 0 0 4px rgba(14, 73, 154, 0.2);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency).selected.category-property {
+  font-size: 1.2rem;
+  -webkit-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -moz-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -ms-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -o-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency) {
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency):not(.selected).category-violent {
+  -webkit-box-shadow: 0 0 0 1px #066349, 0 0 0 4px rgba(6, 99, 73, 0.2);
+  -moz-box-shadow: 0 0 0 1px #066349, 0 0 0 4px rgba(6, 99, 73, 0.2);
+  -ms-box-shadow: 0 0 0 1px #066349, 0 0 0 4px rgba(6, 99, 73, 0.2);
+  -o-box-shadow: 0 0 0 1px #066349, 0 0 0 4px rgba(6, 99, 73, 0.2);
+  box-shadow: 0 0 0 1px #066349, 0 0 0 4px rgba(6, 99, 73, 0.2);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency):not(.selected).category-violent:hover {
+  -webkit-box-shadow: 0 0 0 1px #066349, 0 0 0 4px rgba(6, 99, 73, 0.2);
+  -moz-box-shadow: 0 0 0 1px #066349, 0 0 0 4px rgba(6, 99, 73, 0.2);
+  -ms-box-shadow: 0 0 0 1px #066349, 0 0 0 4px rgba(6, 99, 73, 0.2);
+  -o-box-shadow: 0 0 0 1px #066349, 0 0 0 4px rgba(6, 99, 73, 0.2);
+  box-shadow: 0 0 0 1px #066349, 0 0 0 4px rgba(6, 99, 73, 0.2);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency).selected.category-violent {
+  font-size: 1.2rem;
+  -webkit-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -moz-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -ms-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -o-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency):not(.selected).category-quality-of-life {
+  -webkit-box-shadow: 0 0 0 1px #919100, 0 0 0 4px rgba(145, 145, 0, 0.2);
+  -moz-box-shadow: 0 0 0 1px #919100, 0 0 0 4px rgba(145, 145, 0, 0.2);
+  -ms-box-shadow: 0 0 0 1px #919100, 0 0 0 4px rgba(145, 145, 0, 0.2);
+  -o-box-shadow: 0 0 0 1px #919100, 0 0 0 4px rgba(145, 145, 0, 0.2);
+  box-shadow: 0 0 0 1px #919100, 0 0 0 4px rgba(145, 145, 0, 0.2);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency):not(.selected).category-quality-of-life:hover {
+  -webkit-box-shadow: 0 0 0 1px #919100, 0 0 0 4px rgba(145, 145, 0, 0.2);
+  -moz-box-shadow: 0 0 0 1px #919100, 0 0 0 4px rgba(145, 145, 0, 0.2);
+  -ms-box-shadow: 0 0 0 1px #919100, 0 0 0 4px rgba(145, 145, 0, 0.2);
+  -o-box-shadow: 0 0 0 1px #919100, 0 0 0 4px rgba(145, 145, 0, 0.2);
+  box-shadow: 0 0 0 1px #919100, 0 0 0 4px rgba(145, 145, 0, 0.2);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency).selected.category-quality-of-life {
+  font-size: 1.2rem;
+  -webkit-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -moz-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -ms-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -o-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency):not(.selected).category-stops---911 {
+  -webkit-box-shadow: 0 0 0 1px #4d3279, 0 0 0 4px rgba(77, 50, 121, 0.2);
+  -moz-box-shadow: 0 0 0 1px #4d3279, 0 0 0 4px rgba(77, 50, 121, 0.2);
+  -ms-box-shadow: 0 0 0 1px #4d3279, 0 0 0 4px rgba(77, 50, 121, 0.2);
+  -o-box-shadow: 0 0 0 1px #4d3279, 0 0 0 4px rgba(77, 50, 121, 0.2);
+  box-shadow: 0 0 0 1px #4d3279, 0 0 0 4px rgba(77, 50, 121, 0.2);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency):not(.selected).category-stops---911:hover {
+  -webkit-box-shadow: 0 0 0 1px #4d3279, 0 0 0 4px rgba(77, 50, 121, 0.2);
+  -moz-box-shadow: 0 0 0 1px #4d3279, 0 0 0 4px rgba(77, 50, 121, 0.2);
+  -ms-box-shadow: 0 0 0 1px #4d3279, 0 0 0 4px rgba(77, 50, 121, 0.2);
+  -o-box-shadow: 0 0 0 1px #4d3279, 0 0 0 4px rgba(77, 50, 121, 0.2);
+  box-shadow: 0 0 0 1px #4d3279, 0 0 0 4px rgba(77, 50, 121, 0.2);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency).selected.category-stops---911 {
+  font-size: 1.2rem;
+  -webkit-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -moz-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -ms-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -o-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency):not(.selected).category-sex-offender {
+  -webkit-box-shadow: 0 0 0 1px #b57426, 0 0 0 4px rgba(181, 116, 38, 0.2);
+  -moz-box-shadow: 0 0 0 1px #b57426, 0 0 0 4px rgba(181, 116, 38, 0.2);
+  -ms-box-shadow: 0 0 0 1px #b57426, 0 0 0 4px rgba(181, 116, 38, 0.2);
+  -o-box-shadow: 0 0 0 1px #b57426, 0 0 0 4px rgba(181, 116, 38, 0.2);
+  box-shadow: 0 0 0 1px #b57426, 0 0 0 4px rgba(181, 116, 38, 0.2);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency):not(.selected).category-sex-offender:hover {
+  -webkit-box-shadow: 0 0 0 1px #b57426, 0 0 0 4px rgba(181, 116, 38, 0.2);
+  -moz-box-shadow: 0 0 0 1px #b57426, 0 0 0 4px rgba(181, 116, 38, 0.2);
+  -ms-box-shadow: 0 0 0 1px #b57426, 0 0 0 4px rgba(181, 116, 38, 0.2);
+  -o-box-shadow: 0 0 0 1px #b57426, 0 0 0 4px rgba(181, 116, 38, 0.2);
+  box-shadow: 0 0 0 1px #b57426, 0 0 0 4px rgba(181, 116, 38, 0.2);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency).selected.category-sex-offender {
+  font-size: 1.2rem;
+  -webkit-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -moz-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -ms-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -o-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency):not(.selected).category-quality-of-life, .cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency).selected.category-quality-of-life {
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.cluster-map .leaflet-marker-icon.marker-cluster.type-agency:not(.selected) {
+  -webkit-box-shadow: 0 0 0 2px rgb(255, 255, 255), 0 0 0 4px rgba(125, 143, 158, 0.2);
+  -moz-box-shadow: 0 0 0 2px rgb(255, 255, 255), 0 0 0 4px rgba(125, 143, 158, 0.2);
+  -ms-box-shadow: 0 0 0 2px rgb(255, 255, 255), 0 0 0 4px rgba(125, 143, 158, 0.2);
+  -o-box-shadow: 0 0 0 2px rgb(255, 255, 255), 0 0 0 4px rgba(125, 143, 158, 0.2);
+  box-shadow: 0 0 0 2px rgb(255, 255, 255), 0 0 0 4px rgba(125, 143, 158, 0.2);
+}
+
+.cluster-map .leaflet-marker-icon.marker-cluster.type-crime:not(.selected), .cluster-map .leaflet-marker-icon.marker-cluster.type-sex-offender:not(.selected) {
+  -webkit-box-shadow: 0 0 0 1px #7b8082, 0 0 0 4px rgba(123, 128, 130, 0.4);
+  -moz-box-shadow: 0 0 0 1px #7b8082, 0 0 0 4px rgba(123, 128, 130, 0.4);
+  -ms-box-shadow: 0 0 0 1px #7b8082, 0 0 0 4px rgba(123, 128, 130, 0.4);
+  -o-box-shadow: 0 0 0 1px #7b8082, 0 0 0 4px rgba(123, 128, 130, 0.4);
+  box-shadow: 0 0 0 1px #7b8082, 0 0 0 4px rgba(123, 128, 130, 0.4);
+}
+
+.cluster-map .leaflet-marker-icon.marker-cluster.type-cluster:not(.selected) {
+  -webkit-box-shadow: 0 0 0 1px rgb(255, 255, 255), 0 0 0 4px rgba(55, 64, 69, 0.3);
+  -moz-box-shadow: 0 0 0 1px rgb(255, 255, 255), 0 0 0 4px rgba(55, 64, 69, 0.3);
+  -ms-box-shadow: 0 0 0 1px rgb(255, 255, 255), 0 0 0 4px rgba(55, 64, 69, 0.3);
+  -o-box-shadow: 0 0 0 1px rgb(255, 255, 255), 0 0 0 4px rgba(55, 64, 69, 0.3);
+  box-shadow: 0 0 0 1px rgb(255, 255, 255), 0 0 0 4px rgba(55, 64, 69, 0.3);
+}
+
+.cluster-map .leaflet-marker-icon.marker-cluster.selected {
+  -webkit-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -moz-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -ms-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -o-box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+  box-shadow: 0 0 0 4px rgba(175, 64, 11, 0.6);
+}
+
+.cluster-map .leaflet-marker-icon.marker-cluster:not(.type-crime):not(.type-sex-offender).density-high {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.064rem;
+  text-align: center;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -moz-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -ms-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -o-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  margin-top: -20px;
+  margin-left: -20px;
+  font-size: 0.9rem;
+}
+
+.cluster-map .leaflet-marker-icon.marker-cluster:not(.type-crime):not(.type-sex-offender).density-medium {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.064rem;
+  text-align: center;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+  -webkit-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -moz-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -ms-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -o-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  margin-top: -15px;
+  margin-left: -15px;
+  font-size: 0.8rem;
+}
+
+.cluster-map .leaflet-marker-icon.marker-cluster:not(.type-crime):not(.type-sex-offender).density-low {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.064rem;
+  text-align: center;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  border-radius: 12px;
+  -webkit-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -moz-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -ms-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -o-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  margin-top: -12px;
+  margin-left: -12px;
+  font-size: 0.8rem;
+}
+
+.cluster-map .leaflet-marker-icon.marker-cluster.type-crime, .cluster-map .leaflet-marker-icon.marker-cluster.type-sex-offender {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.064rem;
+  text-align: center;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  border-radius: 12px;
+  -webkit-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -moz-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -ms-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -o-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  margin-top: -12px;
+  margin-left: -12px;
+  font-size: 0.8rem;
+}
+
+.cluster-map .leaflet-marker-icon.icon-no-data-agency {
+  position: absolute;
+  width: 80px;
+  margin-left: -40px;
+  bottom: -40px;
+}
+
+.cluster-map .leaflet-marker-icon.icon-no-data-agency:hover .no-data-flyout {
+  display: block;
+}
+
+.cluster-map .leaflet-marker-icon.icon-no-data-agency .no-data-pin {
+  width: 80px;
+  text-align: center;
+  background: #f8f4f0;
+  color: rgba(55, 64, 69, 0.5);
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 2px;
+  position: relative;
+  z-index: 2;
+  word-break: break-word;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-text-shadow: 0 1px 0 #fff;
+  -moz-text-shadow: 0 1px 0 #fff;
+  -ms-text-shadow: 0 1px 0 #fff;
+  -o-text-shadow: 0 1px 0 #fff;
+  text-shadow: 0 1px 0 #fff;
+  -webkit-box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(55, 64, 69, 0.3);
+  -moz-box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(55, 64, 69, 0.3);
+  -ms-box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(55, 64, 69, 0.3);
+  -o-box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(55, 64, 69, 0.3);
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(55, 64, 69, 0.3);
+}
+
+.cluster-map .leaflet-marker-icon.icon-no-data-agency .no-data-flyout {
+  position: absolute;
+  margin: 0;
+  background-color: #ffffff;
+  padding: 8px 8px 12px;
+  width: 200px;
+  z-index: 1;
+  font-size: 0.8rem;
+  line-height: 1.25;
+  text-align: center;
+  cursor: default;
+  display: none;
+  bottom: 36px;
+  left: -moz-calc(-60px);
+  left: -webkit-calc(-60px);
+  left: -o-calc(-60px);
+  left: calc(-60px);
+  -webkit-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.15);
+}
+
+.cluster-map .leaflet-marker-icon.icon-no-data-agency .no-data-flyout a {
+  display: block;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.icon-agency:before,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.icon-agency:before {
+  content: "";
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.icon-sheriff:before,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.icon-sheriff:before {
+  content: "";
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency:after,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff:after {
+  content: '';
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  top: -2px;
+  left: 0;
+  background-color: transparent;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer {
+  color: #ffc800;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer:not(.selected),
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer:not(.selected) {
+  background-color: #28566c;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer.selected,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer.selected {
+  background-color: #28566c;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer.selected strong, .cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer.selected strong:after, .cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer.selected strong:before,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer.selected strong,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer.selected strong:after,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer.selected strong:before {
+  background-color: #af400b;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer strong,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer strong {
+  position: absolute;
+  bottom: 25px;
+  left: -16px;
+  width: 56px;
+  padding: 0.1rem;
+  background-color: rgba(248, 163, 72, 0.95);
+  font-size: 0.7rem;
+  color: #fff;
+  line-height: 1.543;
+  text-align: center;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.028rem;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -moz-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -ms-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -o-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer strong span,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer strong span {
+  display: none;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer strong:after, .cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer strong:before,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer strong:after,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer strong:before {
+  content: '';
+  background-color: rgba(248, 163, 72, 0.95);
+  position: absolute;
+  height: 14px;
+  width: 23px;
+  z-index: -1;
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  -ms-border-radius: 0 0 6px 6px;
+  -o-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer strong:after,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer strong:after {
+  bottom: -2px;
+  left: 33px;
+  -webkit-transform: rotate(-21deg);
+  -moz-transform: rotate(-21deg);
+  -ms-transform: rotate(-21deg);
+  -o-transform: rotate(-21deg);
+  transform: rotate(-21deg);
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer strong:before,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer strong:before {
+  bottom: -2px;
+  left: 0;
+  -webkit-transform: rotate(21deg);
+  -moz-transform: rotate(21deg);
+  -ms-transform: rotate(21deg);
+  -o-transform: rotate(21deg);
+  transform: rotate(21deg);
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer:hover strong,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer:hover strong {
+  width: 100px;
+  left: -38px;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer:hover strong span,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer:hover strong span {
+  display: inline;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer:hover strong:after, .cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer:hover strong:before,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer:hover strong:after,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer:hover strong:before {
+  width: 40px;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer:hover strong:after,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer:hover strong:after {
+  bottom: -6px;
+  left: 60px;
+  -webkit-transform: rotate(-13deg);
+  -moz-transform: rotate(-13deg);
+  -ms-transform: rotate(-13deg);
+  -o-transform: rotate(-13deg);
+  transform: rotate(-13deg);
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer:hover strong:before,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer:hover strong:before {
+  bottom: -5px;
+  left: 0px;
+  -webkit-transform: rotate(13deg);
+  -moz-transform: rotate(13deg);
+  -ms-transform: rotate(13deg);
+  -o-transform: rotate(13deg);
+  transform: rotate(13deg);
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency:not(.plus-customer):not(.selected),
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff:not(.plus-customer):not(.selected) {
+  background-color: #7d8f9e;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.selected,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.selected {
+  background-color: rgba(175, 64, 11, 0.85);
+}
+
+.cluster-map.persistent-marker-clustered .leaflet-marker-icon.icon-agency, .cluster-map.persistent-marker-clustered .leaflet-marker-icon.icon-sheriff {
+  background-color: #7d8f9e;
+}
+
+.cluster-map.persistent-marker-clustered .leaflet-marker-icon.icon-agency:before, .cluster-map.persistent-marker-clustered .leaflet-marker-icon.icon-sheriff:before {
+  content: "1";
+}
+
+.cluster-map.persistent-marker-clustered .leaflet-marker-icon.icon-agency strong, .cluster-map.persistent-marker-clustered .leaflet-marker-icon.icon-sheriff strong {
+  display: none;
+}
+
+.cluster-map .leaflet-marker-icon.icon-agency.plus-customer.hide-agency-icon {
+  display: none;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.064rem;
+  text-align: center;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  border-radius: 12px;
+  -webkit-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -moz-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -ms-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -o-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  margin-top: -12px;
+  margin-left: -12px;
+  font-size: 1.2rem;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer:not(.selected),
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer:not(.selected) {
+  -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 4px rgba(248, 163, 72, 0.85);
+  -moz-box-shadow: 0 0 0 1px #fff, 0 0 0 4px rgba(248, 163, 72, 0.85);
+  -ms-box-shadow: 0 0 0 1px #fff, 0 0 0 4px rgba(248, 163, 72, 0.85);
+  -o-box-shadow: 0 0 0 1px #fff, 0 0 0 4px rgba(248, 163, 72, 0.85);
+  box-shadow: 0 0 0 1px #fff, 0 0 0 4px rgba(248, 163, 72, 0.85);
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer.selected,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer.selected {
+  -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 4px #af400b;
+  -moz-box-shadow: 0 0 0 1px #fff, 0 0 0 4px #af400b;
+  -ms-box-shadow: 0 0 0 1px #fff, 0 0 0 4px #af400b;
+  -o-box-shadow: 0 0 0 1px #fff, 0 0 0 4px #af400b;
+  box-shadow: 0 0 0 1px #fff, 0 0 0 4px #af400b;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer strong,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer strong {
+  bottom: 25px;
+  left: -16px;
+  width: 56px;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer strong:after,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer strong:after {
+  bottom: -2px;
+  left: 33px;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer strong:before,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer strong:before {
+  bottom: -2px;
+  left: 0;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer:hover strong,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer:hover strong {
+  width: 100px;
+  left: -38px;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer:hover strong:after,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer:hover strong:after {
+  bottom: -6px;
+  left: 60px;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer:hover strong:before,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer:hover strong:before {
+  bottom: -5px;
+  left: 0px;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency:not(.plus-customer):not(.selected),
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff:not(.plus-customer):not(.selected) {
+  -webkit-box-shadow: 0 0 0 2px rgb(255, 255, 255), 0 0 0 4px rgba(125, 143, 158, 0.4);
+  -moz-box-shadow: 0 0 0 2px rgb(255, 255, 255), 0 0 0 4px rgba(125, 143, 158, 0.4);
+  -ms-box-shadow: 0 0 0 2px rgb(255, 255, 255), 0 0 0 4px rgba(125, 143, 158, 0.4);
+  -o-box-shadow: 0 0 0 2px rgb(255, 255, 255), 0 0 0 4px rgba(125, 143, 158, 0.4);
+  box-shadow: 0 0 0 2px rgb(255, 255, 255), 0 0 0 4px rgba(125, 143, 158, 0.4);
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.selected,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.selected {
+  -webkit-box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.6), 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -moz-box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.6), 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -ms-box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.6), 0 0 0 4px rgba(175, 64, 11, 0.6);
+  -o-box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.6), 0 0 0 4px rgba(175, 64, 11, 0.6);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.6), 0 0 0 4px rgba(175, 64, 11, 0.6);
+}
+
+.cluster-map.persistent-marker-clustered .leaflet-marker-icon.icon-agency,
+.cluster-map.persistent-marker-clustered .leaflet-marker-icon.icon-sheriff {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.064rem;
+  text-align: center;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  border-radius: 12px;
+  -webkit-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -moz-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -ms-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  -o-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  margin-top: -12px;
+  margin-left: -12px;
+  font-size: 1.4rem;
+  -webkit-box-shadow: 0 0 0 2px rgb(255, 255, 255), 0 0 0 4px rgba(125, 143, 158, 0.2);
+  -moz-box-shadow: 0 0 0 2px rgb(255, 255, 255), 0 0 0 4px rgba(125, 143, 158, 0.2);
+  -ms-box-shadow: 0 0 0 2px rgb(255, 255, 255), 0 0 0 4px rgba(125, 143, 158, 0.2);
+  -o-box-shadow: 0 0 0 2px rgb(255, 255, 255), 0 0 0 4px rgba(125, 143, 158, 0.2);
+  box-shadow: 0 0 0 2px rgb(255, 255, 255), 0 0 0 4px rgba(125, 143, 158, 0.2);
+}
+
+.cluster-map .leaflet-marker-icon.icon-agency.plus-customer.selected,
+.cluster-map .leaflet-marker-icon.icon-sheriff.plus-customer.selected,
+.cluster-map .leaflet-marker-icon.icon-agency.selected,
+.cluster-map .leaflet-marker-icon.icon-sheriff.selected,
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.donut-marker-cluster):not(.icon-no-data-agency).selected {
+  z-index: 900000 !important;
+}
+
+/*# sourceMappingURL=cluster-map.icons.css.map */
+

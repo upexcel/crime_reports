@@ -1,0 +1,237 @@
+<ion-view >
+  <incident-count-header map-view="mapView" if-explore-agency="ifExploreAgency" current-zoom="currentZoom"
+                         if-loading="trendSource.loading"
+                         explore-agency-name="exploreAgencyName" no-of-incidents="no_of_incidents"
+                         start_date="dataSource.filters.start_date"
+                         end-date="dataSource.filters.end_date"></incident-count-header>
+  <ion-content ng-init="initMap()" text overflow-scroll="true" class="has-my-header map-view">
+    <gps-location on-map='true'></gps-location>
+    <div class="page-loader" ng-show='dataSource.dataFetching === true || agencySource.dataFetching === true' >
+      <span class="spinner"></span>
+    </div>
+    <div class="cluster-map">
+      <div id="map" data-tap-disabled="true" ng-click="closeCard()" class="map-instance"></div>
+    </div>
+
+    <div class="user-message" ng-show="showWarning"
+         ng-class="{'shift-right':map.shapeGroupNames.length > 1 && ifExploreAgency}">
+      <div class="zoom-alert alert-warning">
+        <p class="header-text">Too many incidents to plot.</p>
+        <p>Zoom in or change your filters to see individual incidents.</p>
+      </div>
+    </div>
+    <div class="shapes-choice dropup"
+         ng-show="map.shapeGroupNames.length > 1 && ifExploreAgency">
+      <div id="show-layers-btn" ng-click="map.toggleMapRegionDropDown()">Map Views</div>
+      <div id="map-regions" class="mr-dropdown-menu" ng-show="map.openMapRegionDropDown">
+        <h4>Map Regions</h4>
+        <ul class="mr-dropdown-menu1" role="menu">
+          <li class="clearfix" ng-repeat="shapeGroupName in map.shapeGroupNames track by $index">
+            <label ng-attr-for="{{'shape-group-name-' + shapeGroupName| className}}">
+              <input type="checkbox" name="showLayersSelection"
+                     class="shape-group-selector"
+                     ng-click="map.selectShapeGroup(shapeGroupName)"
+                     ng-checked="map.currentShapeGroupName == shapeGroupName && !map.currentShapeGroupIndeterminate"
+                     ng-attr-id="{{'shape-group-name-' + shapeGroupName| className}}"
+                     />
+              <span ng-bind="shapeGroupName" class="shape-group-label"></span>
+            </label>
+            <div class="shape-groups" ng-if="map.currentShapeGroupName == shapeGroupName">
+              <label ng-repeat="shapeObj in map.getShapeObjects(map.currentShapeGroupName) track by $index"
+                     ng-attr-for="{{'shapeOption' + $index}}">
+                <input ng-attr-id="{{'shapeOption' + $index}}" type="checkbox"
+                       ng-true-value="true" ng-false-value="false"
+                       ng-model="map.currentShapeIds[shapeObj.shape_id]"/>
+                <span ng-bind="::shapeObj.name"></span>
+              </label>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </ion-content>
+
+  <div id="map-details" class="bar bar-footer"
+       ng-class="{'show-card':showBottomCard, 'hide-card ':!showBottomCard}">
+    <ul class="list">
+      <li class="item pad-0" ng-show="!clickedMarkerData.agency_id">
+      <ion-list ng-show="clickedMarkerData.categorization.sub_category">
+        <div class="grp_list" id="groupList">
+          <!-- head of Crime card -->
+          <ion-item class="border pad-0" ng-click="toggleGroups()">
+            <div class="row pad-0">
+              <div class="col-20 max-5em cluster-map crime-header" ng-click="listView()">
+                <div class="leaflet-marker-icon  marker-id-{{clickedMarkerData.primary_key}} category-{{clickedMarkerData.categorization.category}} icon-{{clickedMarkerData.categorization.sub_category}}">
+                </div>
+              </div>
+              <div class="col pad-0 map-card-header" ng-click="listview()">
+                <h3 class="pad-10-5" ng-bind="clickedMarkerData.parent_incident_type"></h3>
+              </div>
+              <div ng-click="closeCard()" class="col-10 card-close max-5em float-right">
+                <span ng-click="" class="icon-cross cross"></span>
+              </div>
+            </div>
+          </ion-item>
+          <!-- tail of Crime data -->
+          <ion-item class="pad-0 item_map">
+            <div class="row pad-0">
+              <div class="col">
+                <div class="row pad-0">
+                  <div class="media-body col-75">
+                    <p ng-bind="clickedMarkerData.address_1"></p>
+                    <p class="has-external-link" ng-bind-html="clickedMarkerData.incident_description"></p>
+                    <p><span> Incident ID:</span> <span>{{clickedMarkerData.incident_id}}</span>
+                    </p>
+                    <p><span> Case ID:</span>
+                      <span>{{clickedMarkerData.case_number.toString()}}</span></p>
+                  </div>
+                  <div class="col-25" style="min-width: 4.5rem;">
+                    <div class="date">
+                      {{(clickedMarkerData.incident_datetime| date:'dd MMM yyyy')}}<br/>
+                      {{(clickedMarkerData.incident_datetime| date:'h:mm a')}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-with-links clearfix row">
+              <div class="col-33 text-center" >
+                <a ng-if="clickedMarkerData.meta.tipsoft_id != 0 && clickedMarkerData.meta.tipsoft_id !== null" on-tap='submitTip(clickedMarkerData.meta.tipsoft_id,clickedMarkerData.case_number)'>Submit a tip</a>
+              </div>
+              <div class="col-33 text-center">
+                <a class="" on-tap='shareTip(clickedMarkerData)'>Share</a>
+              </div>
+              <div class="col-33 text-center">
+                <a class="" on-tap='centerOnMap(clickedMarkerData)'>Center on map</a>
+              </div>
+            </div>
+          </ion-item>
+        </div>
+      </ion-list>
+      <ion-list ng-show="clickedMarkerData.sex_offender_id">
+        <div class="grp_list" id="groupList">
+          <!-- head of sex offender card -->
+          <ion-item class="border" ng-click="toggleGroup()">
+            <div class="row padding-bottom-0">
+              <div class="col padding-bottom-0 max-5em text-center col-10 list-desp" ng-click="listView()">
+                <img class="round" ng-src="{{clickedMarkerData.photo_url}}" alt="image"/>
+              </div>
+              <div class="col pad_row text-left map-card-header" ng-click="listview()">
+                <h3>
+                  <span> {{clickedMarkerData.name}}
+                    <div class="address font-0.9">
+                      <div ng-if="clickedMarkerData.address_1 != 'NA'">({{clickedMarkerData.address_1}})</div>
+                    </div>
+                  </span>
+                </h3>
+              </div>
+              <div class="col col-10 text-center" style="line-height:1.6;">
+                <i on-tap='shareTip(clickedMarkerData)' class="icon font-30 ion-android-share"></i>
+              </div>
+            </div>
+          </ion-item>
+          <!-- tail of sexoffender -->
+          <ion-item class="list_items item_map" ng-class='{"list_open":shownDiv}'>
+            <div class="row border">
+              <div class="col">
+                <ul class="so-sublist">
+                  <li><span> Race:</span> {{clickedMarkerData.race}}</li>
+                  <li><span> Gender:</span> {{clickedMarkerData.sex}}</li>
+                  <li><span> Age:</span> {{clickedMarkerData.age}}</li>
+
+                </ul>
+              </div>
+              <div class="col">
+                <ul class="so-sublist">
+                  <li><span> Height:</span> {{clickedMarkerData.height}}</li>
+                  <li><span> Weight:</span> {{clickedMarkerData.weight}}</li>
+                  <li><span> Eye Color:</span> {{clickedMarkerData.eye_color}}</li>
+                  <li><span> Hair Color:</span> {{clickedMarkerData.hair_color}}</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div>
+                  <a class="share-icons" ng-if="isFieldPresent(clickedMarkerData.url)" on-tap="stateSexoffenderRegistry(clickedMarkerData.url)">STATE SEX OFFENDER REGISTRY</a>
+                  <span class="share-icons" ng-if="!isFieldPresent(clickedMarkerData.url)">STATE SEX OFFENDER REGISTRY</span>
+                </div>
+              </div>
+            </div>
+          </ion-item>
+        </div>
+      </ion-list>
+      </li>
+      <!--head of Agency Data-->
+      <li class="item pad-0" ng-show="clickedMarkerData.agency_id">
+      <ion-list>
+        <div class="grp_list" id="groupList">
+          <ion-item class="border pad-0" ng-click="toggleGroupss()">
+            <div class="row pad-0">
+              <div class="cluster-map agency-div text-center max-5em col-20"
+                   ng-if="!clickedMarkerData.icon">
+                <div class="leaflet-marker-icon icon-agency no-icon-font selected2"
+                     ng-class="{'plus-customer':clickedMarkerData.plus_enabled == true,
+                                                          'icon-agency':clickedMarkerData.agency_type == 'Police Dept', 'icon-sheriff':clickedMarkerData.agency_type != 'Police Dept'}">
+                </div>
+              </div>
+              <div class="text-center  col-48" ng-if="clickedMarkerData.icon">
+                <img class="plus_img" ng-src="{{clickedMarkerData.icon}}">
+              </div>
+              <div class="col-agency-name pad-0">
+                <h3 ng-bind="clickedMarkerData.agency_name"></h3>
+              </div>
+              <div class="col-48 card-close  float-right">
+                <span ng-click="closeCard('close')" class="icon-cross cross"></span>
+              </div>
+            </div>
+          </ion-item>
+
+          <ion-item>
+            <div class="row pad-0">
+              <div class="col agency-addressc">
+                <span ng-bind="clickedMarkerData.city"></span>&nbsp;
+                <span ng-bind="clickedMarkerData.state"></span>&nbsp;
+                <span ng-bind="clickedMarkerData.agency_id"></span>
+              </div>
+              <div class="col agency-typec" ng-bind="clickedMarkerData.agency_type"></div>
+            </div>
+            <ul class="list-inline ">
+              <li class="highlight" ng-show="!ifExploreAgency" ng-if="clickedMarkerData.plus_enabled"
+                  on-tap="exploreSelectedAgency(clickedMarkerData)">Explore this agency
+              </li>
+
+              <li class="row pad-0" on-tap="listView.ZoomToIncident(item)">
+                <div ng-click="ZoomToIncident(clickedMarkerData)" class="col go-web"
+                     ng-if="!ifExploreAgency">
+                  Zoom to Incidents
+                </div>
+                <div class="col go-web" ng-if="ifExploreAgency && clickedMarkerData.agency_url" ng-click="goToAgency(clickedMarkerData.agency_url)">
+                  Go to agency website
+                </div>
+                <div class="col go-web" ng-if="clickedMarkerData.tipsoft_id != 0 && clickedMarkerData.tipsoft_id !== null" on-tap='submitTipAgency(clickedMarkerData.tipsoft_id)'>
+                  Submit a Tip
+                </div>
+                <div class="share-icons col">
+                  <span ng-if="clickedMarkerData.facebook_url && clickedMarkerData.facebook_url != 'nil'"
+                        class="icon-facebook"
+                        ng-click="visitTwitterOrFacebookPage(clickedMarkerData.facebook_url)">
+                  </span>
+                  <span ng-if="clickedMarkerData.twitter_url && clickedMarkerData.twitter_url != 'nil'"
+                        class="icon-twitter"
+                        ng-click="visitTwitterOrFacebookPage(clickedMarkerData.twitter_url)">
+                  </span>
+                </div>
+              </li>
+
+            </ul>
+          </ion-item>
+        </div>
+      </ion-list>
+      </li>
+    </ul>
+  </div>
+</ion-view>
+

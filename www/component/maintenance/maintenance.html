@@ -1,0 +1,44 @@
+<ion-view>
+  <div class="maintenance">
+    <div class="app-header">
+      <a href="/" class="clearfix">
+        <img src="img/images/apple-touch-icon-72x72-precomposed.png" alt="crimereports">
+          <h1>CrimeReports™</h1>
+          <svg width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+            <filter id="drop-shadow">
+              <feGaussianBlur in="SourceAlpha" stdDeviation="2.2"></feGaussianBlur>
+              <feOffset dx="0" dy="0" result="offsetblur"></feOffset>
+              <feFlood flood-color="rgba(0, 0, 0, 0.6)"></feFlood>
+              <feComposite in2="offsetblur" operator="in"></feComposite>
+              <feMerge>
+                <feMergeNode></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+              </feMerge>
+            </filter>
+          </svg>
+      </a>
+    </div>
+
+    <div class="container-content">
+      <h2 class="maintenance heading-m">
+        CrimeReports.com is down for maintenance
+        <span>We are temporarily down for maintenance and should be back online shortly.</span>
+        <span>For site status, please check <a href="http://status.socrata.com" target="_blank">http://status.socrata.com</a></span>
+      </h2>
+    </div>
+
+    <div class="app-footer clearfix">
+      <a class="motorola-partner-link"
+         href="http://www.motorolasolutions.com/en_us/products/smart-public-safety-solutions/citizen-engagement/crimereports.html"
+         target="_blank">
+        <img class="motorola-logo" ng-src="img/images/motorola-white.svg" alt="Motorola Solutions">
+      </a>
+      <div class="powered-by-text clearfix">
+        <span>powered by</span>
+        <a class="socrata-partner-link pull-left"
+           href="https://www.socrata.com/solutions/socrata-for-public-safety/" target="_blank">
+          <img ng-src="img/images/socrata-white.svg" alt="Socrata" src="img/images/socrata.svg">
+        </a>
+      </div>
+    </div>
+</ion-view>

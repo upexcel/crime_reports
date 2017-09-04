@@ -1,0 +1,131 @@
+@media only screen and (min-width: 280px) {
+  .terms-and-policies {
+    font-size: 16px;
+    background-color: #ffffff;
+  }
+
+  .terms-and-policies h1,
+  .terms-and-policies h2,
+  .terms-and-policies h3,
+  .terms-and-policies h4,
+  .terms-and-policies h5 {
+    color: #333e49;
+    font-weight: 900;
+  }
+
+  .terms-and-policies p,
+  .terms-and-policies li {
+    color: #667273;
+    font-weight: 300;
+  }
+
+  .terms-and-policies h1,
+  .terms-and-policies h2,
+  .terms-and-policies h3,
+  .terms-and-policies h4,
+  .terms-and-policies h5,
+  .terms-and-policies p,
+  .terms-and-policies ul,
+  .terms-and-policies figure {
+    margin-bottom: 1.63em;
+  }
+
+  .terms-and-policies a {
+    color: #5591b9;
+  }
+
+  .terms-and-policies a:hover {
+    color: #45799c;
+    text-decoration: none;
+  }
+
+  .terms-and-policies ul h4 {
+    margin-bottom: 0;
+  }
+
+  .terms-and-policies figure {
+    padding: 15px;
+    background-color: #ecf0f1;
+    text-align: center;
+  }
+
+  .terms-and-policies .img-responsive {
+    display: inline-block;
+  }
+
+  .terms-and-policies .heading {
+    padding: 20px 0;
+    margin-bottom: 30px;
+    background-color: #ecf0f1;
+  }
+
+  .terms-and-policies .heading h1 {
+    margin: 0;
+  }
+
+  .terms-and-policies .main {
+    padding-bottom: 10px;
+    width: 100%;
+  }
+
+  .terms-and-policies .main .table-of-contents h4 {
+    border-top: #5591b9 solid 5px;
+    padding-top: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .terms-and-policies .main .table-of-contents ul {
+    list-style-type: none;
+    margin: 0 0 2em 0;
+    padding: 0;
+  }
+
+  .terms-and-policies .main .table-of-contents ul li {
+    border-bottom: #bdc3c7 solid 1px;
+  }
+
+  .terms-and-policies .main .table-of-contents ul li a {
+    display: block;
+    padding: 5px 15px;
+    font-weight: 400;
+  }
+
+  .terms-and-policies .main .table-of-contents ul li a:hover {
+    background-color: #ecf0f1;
+  }
+
+  .terms-and-policies .main .content h2 {
+    margin-top: 2em;
+  }
+
+  .terms-and-policies .main .content h2:first-of-type {
+    margin-top: 5px;
+  }
+
+  .terms-and-policies .main .content ol {
+    padding: 10px;
+  }
+
+  .terms-and-policies .main .content ol ul {
+    padding-left: 0;
+    list-style-type: none;
+  }
+
+  .terms-and-policies .main .content ol ul ul {
+    padding-left: 15px;
+  }
+
+  .terms-and-policies .main .content li {
+    margin-bottom: 1.63em;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+  .terms-and-policies .heading h1 {
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=terms-and-privacy.css.map */

@@ -1,0 +1,37 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <div class="cancelbt">
+      <i ng-click="closeResendConfirmationModal()" class="ion-arrow-left-c">
+
+      </i>
+    </div>
+    <div class="main_title">
+      <i>Resend Confirmation
+      </i>
+    </div>
+
+  </ion-header-bar>
+  <div class="page-loader" ng-show='sendingPassword === true'>
+    <span class="spinner"></span>
+  </div>
+  <ion-content class="forgot-password">
+    <div class="modal-body" ng-if="!formSubmitted">
+      <p>Enter your email address below and we'll send you a confirmation email .</p>
+      <input type="email" class="form-control" placeholder="Email address"
+             ng-model="resend.user.email"/>
+
+      <a href class="modal-btn primary pull-left"
+         ng-class="{'disabled': !validateEmail(resend.user.email)}"
+         ng-click="!validateEmail(resend.user.email) || resendConfirmationSubmit()"
+         >Submit <i ng-if="getPasswordSpinner" class="fa fa-spin fa-spinner"></i></a>
+    </div>
+
+    <div class="modal-body" ng-if="formSubmitted">
+      <p>Check your inbox for the next steps. If you don't receive an email, and it's not in your spam folder this
+        could
+        mean you signed up with a different address.</p>
+      <a href class="modal-btn primary pull-left"
+         ng-click=" signIn()">Sign In</a>
+    </div>
+  </ion-content>
+</ion-modal-view>

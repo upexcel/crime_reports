@@ -1,0 +1,464 @@
+.video-js {
+    display: block;
+    vertical-align: top;
+    box-sizing: border-box;
+    color: #fff;
+    background-color: #000;
+    position: relative;
+    padding: 0;
+    font-size: 10px;
+    line-height: 1;
+    font-weight: normal;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.incident-video-links .modal-content {
+
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,0.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,0.5);
+    background-clip: padding-box;
+    outline: 0;
+}
+.nav {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+.nav-tabs>li {
+    float: left;
+    margin-bottom: -1px;
+}
+.nav>li {
+    position: relative;
+    display: block;
+}
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 4px 20px;
+}
+.tab-content>.active {
+    display: block !important;
+}
+.tab-content>.tab-pane {
+    display:none;
+}
+.incident-video-links.modal-with-header .modal-head .modal-dialog-close,
+.incident-video-links.modal-with-header .modal-head .modal-title {
+    height: 5rem;
+    line-height: 3rem;
+}
+.incident-video-links.modal-with-header .modal-head .modal-dialog-close{
+    color: #828587;
+    font-size: 2rem !important;
+    text-decoration: none;
+    text-align: center;
+}
+.incident-video-links.modal-with-header .modal-head .modal-dialog-close {
+    width: 5rem;
+    position: fixed;
+    top: 5px;
+    right: 6px;
+}
+.pure-control-group{
+    padding-top:10px;
+}
+.incident-video-links.modal-with-header .modal-head .modal-title {
+    margin-left: 15px !important;
+    display: block;
+    height: 50px;
+    padding: 0 0px 0 0px;
+    margin: 0;
+    font-size: 1.3rem;
+    color:#374045;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+.incident-video-links.modal-with-header .modal-head .back-to-videos {
+    font-size: 20px;
+    display: inline-block;
+    text-decoration: none;
+    padding-bottom:7px;
+}
+
+.incident-video-links.modal-with-header .modal-head .back-to-videos span {
+    display: inherit;
+    font-size: 1rem;
+    margin-right: 0.2rem;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.incident-video-links.modal-with-header .modal-body textarea {
+    width: 100%;
+    padding: 0.2rem 0.5rem;
+    resize: vertical;
+}
+
+.incident-video-links.modal-with-header .modal-body input,
+.incident-video-links.modal-with-header .modal-body textarea {
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+.incident-video-links.modal-with-header .modal-body input:focus,
+.incident-video-links.modal-with-header .modal-body textarea:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    -ms-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    -o-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.incident-video-links .nav-tabs {
+    border: 0 none;
+    padding: 0 1.5rem;
+    background-color: #f4f6f8;
+    height: 3rem;
+    -webkit-box-shadow: inset 0 -1px 1px 0 rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 -1px 1px 0 rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: inset 0 -1px 1px 0 rgba(0, 0, 0, 0.05);
+    -o-box-shadow: inset 0 -1px 1px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 -1px 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.incident-video-links .nav-tabs > li > a {
+    color: #374045;
+    height: 3rem;
+    -webkit-transition: all 0.15s linear;
+    -moz-transition: all 0.15s linear;
+    -ms-transition: all 0.15s linear;
+    -o-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+    margin-right: 2px;
+    line-height: 2.563;
+    border-radius: 0 0 0 0;
+    text-decoration: none;
+}
+
+.incident-video-links .nav-tabs > li > a:hover {
+    background-color: #e4e6e8;
+    -webkit-box-shadow: inset 0 -4px 0 #d4d6d8;
+    -moz-box-shadow: inset 0 -4px 0 #d4d6d8;
+    -ms-box-shadow: inset 0 -4px 0 #d4d6d8;
+    -o-box-shadow: inset 0 -4px 0 #d4d6d8;
+    box-shadow: inset 0 -4px 0 #d4d6d8;
+    margin-right: 2px;
+    line-height: 2.563;
+    border-radius: 0 0 0 0;
+    text-decoration: none;
+}
+
+.incident-video-links .nav-tabs > li.active > a {
+    font-weight: 700;
+    border: 0 none;
+    -webkit-box-shadow: inset 0 -4px 0 #0382ca;
+    -moz-box-shadow: inset 0 -4px 0 #0382ca;
+    -ms-box-shadow: inset 0 -4px 0 #0382ca;
+    -o-box-shadow: inset 0 -4px 0 #0382ca;
+    box-shadow: inset 0 -4px 0 #0382ca;
+    margin-right: 2px;
+    line-height: 2.563;
+    border-radius: 0 0 0 0;
+    text-decoration: none;
+}
+
+.incident-video-links .nav-tabs > li.active > a:hover, .incident-video-links .nav-tabs > li.active > a:focus {
+    border: 0 none;
+}
+
+.incident-video-links .tab-content {
+    padding: 1.5rem;
+}
+
+.incident-video-links .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+}
+
+.incident-video-links .video-wrapper video,
+.incident-video-links .video-wrapper .video-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.incident-video-links .video-wrapper .video-js {
+    border: 2px solid #ddd;
+}
+
+.incident-video-links .video-wrapper .video-js .vjs-control-bar {
+    background-color: #fff;
+    color: #000;
+}
+
+.incident-video-links .video-wrapper .video-js .vjs-fullscreen-control {
+    display: none;
+}
+
+.incident-video-links .video-wrapper .video-js .vjs-time-control {
+    min-width: 3rem;
+}
+
+.incident-video-links .video-wrapper .video-js .vjs-progress-holder {
+    pointer-events: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+.incident-video-links .video-wrapper .video-js .vjs-progress-control:hover .vjs-play-progress {
+    top: -1.1rem;
+    font-size: 0.9em;
+}
+
+.incident-video-links .video-wrapper .video-js .vjs-progress-control:hover .vjs-play-progress:after {
+    font-size: 0.6em;
+    top: -2.5em;
+}
+
+.incident-video-links .video-wrapper .video-js .vjs-progress-control:hover .vjs-play-progress:before {
+    top: 0.1rem;
+}
+
+.incident-video-links .video-wrapper .video-js .vjs-progress-control .vjs-play-progress {
+    font-size: 0.9em;
+}
+
+.incident-video-links .video-wrapper .video-js .vjs-progress-control .vjs-play-progress:after {
+    right: -2.5em;
+}
+
+.incident-video-links .video-wrapper .video-js .vjs-progress-control .vjs-play-progress:before {
+    position: absolute;
+    top: -1.1rem;
+    right: -0.8rem;
+    content: '';
+    width: 0.8rem;
+    height: 2.5rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    font-size: 0;
+    pointer-events: auto;
+    -webkit-box-shadow: 0 0 1px 0.05rem #0382ca;
+    -moz-box-shadow: 0 0 1px 0.05rem #0382ca;
+    -ms-box-shadow: 0 0 1px 0.05rem #0382ca;
+    -o-box-shadow: 0 0 1px 0.05rem #0382ca;
+    box-shadow: 0 0 1px 0.05rem #0382ca;
+}
+
+.incident-video-links .video-wrapper .video-js .vjs-custom-range-slider {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:0.3rem;
+    background-color: #b5b5b5;
+}
+
+.incident-video-links .video-wrapper .video-js .vjs-custom-range-slider .slider-handle {
+    background: #fb9816;
+    color: #fff;
+    border-radius: 0;
+    margin-left: 0;
+    cursor: col-resize;/* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;/* Enable Ligatures ================ */
+    letter-spacing: 0;
+    -webkit-font-feature-settings: "liga";
+    -moz-font-feature-settings: "liga=1";
+    -moz-font-feature-settings: "liga";
+    -ms-font-feature-settings: "liga" 1;
+    -o-font-feature-settings: "liga";
+    font-feature-settings: "liga";/* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width:25px;
+}
+
+.incident-video-links .video-wrapper .video-js .vjs-custom-range-slider .slider-handle:after {
+    content: "\e613";
+    display: inherit;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+.incident-video-links .video-wrapper .video-js .vjs-custom-range-slider .slider-handle.min-slider-handle:after {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.incident-video-links .video-wrapper .video-js .vjs-custom-range-slider .slider-handle.max-slider-handle {
+    margin-left: -25px;
+}
+
+.incident-video-links .video-wrapper .video-js .vjs-custom-range-slider .slider-handle.max-slider-handle:after {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.incident-video-links .video-wrapper .video-js .slider.slider-horizontal {
+    width: 100%;
+}
+
+.incident-video-links .video-wrapper .video-js .slider.slider-horizontal .slider-track {
+    background: transparent;
+    height: 20px;
+    margin-top: -10px;
+}
+
+.incident-video-links .video-wrapper .video-js .slider.slider-horizontal .slider-track .slider-selection {
+    background: #666;
+    border: 2px solid #fb9816;
+}
+
+.incident-video-links .video-wrapper .video-js .vjs-slider {
+    margin: 0;
+}
+
+.incident-video-links .video-clip-time-inputs {
+    font-size: 1.2rem;
+    padding: 1.5rem 0 0.5rem;
+}
+
+.incident-video-links .video-clip-time-inputs label {
+    float: left;
+    margin-bottom: 0;
+    padding: 0 0 1rem;
+    font-weight: 600;
+}
+
+.incident-video-links .video-clip-time-inputs label:last-child span {
+    text-align: right;
+}
+
+.incident-video-links .video-clip-time-inputs label:last-child input {
+    margin-right: 0;
+}
+
+.incident-video-links .video-clip-time-inputs label span,
+.incident-video-links .video-clip-time-inputs label input {
+    display: inline-block;
+    margin-right: 15px;
+    float: left;
+}
+
+.incident-video-links .video-clip-time-inputs label span {
+    min-width: 50px;
+    line-height: 30px;
+
+}
+
+.incident-video-links .video-clip-time-inputs label input {
+    max-width: 11rem;
+}
+
+.incident-video-links .request-footage-section .request-text {
+    margin-bottom: 1.5rem;
+    display: block;
+    font-size: 16px;
+    color: #666;
+    font-style: italic;
+}
+
+.incident-video-links .request-footage-section .request-btn {
+    text-align: center;
+    border: none;
+    display: block;
+    width: 100%;
+    height: 47px;
+    line-height: 47px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.034rem;
+    padding: 0 5rem;
+}
+
+.incident-video-links .request-form legend {
+    padding: 1rem 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+    border: 0 none;
+    margin: 0;
+    line-height: 1;
+    text-align: right;
+    font-family: georgia;
+    font-style: italic;
+    color: #db0017;
+}
+
+.incident-video-links .request-form label {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 1rem;
+}
+
+.incident-video-links .request-form .request-footage-section {
+    padding: 1.5rem 0;
+}
+
+.incident-video-links .request-form .dd-selector {
+    min-width: 18rem;
+    display: inline-block;
+    width: 100%;
+}
+.incident-video-links .request-form .dd-selector select{
+    font-size: inherit;
+    padding: 5px 10px;
+    /*width: 100%;*/
+}
+
+.incident-video-links .request-form .dd-selector .dd-selector-value {
+    text-transform: capitalize;
+}
+
+.incident-video-links .pure-form input.ng-dirty.ng-invalid {
+    border-color: #db0017;
+}
+
+.incident-video-links .field-message {
+    display: inline-block;
+    color: #db0017;
+    font-size: 90%;
+    margin-bottom: 0.5rem;
+}
+
+.incident-video-links [ng\:cloak],
+.incident-video-links [ng-cloak],
+.incident-video-links [data-ng-cloak],
+.incident-video-links [x-ng-cloak],
+.incident-video-links .ng-cloak,
+.incident-video-links .x-ng-cloak {
+    display: none !important;
+}

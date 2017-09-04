@@ -1,0 +1,22 @@
+<ion-view hide-nav-bar="true">
+  <ion-header-bar class="search-header" ng-if="!isPlatformIos">
+    <div class="row pad-0">
+      <search-overlay is-platform-ios="isPlatformIos"  modal="searchModal"></search-overlay>
+    </div>
+  </ion-header-bar>
+  <ion-header-bar style="margin-top: 0px;" class="pad-0 bar bar-header bar-positive" ng-if="isPlatformIos">
+    <div class="row" style="margin-top: 0px;">
+      <div class="col-20 max-5em text-center ios-back" ng-click="closeSearch()">
+        <i class="icon-menu-left "></i>
+      </div>
+    </div>
+    <div class="my-head-title" style="margin-top: 0px;">
+      SEARCH
+    </div>
+  </ion-header-bar>
+  <ion-content class="has-header" scroll="false" style="top:44px;margin: 0px;padding: 0;">
+    <div class="row pad-0" ng-if="isPlatformIos">
+      <search-overlay is-platform-ios="isPlatformIos" modal="searchModal"></search-overlay>
+    </div>
+  </ion-content>
+</ion-view>

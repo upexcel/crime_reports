@@ -1,0 +1,76 @@
+<ion-view>
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-buttons side="left">
+      <div class="cancelbt" ng-click="goToMap()">
+        <i class="" ng-class="{
+                        'icon-menu-left'
+                        :isPlatformIos, 'ion-arrow-left-c':!isPlatformIos}"> </i>
+      </div>
+      <div class="modal-title" ng-class="{
+                    'my-head-title'
+                    :isPlatformIos, 'main_title':!isPlatformIos}">
+        <i>MENU</i>
+      </div>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content style="top:44px;margin: 0px;" class="page-view" overflow-scroll="false">
+    <div class="navbar-collapse">
+      <div class="partner-logos visible-xs-block clearfix">
+        <img class="motorola-logo" ng-src="{{::motorolaLogoUrl}}" alt="Motorola Solutions"/>
+
+        <div class="powered-by-socrata">
+          <img class="socrata-logo" ng-src="{{::socrataLogoUrl}}" alt="Socrata"/>
+          <span class="powered-by-text">powered by</span>
+        </div>
+      </div>
+      <ion-list>
+        <ion-item href="" ng-click="shareTip(viewPort)" class="share-link">
+          <i ng-class="(isPlatformIos) ? 'ion-ios-redo-outline' : 'ion-android-share'"></i>
+          Share
+        </ion-item>
+        <ion-item data-tap-disabled="true" menu-close class="" ng-click="createAlert()">
+          <i ng-class="(isPlatformIos) ? 'ion-ios-information-outline' : 'ion-android-alert'"></i>
+          Alerts
+        </ion-item>
+        <ion-item data-tap-disabled="true" ui-sref="setlocation" menu-close class="">
+          <i ng-class="(isPlatformIos) ? 'ion-ios-location-outline' : 'ion-location'"></i>
+          Locations
+        </ion-item>
+        <ion-item menu-close ng-click="submittip()" href="">
+          <i ng-class="(isPlatformIos) ? 'ion-ios-compose-outline' : 'ion-android-textsms'"></i>
+          Submit a Tip
+        </ion-item>
+        <ion-item class="" menu-close ng-click="registercamera()" href="">
+          <i ng-class="(isPlatformIos) ? 'ion-ios-camera-outline' : 'ion-camera'"></i>
+          Register a Camera
+        </ion-item>
+        <ion-item href="" ui-sref="app.about" class="">
+          <i ng-class="(isPlatformIos) ? 'ion-ios-paper-outline' : 'ion-android-list'"></i>
+          FAQ
+          <!--About-->
+        </ion-item>
+        <ion-item href="" class="" ng-click="giveFeedback()">
+          <i ng-class="(isPlatformIos) ? 'ion-ios-paper-outline' : 'ion-android-list'"></i>
+          Feedback
+        </ion-item>
+        <ion-item class="item-account">
+          ACCOUNT
+          <i ng-show="log" class="account-icon ion-person"></i>
+        </ion-item>
+        <ion-item data-tap-disabled="true" ui-sref="app.signin" menu-close ng-hide="log" class="">
+          <i class="ion-log-in"></i>
+          Sign In
+        </ion-item>
+        <ion-item menu-close href="" ng-if="log" class="" ui-sref="app.setting">
+          <i ng-class="(isPlatformIos) ? 'ion-ios-settings' : 'ion-android-options'"></i>
+          Settings
+        </ion-item>
+        <ion-item menu-close ng-show="log" ng-click="logout()" href="#">
+          <i class="ion-log-out"></i>
+          Sign Out
+        </ion-item>
+
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-view>

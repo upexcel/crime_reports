@@ -1,0 +1,403 @@
+@import "util";
+@import "cluster-map-variables";
+
+.cluster-map {
+  .leaflet-marker-icon {
+    //-----------------------------------------
+    // CRIME MARKERS
+    //-----------------------------------------
+    &:not(.marker-cluster):not(.donut-marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency) {
+      @include icofont-reset();
+      letter-spacing: 0;
+      font-weight: normal;
+      @include prefixer(text-shadow, "0 0 transparent");
+
+      @each $category in (property, violent, quality-of-life, stops---911, sex-offender) {
+        &:not(.selected).category-#{$category} {
+          color: crime-marker-color($category, 1);
+          background-color: #fff;
+          &:hover {
+            color: crime-marker-color($category, 0.8)
+          }
+        }
+        &.selected.category-#{$category} {
+          background-color: crime-marker-color(current, 0.85)
+        }
+      }
+    }
+
+    //-----------------------------------------
+    // CLUSTER MARKER
+    //-----------------------------------------
+    &.marker-cluster {
+      &.type-agency:not(.selected) {
+        background-color: crime-marker-color(agency, 1)
+      }
+
+      &.type-crime, &.type-sex-offender {
+        &:not(.selected) {
+          background-color: crime-marker-color(stack, 1);
+          color: crime-marker-color(crime-cluster, 1);
+          @include prefixer(text-shadow, "0 0 0 transparent");
+        }
+      }
+
+      &.type-cluster:not(.selected) {
+        background-color: crime-marker-color(server-cluster, 0.55)
+      }
+
+      &.selected {
+        background-color: crime-marker-color(current, 0.85)
+      }
+
+      &:not(.type-crime):not(.type-sex-offender) {
+        &.density-high {
+          font-weight: 600;
+          letter-spacing: -0.03rem;
+        }
+        &.density-medium {
+          font-weight: 600;
+          letter-spacing: -0.03rem;
+        }
+        &.density-low {
+          font-weight: 600
+        }
+      }
+
+      &.type-crime,
+      &.type-sex-offender {
+        font-weight: 600
+      }
+    }
+  }
+
+  $marker-radius: 24px;
+  $outline-radius: 4px;
+  .leaflet-marker-icon {
+    //-----------------------------------------
+    // CRIME MARKERS
+    //-----------------------------------------
+    &:not(.marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency) {
+      @include concentric-circle-with-text($marker-radius);
+      font-size: 1.4rem;
+
+      @each $category in (property, violent, quality-of-life, stops---911, sex-offender) {
+        &:not(.selected).category-#{$category} {
+          @include prefixer(box-shadow, "0 0 0 1px " + crime-marker-color($category, 1) + ", 0 0 0 " + $outline-radius + " " + crime-marker-color($category, 0.2));
+          &:hover {
+            @include prefixer(box-shadow, "0 0 0 1px " + crime-marker-color($category, 1) + ", 0 0 0 " + $outline-radius + " " + crime-marker-color($category, 0.2))
+          }
+        }
+        &.selected.category-#{$category} {
+          font-size: 1.2rem;
+          @include prefixer(box-shadow, "0 0 0 " + $outline-radius + " " + crime-marker-color(current, 0.6));
+        }
+      }
+
+      &:not(.selected).category-quality-of-life,
+      &.selected.category-quality-of-life {
+        font-size: 1.2rem;
+        line-height: 1.4;
+      }
+    }
+
+    //-----------------------------------------
+    // CLUSTER MARKER
+    //-----------------------------------------
+    &.marker-cluster {
+      &.type-agency {
+        $outline-radius: 4px;
+        &:not(.selected) {
+          @include prefixer(box-shadow, "0 0 0 2px rgb(255, 255, 255), 0 0 0 " + $outline-radius + " " + crime-marker-color(agency, 0.2))
+        }
+      }
+
+      &.type-crime, &.type-sex-offender {
+        $outline-radius: 4px;
+        &:not(.selected) {
+          @include prefixer(box-shadow, "0 0 0 1px " + crime-marker-color(crime-cluster, 1) + ", 0 0 0 " + $outline-radius + " " + crime-marker-color(crime-cluster, 0.4))
+        }
+      }
+
+      &.type-cluster {
+        $outline-radius: 4px;
+        &:not(.selected) {
+          @include prefixer(box-shadow, "0 0 0 1px rgb(255, 255, 255), 0 0 0 " + $outline-radius + " " + crime-marker-color(server-cluster, 0.3))
+        }
+      }
+
+      &.selected {
+        $outline-radius: 4px;
+        @include prefixer(box-shadow, "0 0 0 " + $outline-radius + " " + crime-marker-color(current, 0.6));
+      }
+      &:not(.type-crime):not(.type-sex-offender) {
+        &.density-high {
+          $marker-radius: 40px;
+          @include concentric-circle-with-text($marker-radius);
+          font-size: 0.9rem;
+        }
+        &.density-medium {
+          $marker-radius: 30px;
+          @include concentric-circle-with-text($marker-radius);
+          font-size: 0.8rem;
+        }
+        &.density-low {
+          $marker-radius: 24px;
+          @include concentric-circle-with-text($marker-radius);
+          font-size: 0.8rem;
+        }
+      }
+
+      &.type-crime,
+      &.type-sex-offender {
+        $marker-radius: 24px;
+        @include concentric-circle-with-text($marker-radius);
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  // NO DATA AGENCY
+  $noDataPinWidth: 80px;
+  $flyOutWidth: 200px;
+  .leaflet-marker-icon.icon-no-data-agency {
+    position: absolute;
+    width: $noDataPinWidth;
+    margin-left: -$noDataPinWidth / 2;
+    bottom: -$noDataPinWidth / 2;
+    &:hover .no-data-flyout {
+      display: block
+    }
+    .no-data-pin {
+      width: $noDataPinWidth;
+      text-align: center;
+      background: #f8f4f0;
+      color: rgba(55, 64, 69, 0.5);
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 500;
+      line-height: 1.5;
+      padding: 2px;
+      position: relative;
+      z-index: 2;
+      word-break: break-word;
+      @include prefixer(border-radius, "4px");
+      @include prefixer(text-shadow, "0 1px 0 #fff");
+      @include prefixer(box-shadow, "0 0 0 2px #fff,0 0 0 4px rgba(55, 64, 69, 0.3)");
+    }
+    .no-data-flyout {
+      position: absolute;
+      margin: 0;
+      background-color: #ffffff;
+      padding: 8px 8px 12px;
+      width: $flyOutWidth;
+      z-index: 1;
+      font-size: 1.1rem;
+      line-height: 1.25;
+      text-align: center;
+      cursor: default;
+      display: none;
+      bottom: 36px;
+      @include calc(left, $noDataPinWidth / 2 - $flyOutWidth / 2);
+      @include prefixer(box-shadow, "0 0 2px 1px rgba(0, 0, 0, 0.15)");
+      a {
+        display: block;
+        margin-top: 5px;
+        font-weight: 500;
+      }
+
+    }
+  }
+  // NO DATA AGENCY ENDS
+
+  //-----------------------------------------
+  // AGENCY MARKER
+  //-----------------------------------------
+  &:not(.persistent-marker-clustered) {
+    .leaflet-marker-icon.icon-agency,
+    .leaflet-marker-icon.icon-sheriff {
+      @include icofont-reset();
+      &.icon-agency:before {
+        content: "\e91e"
+      }
+      &.icon-sheriff:before {
+        content: "\e91f"
+      }
+      &:after {
+        content: '';
+        width: 100%;
+        height: 4px;
+        position: absolute;
+        top: -2px;
+        left: 0;
+        background-color: transparent;
+      }
+
+      &.plus-customer {
+        color: #ffc800;
+        &:not(.selected) {
+          background-color: crime-marker-color(plus-agency, 1)
+        }
+        &.selected {
+          background-color: crime-marker-color(plus-agency, 1);
+          strong {
+            &,
+            &:after,
+            &:before {
+              background-color: #af400b
+            }
+          }
+        }
+        strong {
+          position: absolute;
+          bottom: 25px;
+          left: -16px;
+          width: 56px;
+          padding: 0.1rem;
+          background-color: rgba(248, 163, 72, 0.95);
+          font-size: 0.7rem;
+          color: #fff;
+          line-height: 1.543;
+          text-align: center;
+          font-family: "Open Sans", Helvetica, Arial, sans-serif;
+          text-transform: uppercase;
+          letter-spacing: -0.028rem;
+          @include prefixer(border-radius, "6px");
+          @include prefixer(text-shadow, "0 1px 0px rgba(0,0,0,0.25)");
+          span {
+            display: none
+          }
+          &:after,
+          &:before {
+            content: '';
+            background-color: rgba(248, 163, 72, 0.95);
+            position: absolute;
+            height: 14px;
+            width: 23px;
+            z-index: -1;
+            @include prefixer(border-radius, "0 0 6px 6px");
+          }
+          &:after {
+            bottom: -2px;
+            left: 33px;
+            @include prefixer(transform, "rotate(-21deg)");
+          }
+          &:before {
+            bottom: -2px;
+            left: 0;
+            @include prefixer(transform, "rotate(21deg)");
+          }
+        }
+        &:hover strong {
+          width: 100px;
+          left: -38px;
+          span {
+            display: inline
+          }
+          &:after,
+          &:before {
+            width: 40px
+          }
+          &:after {
+            bottom: -6px;
+            left: 60px;
+            @include prefixer(transform, "rotate(-13deg)");
+          }
+          &:before {
+            bottom: -5px;
+            left: 0px;
+            @include prefixer(transform, "rotate(13deg)");
+          }
+        }
+      }
+      &:not(.plus-customer) {
+        &:not(.selected) {
+          background-color: crime-marker-color(agency, 1)
+        }
+      }
+      &.selected {
+        background-color: crime-marker-color(current, 0.85)
+      }
+    }
+  }
+
+  &.persistent-marker-clustered {
+    .leaflet-marker-icon.icon-agency, .leaflet-marker-icon.icon-sheriff {
+      background-color: crime-marker-color(agency, 1);
+      &:before {
+        content: "1"
+      }
+      strong {
+        display: none
+      }
+    }
+  }
+
+  .leaflet-marker-icon.icon-agency.plus-customer.hide-agency-icon {
+    display: none
+  }
+
+  $outline-radius: 4px;
+  &:not(.persistent-marker-clustered) {
+    .leaflet-marker-icon.icon-agency,
+    .leaflet-marker-icon.icon-sheriff {
+      $marker-radius: 24px;
+      @include concentric-circle-with-text($marker-radius);
+      font-size: 1.2rem;
+
+      &.plus-customer {
+        &:not(.selected) {
+          @include prefixer(box-shadow, "0 0 0 1px #fff, 0 0 0 " + $outline-radius + " rgba(248, 163, 72, 0.85)")
+        }
+        &.selected {
+          @include prefixer(box-shadow, "0 0 0 1px #fff, 0 0 0 " + $outline-radius + " #af400b")
+        }
+
+        strong {
+          bottom: 25px;
+          left: -16px;
+          width: 56px;
+          &:after {
+            bottom: -2px;
+            left: 33px;
+          }
+          &:before {
+            bottom: -2px;
+            left: 0;
+          }
+        }
+        &:hover strong {
+          width: 100px;
+          left: -38px;
+          &:after {
+            bottom: -6px;
+            left: 60px;
+          }
+          &:before {
+            bottom: -5px;
+            left: 0px;
+          }
+        }
+      }
+      &:not(.plus-customer) {
+        &:not(.selected) {
+          @include prefixer(box-shadow, "0 0 0 2px rgb(255, 255, 255), 0 0 0 " + $outline-radius + " " + crime-marker-color(agency, 0.4))
+        }
+      }
+      &.selected {
+        @include prefixer(box-shadow, "0 0 0 2px rgba(0, 0, 0, 0.6), 0 0 0 " + $outline-radius + " " + crime-marker-color(current, 0.6))
+      }
+    }
+  }
+
+  &.persistent-marker-clustered {
+    .leaflet-marker-icon.icon-agency,
+    .leaflet-marker-icon.icon-sheriff {
+      $marker-radius: 24px;
+      @include concentric-circle-with-text($marker-radius);
+      font-size: 1.4rem;
+      @include prefixer(box-shadow, "0 0 0 2px rgb(255, 255, 255), 0 0 0 " + $outline-radius + " " + crime-marker-color(agency, 0.2));
+    }
+  }
+
+}

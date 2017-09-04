@@ -1,0 +1,502 @@
+.bar.bar-light, .bar.bar-positive {
+  background-color: #28566c;
+  background-image: none;
+  border: none;
+}
+
+.shape-groups {
+  transform: translateX(15px);
+  -webkit-transform: translateX(15px);
+  -moz-transform: translateX(15px);
+  -ms-transform: translateX(15px);
+}
+
+.icon-locate {
+  font-family: 'icomoon2' !important;
+  font-size: 2rem !important;
+  text-align: center;
+  line-height: 20px !important;
+}
+
+.icon-locate:before {
+  content: '\e905' !important;
+}
+
+.platform-ios .icon-locate:before {
+  content: '\e921' !important;
+}
+
+.icon-map, .icon-list, .icon-trends, .icon-search, .icon-filter, .icon-menu,
+.icon-menu-left, .icon-menu-right, .icon-cross, .icon-back-map, .icon-twitter, .icon-facebook {
+  font-family: 'icomoon2' !important;
+}
+
+.icon-menu {
+  margin-left: -10px;
+  margin-top: -2px !important;
+}
+
+.icon-filter {
+  margin-left: -5px;
+}
+
+.icon-cross {
+  line-height: 1.6rem !important;
+}
+
+.icon-back-map {
+  width: inherit !important;
+  height: 1rem !important;
+  line-height: 1rem !important;
+  font-size: 1.2rem;
+}
+
+/*android platform icons*/
+.icon-map:before {
+  content: '\e947' !important;
+}
+
+.icon-list:before {
+  content: "\e946" !important;
+}
+
+.icon-trends:before {
+  content: "\e948" !important;
+}
+
+.icon-search:before {
+  content: "\e90a" !important;
+}
+
+.icon-filter:before {
+  content: '\e94d' !important;
+}
+
+.icon-menu:before {
+  content: '\e94e' !important;
+}
+
+.icon-back-map:before {
+  content: '\e90b' !important;
+}
+
+.icon-cross:before {
+  content: '\e901' !important;
+}
+
+.icon-twitter:before {
+  content: '\e944' !important;
+}
+
+.icon-facebook:before {
+  content: '\e918' !important;
+}
+
+.icons-agency:before {
+  content: "\e91e";
+}
+
+/*ios platform icons*/
+.platform-ios .icon-map:before {
+  content: "\e94a";
+}
+
+.platform-ios .icon-list:before {
+  content: "\e949";
+}
+
+.platform-ios .icon-trends:before {
+  content: "\e94b";
+}
+
+.platform-ios .icon-search:before {
+  content: "\e926";
+}
+
+.platform-ios .icon-filter:before {
+  content: "\e94c";
+}
+
+.platform-ios .icon-back-map:before {
+  content: "\e927";
+}
+
+.platform-ios .icon-cross:before {
+  content: "\e91d";
+}
+
+.icon-menu-right:before {
+  content: '\e904';
+}
+
+.icon-menu-left:before {
+  content: '\e900';
+}
+
+.ios-back-button button {
+  padding-left: 2px !important;
+  margin-top: -4px !important;
+  margin-left: -7px;
+}
+
+.ios-back-button button:before {
+  padding-left: 0px !important;
+}
+
+.header-tabs .tab-nav.tabs {
+  background: #282828 none repeat scroll 0 0;
+  padding-top: 0px;
+  overflow: hidden;
+  border-bottom: none !important;
+}
+
+.header-tabs .tab-nav.tabs .tab-item {
+  position: relative;
+  border-bottom: none;
+  max-width: none;
+  color: #fff;
+}
+
+.header-tabs .tab-nav.tabs .tab-item .icon {
+  display: block;
+  margin: 0 auto;
+  height: 52px;
+  font-size: 32px;
+  line-height: 50px;
+}
+
+.header-tabs .tab-nav.tabs .tab-item.tab-item-active {
+  background: #28566c !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #fff;
+  height: 52px;
+}
+
+.view .menu-content .nav-bar-block .buttons.buttons-right.header-item {
+  left: 0px;
+}
+
+.view .menu-content .nav-bar-block .right-buttons {
+  width: 100%;
+}
+
+.view .menu-content .nav-bar-block .right-buttons .header-search {
+  width: 85%;
+  position: absolute;
+}
+
+.view .menu-content .nav-bar-block .right-buttons .item {
+  padding: 0px;
+  border: none;
+  margin: 0px;
+  background-color: transparent;
+}
+
+.view .menu-content .nav-bar-block .right-buttons .item .pad-0 {
+  padding: 0px !important;
+}
+
+.view .menu-content .nav-bar-block .right-buttons .item .brand_logo {
+  float: left;
+  height: 32px;
+  padding: 2px 0 0 5px;
+}
+
+.view .menu-content .nav-bar-block .right-buttons .item .brand-logo1 {
+  color: #fff;
+  font-size: 1.2em;
+  margin: 0px 0 0 42px !important;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 32px;
+  line-height: 32px;
+  letter-spacing: -1px;
+}
+
+.view .menu-content .nav-bar-block .right-buttons .item .brand-logo1 sup {
+  font-size: 60%;
+}
+
+.view .menu-content .nav-bar-block .right-buttons .toggle-button {
+  position: absolute;
+  right: 0;
+}
+
+.view .menu-content .nav-bar-block .right-buttons .toggle-button .icon-menu {
+  font-family: 'icomoon2';
+}
+
+.view .menu-content .nav-bar-block .right-buttons .toggle-button button {
+  color: #fff !important;
+  font-size: 1.8rem !important;
+  line-height: 2.4rem;
+}
+
+.view .menu-content .nav-bar-block .right-buttons .toggle-button .icon-menu:before {
+  content: '\e94e';
+}
+
+.map-view {
+  top: 44px;
+  bottom: 49px;
+}
+
+.map-view #map {
+  width: 100%;
+  height: 100%;
+}
+
+.map-view .page-loader {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 4rem;
+  height: 4rem;
+  margin: -2rem 0 0 -2rem;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 99999;
+}
+
+.map-view .page-loader .spinner {
+  width: 2.4rem;
+  height: 2.4rem;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  border-color: #a8bac2;
+}
+
+.map-view .page-loader .spinner:after {
+  content: '';
+  border-color: transparent;
+  border-top-color: #527789;
+  position: absolute;
+  top: -0.4rem;
+  right: -0.4rem;
+  bottom: -0.4rem;
+  left: -0.4rem;
+  animation: spin 0.75s linear infinite;
+}
+
+.map-view .page-loader .spinner, .map-view .page-loader .spinner:after {
+  border-width: 0.4rem;
+  border-style: solid;
+  border-radius: 1.2rem;
+}
+
+.map-view .gps {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  width: 2rem;
+  height: 1.8rem;
+  color: #1B86C8;
+  background-color: #fff;
+  z-index: 11111;
+  text-align: center;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+}
+
+.map-view .gps .icon-locate {
+  font-family: 'icomoon2';
+  font-size: 1.7rem !important;
+  text-align: center;
+  line-height: 28px !important;
+}
+
+.map-view .user-message {
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  font-size: 1em;
+  width: 100%;
+  padding: 2px 5px 2px 48px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02); */
+}
+
+.map-view .user-message.shift-right {
+  padding: 2px 5px 2px 150px !important;
+}
+
+.map-view .user-message .zoom-alert {
+  display: block;
+  margin-bottom: 0px;
+}
+
+.map-view .user-message .alert-warning {
+  background-color: #ffdaa6;
+  border-color: #faebcc;
+  padding: 0.5rem;
+}
+
+.map-view .user-message .alert-warning .header-text {
+  font-weight: 600;
+  color: #a75e38;
+}
+
+.map-view .user-message .alert-warning p {
+  font-size: 0.8rem;
+  text-align: left;
+  color: #58595b;
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  10% {
+    -webkit-transform: rotate(36deg);
+  }
+
+  20% {
+    -webkit-transform: rotate(72deg);
+  }
+
+  30% {
+    -webkit-transform: rotate(108deg);
+  }
+
+  40% {
+    -webkit-transform: rotate(144deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+
+  60% {
+    -webkit-transform: rotate(216deg);
+  }
+
+  70% {
+    -webkit-transform: rotate(252deg);
+  }
+
+  80% {
+    -webkit-transform: rotate(288deg);
+  }
+
+  90% {
+    -webkit-transform: rotate(324deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.chief-message {
+  padding: 10px 13px !important;
+  -webkit-box-shadow: inset 0 -1px 1px #eaeaea;
+  -moz-box-shadow: inset 0 -1px 1px #eaeaea;
+  -ms-box-shadow: inset 0 -1px 1px #eaeaea;
+  -o-box-shadow: inset 0 -1px 1px #eaeaea;
+  box-shadow: inset 0 -1px 1px #eaeaea;
+}
+
+.list-view .chief-message .chief-message-box .item-stable.item {
+  padding: 0;
+}
+
+.chief-message-box {
+  width: 100%;
+}
+
+.borderBottom {
+  border-bottom: 1px solid #ccc;
+}
+
+.border-bottom-none {
+  border-bottom: none !important;
+}
+
+.message-container {
+  padding: 0;
+  overflow-y: hidden;
+  border-color: #fff;
+  background: inherit;
+  max-height: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  z-index: 0;
+  white-space: normal;
+  padding: 0px !important;
+  font-size: 0.75rem;
+  color: #878c8f;
+  line-height: 1.543;
+}
+
+.message-container.list_open {
+  max-height: 2000px;
+  -webkit-transition: max-height 0.5s ease-in-out;
+  -moz-transition: max-height 0.5s ease-in-out;
+  -o-transition: max-height 0.5s ease-in-out;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.chief-message-arrow {
+  float: right;
+  line-height: 1;
+  font-size: 1.25rem;
+}
+
+.plus-customer-data {
+  max-width: 80px;
+  float: left;
+  padding-right: 10px;
+  margin-top: 5px;
+}
+
+.has-incident {
+  top: 80px;
+  bottom: 50px;
+}
+
+.has-incident-agency {
+  top: 120px;
+  bottom: 50px;
+}
+
+@font-face {
+  font-family: "icomoon";
+  src: url("fonts/icomoon.eot?dhlt85");
+  src: url("fonts/icomoon.eot?dhlt85#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf?dhlt85") format("truetype"), url("fonts/icomoon.woff?dhlt85") format("woff"), url("fonts/icomoon.svg?dhlt85#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'icomoon2';
+  src: url("fonts/font/icomoon.eot?9onjxg");
+  src: url("fonts/font/icomoon.eot?9onjxg#iefix") format("embedded-opentype"), url("fonts/font/icomoon.ttf?9onjxg") format("truetype"), url("fonts/font/icomoon.woff?9onjxg") format("woff"), url("fonts/font/icomoon.svg?9onjxg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency,
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff {
+  padding-left: 1px;
+  line-height: 26px !important;
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.donut-marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency):not(.selected).category-property {
+  padding-top: 1px;
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.donut-marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency):not(.selected).category-violent {
+  padding-top: 1px;
+}
+
+.cluster-map .leaflet-marker-icon:not(.marker-cluster):not(.donut-marker-cluster):not(.icon-agency):not(.icon-sheriff):not(.icon-no-data-agency) {
+  padding-top: 1px;
+}

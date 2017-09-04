@@ -1,0 +1,135 @@
+@import "util";
+@import "cluster-map-variables";
+
+$sideBarWidth: 320px;
+.cluster-map {
+  width: 100%;
+  height: 100%;
+  .map-instance {
+    width: 100%;
+    height: 100%;
+    path.shape {
+      pointer-events: none;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      fill-rule: evenodd;
+      stroke-opacity: 1;
+      stroke-width: 1.5;
+      fill-opacity: 0.35;
+
+      &.agency {
+        display: none;
+        stroke: crime-marker-color('agency', 1);
+        fill: crime-marker-color('agency', 0.5);
+      }
+
+      &.neighbourhood {
+        fill: #aa55aa;
+        stroke: #aa55aa;
+      }
+
+      &.selected {
+        display: block
+      }
+    }
+  }
+
+  .copyright-info-terms-links {
+    position: fixed;
+    bottom: 30px;
+    z-index: 1001;
+    left: 50%;
+    margin-left: -140px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px 0;
+    p {
+      float: left;
+      margin: 0 10px;
+    }
+    a {
+      float: left;
+      margin-right: 10px;
+      color: #374045;
+    }
+  }
+}
+
+/*map region*/
+.shapes-choice {
+  position: absolute;
+  left: 3rem;
+  bottom: 3.45rem;
+  font-size: 0.85rem;
+  z-index: 1001;
+  #show-layers-btn {
+    width: 6rem;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    border-radius: 2px;
+    cursor: pointer;
+    text-align: center;
+    background-color: #fff;
+    color: #1B86C8;
+    border-radius: 0;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.25);
+  }
+  .mr-dropdown-menu {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    font-size: 14px;
+    text-align: left;
+    background-color: white;
+    border: 1px solid #cccccc;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    background-clip: padding-box;
+    h4 {
+      position: fixed;
+      width: 310px;
+      background-color: #fff;
+      margin: 0;
+      height: 3rem;
+      line-height: 3rem;
+      padding: 0 1.5rem;
+      color: #374045;
+      font-size: 1.2rem;
+      border-bottom: 1px solid #e5e5e5;
+    }
+  }
+  .mr-dropdown-menu1 {
+    width: 311px;
+    max-height: 260px;
+    padding: 0 0 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 48px;
+    color: #374045;
+    li label {
+      display: block;
+      font-weight: 500;
+      font-size: .8rem;
+      padding: 0.3rem 1.5rem;
+      cursor: pointer;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      input {
+        margin-right: 0.5rem;
+        min-width: 1rem;
+        height: 1.1rem;
+        width: 1.1rem;
+        outline: 0px;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.bar-chart {
+    -webkit-overflow-scrolling: auto;
+    margin-right: 1rem;
+        padding-left: 12px;
+}
+
+.bar-chart .ct-chart {
+    height: 200px;
+    padding-top:5px;
+}
+.bar-chart .ct-chart svg{
+    overflow:visible;
+}
+
+.bar-chart .ct-chart .ct-bar {
+    stroke-width: 8px;
+}
+
+.bar-chart .ct-chart .ct-labels span.ct-label {
+    font-size: 9px;
+    white-space: nowrap;
+    letter-spacing: -0.034rem;
+}
+
+.bar-chart .property .ct-series-a .ct-bar {
+    stroke: #0e499a;
+}
+
+.bar-chart .violent .ct-series-a .ct-bar {
+    stroke: #066349;
+}
+
+.bar-chart .quality-of-life .ct-series-a .ct-bar {
+    stroke: #919100;
+}
+
+.bar-chart .stops---911 .ct-series-a .ct-bar {
+    stroke: #4d3279;
+}
+
+.bar-chart .sex-offender .ct-series-a .ct-bar {
+    stroke: #b57426;
+}
+
+/*# sourceMappingURL=bar-chart.css.map */

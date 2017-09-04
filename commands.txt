@@ -1,0 +1,12 @@
+ionic build  android --release
+
+ cd platforms/android/build/outputs/apk/
+keytool -genkey -v -keystore "C:\xampp\htdocs\crime_reports_ionic\test.keystore" -alias test -keyalg RSA -keysize 2048 -validity 10000
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore "/var/www/html/crime_new/test.keystore" android-release-unsigned.apk test
+keystore pwd:(java@123)
+jarsigner -verify -verbose -certs android-release-unsigned.apk
+find zipalign( cmd: locate zipalign)
+/var/android-sdk-linux/build-tools/21.1.2/zipalign -v 4 android-release-unsigned.apk CrimeReports.apk
+sudo chmod -R 777 CrimeReports.apk 
+

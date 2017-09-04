@@ -1,0 +1,52 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-datepicker": {
+            "PACKAGE_NAME": "com.socrata.crimereports"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.socrata.crimereports"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.socrata.crimereports"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.socrata.crimereports"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.socrata.crimereports"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.socrata.crimereports"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.socrata.crimereports"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.socrata.crimereports"
+        },
+        "cordova-universal-links-plugin": {
+            "PACKAGE_NAME": "com.socrata.crimereports"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.socrata.crimereports"
+        },
+        "cordova-plugin-google-analytics": {
+            "PACKAGE_NAME": "com.socrata.crimereports"
+        },
+        "com.hutchind.cordova.plugins.streamingmedia": {
+            "PACKAGE_NAME": "com.socrata.crimereports"
+        }
+    },
+    "dependent_plugins": {
+        "nl.x-services.plugins.toast": {
+            "PACKAGE_NAME": "com.socrata.crimereports"
+        }
+    }
+}

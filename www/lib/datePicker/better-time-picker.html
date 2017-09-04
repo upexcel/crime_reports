@@ -1,0 +1,51 @@
+<div class="better-time-picker">
+    <div class="time-header">
+        <span
+            class="selected-hour"
+            ng-class="{highlighted: betterTimePicker.PageState.hourPickerEnabled}"
+            ng-click="betterTimePicker.selectHourPicker()"
+            ng-bind="betterTimePicker.UserSelection.selectedDate | date:'hh'">
+        </span> :
+        <span
+            ng-class="{highlighted: betterTimePicker.PageState.minutePickerEnabled}"
+            ng-click="betterTimePicker.selectMinutePicker1()"
+            class="selected-minute highlighted"
+            ng-bind="betterTimePicker.startTimePicker?'00':'59'">
+            <!--ng-bind="betterTimePicker.UserSelection.selectedDate | date:'mm'">-->
+        </span>
+        <span class="time-meridian"
+              ng-bind="betterTimePicker.UserSelection.selectedHour < 12 ?'AM':'PM'"></span>
+        <!--    <span
+              ng-class="{highlighted: betterTimePicker.PageState.secondPickerEnabled}"
+              ng-click="betterTimePicker.selectSecondPicker()"
+              class="selectable-second"
+              ng-bind="betterTimePicker.UserSelection.selectedDate | date:'ss'">
+            </span>
+            <span
+              ng-click="betterTimePicker.toggleAmPm()"
+              class="selected-am-pm-toggle"
+              ng-bind="betterTimePicker.UserSelection.selectedDate | date:'a'">
+            </span>-->
+    </div>
+    <div class="time-unit-body">
+        <div class="time-unit-circle">
+            <div
+                ng-click="betterTimePicker.setSelectedTime(timeUnit.value)"
+                ng-repeat="timeUnit in betterTimePicker.PageState.times"
+                ng-class="{'hour': hourPickerEnabled, 'minute': minutePickerEnabled, 'second': secondPickerEnabled,
+                            'active':timeUnit.value == betterTimePicker.UserSelection.selectedHour || timeUnit.value == betterTimePicker.UserSelection.selectedHour + 12 || timeUnit.value == betterTimePicker.UserSelection.selectedHour - 12}"
+                class="hour time-unit"
+                style="left:{{timeUnit.x}}px; top:{{timeUnit.y}}px;">{{timeUnit.value}}
+            </div>
+        </div>
+        <div> 
+            <span class="am time-meridian" 
+                  ng-class="{'active':betterTimePicker.UserSelection.selectedHour < 12}"
+                  ng-click="betterTimePicker.toggleAmPm('Am')">AM</span>
+            <span class="pm time-meridian" 
+                  ng-class="{'active':betterTimePicker.UserSelection.selectedHour >= 12}"
+                  ng-click="betterTimePicker.toggleAmPm('Pm')">PM</span>
+        </div>
+    </div>
+
+</div>

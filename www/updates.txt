@@ -1,0 +1,20 @@
+app code
+===========
+1. in list view paging is artifical 
+2. list view submit tip, share etc dont work
+3. for share we can use social media etc but what URL to share?
+4. api takes very long to respond, either use localStorage for caching or implement it at api level.
+5. right now list view fires another api, instead store map view response in cache and use that itself
+
+
+app refactor
+==============
+1. create service for ajax request (both controller and list_controller) have same ajax code.
+also maybe we can use the data from map view itself
+2. move image mapping to a different service
+3. create lib/ folder
+4. create service/ folder for each page
+5. divide template/ folder also page wise and then divide different parts of a single page into multiple html files
+6. setup nodejs for auto plugin update
+7. setup requirejs
+8. update ionic library

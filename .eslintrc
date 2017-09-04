@@ -1,0 +1,26 @@
+{
+  "env": {
+    "browser": true
+  },
+  extends: "eslint:recommended",
+  "rules": {
+    "quotes": [1, "single"],
+    "camelcase": [0],
+    "no-use-before-define": [0],
+    "semi": [2],
+    "no-unused-vars": 0,
+    "no-console": 0
+  },
+  "globals": {
+    "_": true,
+    "angular": true,
+    "moment": false,
+    "$": true,
+    "L": true,
+    "Map": true,
+    "ionic": true,
+    "Chartist": true,
+    "cordova": true,
+    "d3": true
+  }
+}

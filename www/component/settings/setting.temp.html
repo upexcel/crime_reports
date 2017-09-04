@@ -1,0 +1,163 @@
+<ion-view>
+  <ion-content class="" ng-controller="settingController as settingModelCtrl" overflow-scroll="false">
+    <div class="settings-modal modal-with-header">
+      <div class="modal-head">
+        <span class="title-txt">Settings</span>
+        <span ng-click="goBack()" class="icon-cross cross"></span>
+      </div>
+      <div class="modal-body">
+
+        <div class="row my-tab">
+          <div class="col border-right text-center" ng-class="{'active-tab':ifuserInfoSelected}"
+               ng-click="ifuserInfoSelected = true">My Info
+          </div>
+          <div class="col text-center" ng-class="{'active-tab':!ifuserInfoSelected}"
+               ng-click="ifuserInfoSelected = false">My Alerts
+          </div>
+        </div>
+
+        <!--user info-->
+        <div ng-if="ifuserInfoSelected">
+          <fieldset class="col-sm-6" ng-class="{ 'edit-mode-enabled': settingModelCtrl.showEdit }">
+            <legend class="clearfix">
+              <div class="row pad-0">
+                <div class="col-33 pad-0 text-left"><span class="">Profile</span></div>
+                <div class="col pad-0 text-center">
+                  <div class="link-group clearfix">
+                    <a href class="modal-btn primary"
+                       ng-if="!settingModelCtrl.showEdit"
+                       ng-click="settingModelCtrl.openEditInfo()">Edit</a>
+                    <a href class="modal-btn primary"
+                       ng-if="settingModelCtrl.showEdit"
+                       ng-click="settingModelCtrl.saveUserInfo()">Save</a>
+                    <a href class="modal-btn plain"
+                       ng-if="settingModelCtrl.showEdit"
+                       ng-click="settingModelCtrl.cancelUserInfo()">Cancel</a>
+                  </div>
+                </div>
+              </div>
+
+
+            </legend>
+            <div class="form-group clearfix">
+              <label for="first-name">First name:</label>
+              <input id="first-name" type="text" class="form-control"
+                     ng-model="settingModelCtrl.userData.first_name"
+                     ng-readonly="!settingModelCtrl.showEdit"
+                     ng-value="settingModelCtrl.userData.first_name">
+            </div>
+            <div class="form-group clearfix">
+              <label for="last-name">Last name:</label>
+              <input id="last-name" type="text" class="form-control"
+                     ng-model="settingModelCtrl.userData.last_name"
+                     ng-readonly="!settingModelCtrl.showEdit"
+                     ng-value="settingModelCtrl.userData.last_name">
+            </div>
+
+          </fieldset>
+
+          <fieldset class="col-sm-6" ng-class="{ 'edit-mode-enabled': settingModelCtrl.showPasswordEdit }">
+            <legend class="clearfix">
+              <div class="row pad-0">
+                <div class="col-33 pad-0 text-left">
+                  <span class="legend-title">Sign In Info</span>
+                </div>
+                <div class="col pad-0 text-center">
+                  <div class="link-group clearfix">
+                    <a href class="modal-btn primary"
+                       ng-if="!settingModelCtrl.showPasswordEdit"
+                       ng-click="settingModelCtrl.showPasswordEdit = true">Edit</a>
+                    <a href class="modal-btn primary"
+                       ng-if="settingModelCtrl.showPasswordEdit"
+                       ng-class="{disabled: !settingModelCtrl.validatePasswordData(settingModelCtrl.newUserData)}"
+                       ng-click="!settingModelCtrl.validatePasswordData(settingModelCtrl.newUserData) || settingModelCtrl.savePassword()">Save</a>
+                    <a href class="modal-btn plain"
+                       ng-if="settingModelCtrl.showPasswordEdit"
+                       ng-click="settingModelCtrl.cancelPassword()">Cancel</a>
+                  </div>
+                </div>
+              </div>
+            </legend>
+
+            <div class="form-group clearfix">
+              <label>Email:</label>
+              <span class="input-value" ng-bind="settingModelCtrl.userData.email"></span>
+            </div>
+
+            <div class="form-group clearfix" ng-hide="settingModelCtrl.showPasswordEdit">
+              <label>Password:</label> <span class="input-value">************</span>
+            </div>
+
+            <div class="form-group clearfix" ng-show="settingModelCtrl.showPasswordEdit">
+              <label for="current-password">Current Password:</label>
+              <input id="current-password" type="password" class="form-control"
+                     ng-model="settingModelCtrl.newUserData.current_password">
+            </div>
+
+            <div class="form-group clearfix" ng-show="settingModelCtrl.showPasswordEdit">
+              <label for="new-password">New Password:</label>
+              <input id="new-password" type="password" class="form-control"
+                     ng-model="settingModelCtrl.newUserData.password">
+            </div>
+
+            <div class="form-group clearfix" ng-show="settingModelCtrl.showPasswordEdit">
+              <label for="confirm-password">Re Type Password:</label>
+              <input id="confirm-password" type="password" class="form-control"
+                     ng-model="settingModelCtrl.newUserData.password_confirmation">
+            </div>
+          </fieldset>
+        </div>
+
+        <!--alerts-->
+        <div ng-if="!ifuserInfoSelected">
+          <p class="empty-alerts" ng-if="!settingModelCtrl.userAlerts">
+            You have not created alerts yet.
+            <a href="javascript:void(0)" ng-click="appHeader.openModel('alert')">Create an Alert</a>
+          </p>
+
+          <section class="crime-alerts">
+            <h3>Crime Alerts</h3>
+
+            <div class="empty-alerts" ng-if="settingModelCtrl.showCreateButton">
+              <p class="text-danger">You have not created alerts yet.</p>
+              <a class="modal-btn alert-options" style="float:left;" href="javascript:void(0)"
+                 ng-click="settingModelCtrl.createAlert()">Create a Crime Alert</a>
+            </div>
+
+            <ul class="alert-list">
+              <li ng-repeat="alert in settingModelCtrl.userAlerts" class="clearfix">
+                <h4 ng-bind="alert.name"></h4>
+                <div class="col-sm-8">
+                  <static-map map-bounds="alert.mapBounds"></static-map>
+                </div>
+                <div class="col-sm-4">
+                  <p class="links-group">
+                    <a href ng-click="settingModelCtrl.pauseAlert(alert.id)">
+                      <span ng-bind="!alert.is_paused ? 'Pause' : 'Activate'"></span>
+                    </a>
+                    |
+                    <a href ng-click="settingModelCtrl.deleteAlert(alert.id)">Delete</a>
+                  </p>
+                  <p>
+                    Status:
+                    <span ng-bind="alert.is_paused ? 'Paused' : 'Active'"></span>
+                  </p>
+                  <p>
+                    Frequency:
+                    <span ng-bind="alert.frequency"></span>
+                  </p>
+                  <p class="crime-types-string">
+                    Crime Types:
+                    <span ng-bind="alert.query_params.incident_types"></span>
+                  </p>
+                  <a class="modal-btn alert-options" href="javascript:void(0)"
+                     ng-click="settingModelCtrl.editAlert(alert)">Edit</a>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,36 @@
+<div class="date-range-picker">
+  <div class="preset-range-group clearfix">
+    <div class="radio-group">
+      <ul>
+        <li class="field-group" ng-repeat="presetDateRange in ::dateRangePicker.presetDateRanges">
+          <input type="radio" name="date-range"
+                 ng-attr-id="{{'preset-date-range-' + $index}}"
+                 ng-value="presetDateRange.id"
+                 ng-model="dateRangePicker.presetDateId"
+                 ng-checked="presetDateRange.id == dateRangePicker.presetDateId"
+                 />
+          <label ng-attr-for="{{'preset-date-range-' + $index}}">{{presetDateRange.displayText}}</label>
+          <div class="check"></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="custom-data-range" ng-init="customDateRange = false">
+    <h4 class="clear-fix" ng-click="customDateRange = !customDateRange">
+      <strong><a>Custom date range</a></strong>
+    </h4>
+    <div class="clearfix CustomDates" ng-show="customDateRange">
+      <div class="input-with-icon">
+        <input type="text" class="date-picker-input form-control start-date" placeholder="From"
+               ng-model="dateRangePicker.dateRange[0]" ng-required="true" readonly/>
+        <span class="ion-calendar"></span>
+      </div>
+      <div class="input-with-icon">
+        <input type="text" class="date-picker-input form-control end-date" placeholder="To"
+               ng-model="dateRangePicker.dateRange[1]" ng-required="true" readonly/>
+        <span class="ion-calendar"></span>
+      </div>
+    </div>
+  </div>
+</div>
+

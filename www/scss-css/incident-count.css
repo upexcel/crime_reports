@@ -1,0 +1,189 @@
+.plus-agency-header {
+  width: 100%;
+  height: 2.4rem;
+  line-height: 2.4rem;
+  padding: 0.3rem 0rem;
+  position: absolute;
+  top: 44px;
+  left: 0;
+  z-index: 1031;
+  background-color: #e9eef0;
+  color: #374045;
+  text-align: center;
+  font-weight: 600;
+  overflow: hidden;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.plus-agency-header .plus-agency-headername {
+  top: 0px;
+}
+
+.plus-agency-header a {
+  position: absolute;
+  left: 0.4rem;
+  background-color: #d5dfe3;
+  color: #28566c;
+  height: 1.7rem;
+  line-height: 1.7rem;
+  padding: 0 0.5rem;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.plus-agency-header a i {
+  vertical-align: text-top;
+}
+
+.plus-agency-header .title {
+  float: left;
+  height: 1.7rem;
+  width: 99%;
+  padding-left: 0.3rem;
+  font-size: 0.7rem !important;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.7rem !important;
+  position: inherit;
+  margin-left: 0px !important;
+  text-align: left;
+}
+
+.plus-agency-header .map-trends {
+  position: absolute;
+  z-index: 1000;
+  background: transparent;
+  padding: 0px;
+}
+
+.plus-agency-header .map-trends .row {
+  background: #fff;
+  padding: 0px;
+  color: #58585b;
+}
+
+.plus-agency-header .map-trends .row .total-incidents {
+  height: 1.8rem;
+  line-height: 1.8rem;
+  min-width: 100px;
+  text-align: left;
+  padding-left: 8px;
+}
+
+.plus-agency-header .map-trends .row .map-date-range {
+  white-space: normal;
+  padding: 2px;
+  line-height: 25px;
+  overflow: hidden;
+  color: #999;
+  font-style: normal;
+  float: right;
+  letter-spacing: -0.01rem;
+  position: fixed;
+  right: 5px;
+  font-weight: 500;
+  min-width: 185px;
+}
+
+.plus-agency-header .map-trends .incident-count {
+  padding: 6px 0px 5px 0px !important;
+}
+
+.list-incident-header.plus-agency-header {
+  top: 44px;
+}
+
+.list-incident-header.plus-agency-header .plus-agency-headername {
+  top: 0px;
+}
+
+.min-5 {
+  min-height: 4.8rem !important;
+}
+
+.min-3 {
+  min-height: 2.4rem !important;
+}
+
+.pad-0 {
+  padding: 0px !important;
+}
+
+.top-35 {
+  top: 2.4rem;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+/*list view scss*/
+.plus_mode.tabs-top {
+  top: 122px !important;
+}
+
+.incident-level.tabs-top {
+  top: 81px;
+  border-bottom-width: 0;
+  padding: 9px 9px 0;
+  background: #e9eef0;
+  box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.incident-level.tabs-top .list-tab {
+  line-height: 40px !important;
+  color: #2481ae;
+  height: 40px;
+}
+
+.incident-level.tabs-top .tab-item.listtab-active {
+  font-weight: 500;
+  color: #374045;
+  background-color: #f4f6f7;
+  box-shadow: 0 0px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.tabs-top {
+  background-color: #a3b8c1;
+  padding-bottom: 1px;
+  top: 44px;
+}
+
+.tabs-top .list-tab {
+  font-size: 16px !important;
+  line-height: 48px !important;
+  color: #fff;
+  opacity: 1;
+}
+
+.tabs-top .tab-item {
+  position: relative;
+  border-bottom: none;
+  max-width: none;
+}
+
+.tabs-top .tab-item.listtab-active {
+  font-weight: 600;
+}
+
+.top-6 {
+  top: 8.1rem !important;
+}
+
+.top-8 {
+  top: 10.6rem !important;
+}
+
+.top-6:not(.list-view) {
+  top: 5.1rem !important;
+}
+
+.top-8:not(.list-view) {
+  top: 7.6rem !important;
+}
+
+/*# sourceMappingURL=incident-count.css.map */

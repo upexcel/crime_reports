@@ -1,0 +1,50 @@
+@import "cluster-map-variables";
+
+.spark-line-chart {
+  width: 100%;
+  height: 36px;
+  .ct-chart {
+    height: 100%;
+    cursor: pointer;
+    .ct-area {
+      fill-opacity: .5
+    }
+    .ct-line {
+      stroke-width: 2px
+    }
+    svg {
+      overflow: auto
+    }
+    @each $category in (property, violent, quality-of-life, stops---911) {
+      .#{$category} {
+        .ct-area {
+          fill: crime-marker-color($category, 0.5)
+        }
+        &.ct-series-a {
+          .ct-line {
+            stroke: crime-marker-color($category, 1)
+          }
+        }
+      }
+    }
+    //Category styling
+  }
+}
+
+.sparkline {
+  em {
+    display: block;
+    color: #878c8f;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.8rem;
+    letter-spacing: -0.034rem;
+  }
+  strong {
+    display: block;
+    color: #374045;
+    font-weight: 700;
+    font-size: 0.8rem;
+    line-height: 1.543;
+  }
+}

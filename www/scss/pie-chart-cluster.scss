@@ -1,0 +1,178 @@
+@import "util";
+
+$incidents: (property, violent, quality-of-life, sex-offender, stops---911, cluster);
+$rgb_colors: (rgb(17, 97, 163), rgb(31, 99, 16), rgb(145, 145, 0), rgb(181, 116, 38), rgb(77, 50, 121), rgb(123, 128, 130));
+
+.leaflet-marker-icon.donut-marker-cluster {
+  svg {
+    overflow: visible;
+    path.pie {
+      fill-opacity: 0.7;
+      stroke-width: 2px;
+      @for $i from 1 through length($incidents) {
+        &.#{nth($incidents, $i)} {
+          fill: nth($rgb_colors, $i);
+          stroke: nth($rgb_colors, $i);
+        }
+      }
+    }
+    circle.hole {
+      fill: white;
+      stroke: none;
+    }
+    text.count {
+      fill: #374045;
+      text-anchor: middle;
+      font-size: 10px;
+    }
+  }
+}
+
+.pie-chart-cluster {
+  .pie {
+    position: absolute;
+    overflow: hidden;
+    @include prefixer(transform-origin, "left center");
+    opacity: 0.7;
+
+    @for $i from 1 through length($incidents) {
+      &.#{nth($incidents, $i)} {
+        strong,
+        em {
+          background-color: nth($rgb_colors, $i)
+        }
+      }
+    }
+
+    strong {
+      content: "";
+      position: absolute;
+      @include prefixer(transform-origin, "right center");
+    }
+
+    &.hero {
+      @include prefixer(transform-origin, "center center");
+
+      em {
+        content: "";
+        position: absolute;
+      }
+    }
+  }
+
+  .donut {
+    position: absolute;
+    list-style: none;
+    background: #fff;
+    font-weight: 700;
+    text-align: center;
+    color: #374045;
+    @include prefixer(box-shadow, "0 0 1px 0px rgba(0, 0, 0, 0.25)");
+  }
+
+  $densities: (high, medium, low);
+  $radii: (22px, 18px, 14px);
+  $marker-size: 24px;
+  $donut-radii-ratio: 0.6;
+  $fontSizes: (1.0rem, 0.9rem, 0.8rem);
+
+  @for $i from 1 through length($radii) {
+    &.#{nth($densities, $i)}-density {
+      $radius: nth($radii, $i);
+      height: $radius * 2;
+      width: $radius * 2;
+      margin-top: $marker-size / 2 - $radius;
+      margin-left: $marker-size / 2 - $radius;
+      @include prefixer(border-radius, $radius);
+      .pie {
+        width: $radius;
+        height: $radius * 2;
+        left: $radius * 0.4;
+
+        strong {
+          width: $radius;
+          height: $radius * 2;
+          left: -$radius;
+          @include prefixer(border-radius, $radius + " 0 0 " + $radius);
+        }
+
+        &.hero {
+          width: $radius * 2;
+          height: $radius * 2;
+          left: -$radius * 0.6;
+
+          strong {
+            left: 0
+          }
+
+          em {
+            width: $radius;
+            height: $radius * 2;
+            left: $radius;
+            @include prefixer(border-radius, "0 " + $radius + " " + $radius + " 0");
+          }
+        }
+      }
+
+      .donut {
+        width: $radius * $donut-radii-ratio * 2;
+        height: $radius * $donut-radii-ratio * 2;
+        line-height: $radius * $donut-radii-ratio * 2;
+        top: $marker-size / 2 - $radius * $donut-radii-ratio;
+        left: $marker-size / 2 - $radius * $donut-radii-ratio;
+        font-size: nth($fontSizes, $i);
+        @include prefixer(border-radius, $radius * $donut-radii-ratio);
+      }
+    }
+  }
+}
+
+.donut-marker-cluster {
+  .cluster-pie-tooltip {
+    display: none;
+    position: absolute;
+    left: -10rem;
+    bottom: 1rem;
+    z-index: -1;
+    width: 10rem;
+    padding: 0.4rem;
+    margin: 0;
+    background-color: #fff;
+    @include prefixer(border-radius, "0.1rem");
+    @include prefixer(box-shadow, "0 0 1px 1px rgba(0, 0, 0, 0.25)");
+    li {
+      font-size: 0.7rem;
+      text-align: left;
+      color: #374045;
+      list-style-type: none;
+      padding: 7px 0 0 1.8rem;
+      line-height: 2;
+      margin-bottom: 0.5rem;
+      position: relative;
+      text-transform: capitalize;
+      @include prefixer(text-shadow, "0 0 0 transparent");
+      &:before {
+        content: '';
+        position: absolute;
+        height: 1.2rem;
+        width: 1.2rem;
+        border: 1px solid;
+        left: 0;
+        top: 0.5rem;
+        @include prefixer(border-radius, "0.6rem");
+        @include prefixer(box-shadow, "0 0 1px 0px rgba(0, 0, 0, 0.4)");
+      }
+      @for $i from 1 through length($incidents) {
+        &.#{nth($incidents, $i)} {
+          &:before {
+            background-color: nth($rgb_colors, $i);
+            border-color: darken(nth($rgb_colors, $i), 5%);
+          }
+        }
+      }
+    }
+  }
+  &:hover {
+    /*.cluster-pie-tooltip { display: block }*/
+  }
+}

@@ -1,0 +1,42 @@
+<div id="map1" data-tap-disabled="true" class="map-instance" style="display:block !important; height:100%;" data-ng-init="setlocationCtrl.init()"></div>
+
+<div class="panel-loc">
+  <p class="cr-loc"><img src="img/images/crimereports.svg" alt="chicago police" class="set-icon"/></p>
+
+  <h3 class="brand-logo1 loc-logo" ng-hide="ifExploreAgency">CrimeReports<sup>™</sup></h3>
+  <div class="text-center"><h4 class="loc-title">Welcome! Set your location so we</h4><h4 class="loc-title">can keep
+      you updated</h4></div>
+  <br>
+  <button ng-if="!setlocationCtrl.savedLocation" class="loc-button" ui-sref="initialLocation"><h4
+        class="loc-button-title">Set Location</h4></button>
+  
+  <div locations-height saved-location-data="setlocationCtrl.savedLocationData" style="height:190px;overflow: auto;">
+    <button ng-if="setlocationCtrl.savedLocation" class="loc-button"
+            ng-click="setlocationCtrl.openLocation(savedLocation)"
+            ng-repeat="savedLocation in setlocationCtrl.savedLocationData">
+      <h4 class="loc-button-title" ng-if="!savedLocation.agency"><i
+            ng-class="savedLocation.default?'fa-star':'fa-star-o'" class="fa" ng-if="savedLocation.default"></i>
+        <span>{{savedLocation.search_name}}</span>
+        <span ng-if="!savedLocation.search_name">{{savedLocation.place_name}}</span>
+        <span class="place-bracs-set" ng-if="savedLocation.search_name">({{savedLocation.place_name}})</span>
+      </h4>
+      <h4 class="loc-button-title" ng-if="savedLocation.agency"><i
+            ng-class="savedLocation.default?'fa-star':'fa-star-o'" class="fa" ng-if="savedLocation.default"></i>
+        <span>{{savedLocation.search_name}}</span>
+        <span ng-if="!savedLocation.search_name">{{savedLocation.agency_name}}</span>
+        <span class="place-bracs-set" ng-if="savedLocation.search_name">({{savedLocation.agency_name}})</span>
+      </h4>
+
+    </button>
+  </div>
+
+  <button ng-if="setlocationCtrl.savedLocation" class="loc-button" ui-sref="initialLocation"
+          style="margin: 10px 0 0;left:5%; right: 5%; position:fixed; bottom:5rem;">
+    <h4 class="loc-button-title">Edit Locations</h4>
+  </button>
+
+  <button ng-click="goMap()" class="loc-button"
+          style="margin:0;bottom: 1.8rem;position:fixed;left:5%; right: 5%;">
+    <h4 class="loc-button-title">Go Straight to the Map</h4>
+  </button>
+</div>

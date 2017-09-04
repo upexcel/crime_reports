@@ -1,0 +1,43 @@
+<div class="time-range-picker clearfix">
+  <div class="preset-range-group radio-group clearfix">
+    <ul>
+      <li class="custom-times clearfix" ng-repeat="presetTimeRange in ::timeRangePicker.presetTimeRanges">
+        <input type="radio" name="time-range"
+               ng-attr-id="{{'preset-time-range-' + $index}}"
+               ng-value="presetTimeRange.id" ng-model="timeRangePicker.presetTimeId"
+               ng-checked="presetTimeRange.id == timeRangePicker.presetTimeId"
+               />
+        <label ng-attr-for="{{'preset-time-range-' + $index}}">
+          <strong ng-bind="::presetTimeRange.display"></strong><br>
+          <span ng-bind="::presetTimeRange.displayRange"></span>
+        </label>
+        <div class="check"></div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="preset-time-range-enabler clearfix">
+    <h4 class="clear-fix" ng-click="customTimeRange = !customTimeRange">
+      <strong><a>Custom time range</a></strong>
+    </h4>
+  </div>
+
+  <div class="range-picker-group clearfix" ng-show="customTimeRange">
+    <div class="input-with-icon">
+      <div class="time-picker-div" ng-click="timeRangePicker.selectStartTime()">
+        <span class="time-icon ion-android-time"></span>
+        <span style="margin-left: 10px;" class="qw"> {{timeRangePicker.startTime== 0 ? 12 : timeRangePicker.startTime}}:00 </span>
+        <span class="" ng-bind="timeRangePicker.startAm? 'AM' : 'PM'"></span>
+
+      </div>
+    </div>
+    <div class="input-with-icon">
+      <div class="time-picker-div" ng-click="timeRangePicker.selectEndTime()">
+        <span class="time-icon ion-android-time"></span>
+        <span style="margin-left: 10px;" class="">{{timeRangePicker.endTime== 0 ? 12 : timeRangePicker.endTime}}:59 </span>
+        <span ng-bind="timeRangePicker.endAm ? 'AM' : 'PM'"></span>
+
+      </div>
+    </div>
+  </div>
+</div>

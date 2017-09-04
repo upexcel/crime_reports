@@ -1,0 +1,403 @@
+.custom-filters h4 {
+  font-size: 1rem;
+  color: #374045;
+  font-weight: 400;
+  /*padding-left: 5px;*/
+  margin-bottom: 15px;
+}
+
+.custom-filters .date-selectors {
+  padding: 0rem 0.75rem;
+  border-bottom: 1px solid #DCDBDB;
+}
+
+.custom-filters .date-selectors h4 {
+  height: 1rem;
+  line-height: 1rem;
+  /*padding-left: 5px;*/
+}
+
+.custom-filters .date-selectors .margin-bottom-0 {
+  margin: 10px 0 0;
+}
+
+.custom-filters .date-selectors ul > li {
+  float: left;
+  width: 50%;
+  margin: 0;
+}
+
+.custom-filters .date-selectors .custom-data-range .CustomDates {
+  margin: 15px 0px;
+}
+
+.custom-filters .date-selectors .custom-data-range .CustomDates .input-with-icon {
+  position: relative;
+  background-color: transparent;
+  position: relative;
+  z-index: 0;
+  float: left;
+  margin-left: 0.4rem;
+  width: calc(45%);
+}
+
+.custom-filters .date-selectors .custom-data-range .CustomDates .input-with-icon .form-control {
+  background-color: transparent;
+  padding: 0.5rem 0.5rem 0.5rem 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  color: #000;
+  border: 1px solid;
+  border-color: #DCDBDB;
+  font-size: 0.8rem;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 0 transparent;
+  border-radius: 0;
+}
+
+.custom-filters .date-selectors .custom-data-range .CustomDates .input-with-icon span {
+  position: absolute;
+  top: 0.4rem;
+  left: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.custom-filters .day-selector {
+  padding: 0 0.75rem 0.75rem;
+  border-bottom: 1px solid #DCDBDB;
+}
+
+.custom-filters .day-selector h4 {
+  line-height: 1.4;
+  /*padding-left: 5px;*/
+}
+
+.custom-filters .day-selector .checkbox-group {
+  float: left;
+  /*margin-left: 0.25rem;*/
+  width: 100%;
+}
+
+.custom-filters .day-selector .checkbox-group label {
+  float: left;
+  margin-right: 0.75rem;
+  margin-bottom: 0;
+  width: 1.8rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0px;
+  border: none;
+  color: #374045;
+}
+
+.custom-filters .day-selector .checkbox-group .checkbox {
+  padding: 0px 2px;
+}
+
+.custom-filters .time-range-selectors {
+  padding: 0rem 0.75rem;
+  border-bottom: 1px solid #DCDBDB;
+}
+
+.custom-filters .time-range-selectors > h4 {
+  margin-bottom: 0;
+}
+
+.custom-filters .time-range-selectors .preset-range-group ul li {
+  float: left;
+  width: 49%;
+  height: auto;
+}
+
+.custom-filters .time-range-selectors .preset-range-group ul li:first-child {
+  float: none;
+}
+
+.custom-filters .time-range-selectors .preset-range-group ul li:nth-child(odd) {
+  margin-right: 2%;
+}
+
+.custom-filters .time-range-selectors .preset-range-group ul label {
+  float: left;
+  line-height: 1;
+  padding: 12px 0px 0px 30px;
+  height: auto;
+  font-size: 0.7rem;
+  color: #374045;
+}
+
+.custom-filters .time-range-selectors .range-picker-group .input-with-icon {
+  position: relative;
+  background-color: transparent;
+  position: relative;
+  z-index: 0;
+  float: left;
+  font-size: 1.1rem;
+  margin-left: 0.4rem;
+  width: 120px;
+  margin-bottom: 0.5rem;
+}
+
+.custom-filters .crime-type-filter {
+  border-top: 1px solid #DCDBDB;
+  border-bottom: 1px solid #DCDBDB;
+  margin-bottom: 1px;
+}
+
+.custom-filters .crime-type-filter .section-header {
+  border-bottom: 1px solid #DCDBDB;
+  cursor: pointer;
+  padding: 1.5rem 0.75rem 1.5rem;
+}
+
+.custom-filters .alerts-frequency,
+.custom-filters p.tip,
+.custom-filters .alert-name {
+  padding: 0 0.75rem;
+}
+
+#alertThis .include-sex-offender label {
+  margin-bottom: 1px;
+  border-bottom: 1px solid #DCDBDB;
+}
+
+#alertThis .include-sex-offender,
+#alertThis .receive-official-alerts {
+  margin-bottom: 0;
+}
+
+#alertThis .modal-footer {
+  margin: 1px 0 0;
+  padding: 0.75rem;
+}
+
+.custom-filters .crime-type-filter .section-header.for-alert {
+  position: relative;
+  border-bottom: 0 none;
+}
+
+.custom-filters .crime-type-filter .section-header.for-alert .arrow {
+  right: 0.75rem;
+  top: 24px;
+  font-size: 1.4rem;
+}
+
+.custom-filters .crime-type-filter .section-header h4 {
+  float: left;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  color: #374045;
+  /*padding-left: 5px;*/
+}
+
+.custom-filters .crime-type-filter .section-header span {
+  position: absolute;
+  right: 1rem;
+}
+
+.custom-filters .crime-type-filter .crime-type-picker {
+  padding: 0rem 0.75rem;
+}
+
+.custom-filters .crime-type-filter .crime-type-picker .person {
+  margin-top: 10px;
+}
+
+.custom-filters .crime-type-filter .crime-type-picker .indeterminate-checkbox {
+  display: block;
+  padding-left: 2.75rem;
+  margin-bottom: 0;
+}
+
+.custom-filters .crime-type-filter .crime-type-picker .indeterminate-checkbox #all_incidents {
+  cursor: pointer;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin: 0;
+  min-width: 25px;
+  outline: 0px;
+  margin-right: 5px;
+  float: left;
+}
+
+.custom-filters .crime-type-filter .crime-type-picker .indeterminate-checkbox #all_incidents:indeterminate {
+  width: 1.7rem;
+}
+
+.custom-filters .crime-type-filter .crime-type-picker .indeterminate-checkbox span {
+  color: #444;
+  font-size: 0.9rem;
+  line-height: 1.8rem;
+}
+
+.custom-filters .crime-type-filter .crime-type-picker .crime-category h5 {
+  margin: 0.5rem 0;
+  padding: 2px 0px;
+  color: #acaeb0;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.custom-filters .crime-type-filter .crime-type-picker .crime-category .crimes {
+  border-top: 2px solid #f9f9f9;
+}
+
+.custom-filters .crime-type-filter .crime-type-picker .crime-category .crimes li {
+  position: relative;
+  height: 59px;
+}
+
+.custom-filters .crime-type-filter .crime-type-picker .crime-category .crimes .leaflet-marker-icon {
+  margin: 17px 4px;
+  z-index: 11;
+}
+
+.custom-filters .crime-type-filter .crime-type-picker .crime-category .crimes .item {
+  padding: 16px;
+}
+
+.custom-filters .crime-type-filter .crime-type-picker .crime-category .crimes .item.item-checkbox {
+  padding-left: 44px !important;
+  border: none;
+}
+
+.custom-filters .crime-type-filter .checkbox input:indeterminate:before, .custom-filters .crime-type-filter .checkbox input:indeterminate + .checkbox-icon:before {
+  background: #28566c;
+  border-radius: 3px;
+}
+
+.custom-filters .crime-type-filter .checkbox input:indeterminate:after, .custom-filters .crime-type-filter .checkbox-icon:indeterminate:after {
+  -webkit-transition: opacity 0.05s ease-in-out;
+  transition: opacity 0.05s ease-in-out;
+  opacity: 1 !important;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  position: absolute;
+  top: 33%;
+  left: 25%;
+  display: table;
+  width: 14px;
+  height: 6px;
+  border: 2px solid #fff;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  content: ' ';
+}
+
+.custom-filters .crime-type-filter .checkbox input:checked::before, .custom-filters .crime-type-filter .checkbox input:checked + .checkbox-icon::before {
+  background: #28566c none repeat scroll 0 0;
+  border-color: #28566c;
+  border-radius: 3px;
+}
+
+.custom-filters .crime-type-filter .checkbox input::before, .custom-filters .crime-type-filter .checkbox-icon::before {
+  border-radius: 3px;
+}
+
+.custom-filters .crime-type-filter .checkbox input:after, .custom-filters .crime-type-filter .checkbox-icon:after {
+  -webkit-transition: opacity 0.05s ease-in-out;
+  transition: opacity 0.05s ease-in-out;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 33%;
+  left: 24%;
+  display: table;
+  width: 14px;
+  height: 7px;
+  border: 2px solid #fff;
+  border-top: 0;
+  border-right: 0;
+  content: ' ';
+  opacity: 1;
+}
+
+.custom-filters .sex-offenders-filters {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 2px;
+  margin-top: 0px;
+}
+
+.custom-filters .sex-offenders-filters .leaflet-marker-icon {
+  position: relative;
+  float: left;
+  margin: 15px 5px 4px 12px !important;
+}
+
+.custom-filters .sex-offenders-filters .item-checkbox .item-content span {
+  line-height: 1.5rem;
+}
+
+.custom-filters .reset-filters {
+  height: 4rem;
+  padding: 1rem 0.7rem;
+}
+
+.custom-filters .reset-filters .button-crime {
+  margin-top: 0;
+  padding: 0 15px;
+}
+
+.item-checkbox {
+  padding-left: 10px;
+  border: none;
+}
+
+.item-checkbox .checkbox {
+  padding: 1px;
+}
+
+.item-checkbox .item-content {
+  margin-left: 33px;
+  height: 27px;
+  line-height: 27px;
+}
+
+.popup-body {
+  padding: 0px;
+}
+
+.button.button-positive {
+  border-color: transparent;
+  background-color: #28566c;
+  color: #fff !important;
+}
+
+.sex-offender-terms {
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  color: #58585b;
+  text-align: left;
+  padding: 10px;
+}
+
+.button.button-crime {
+  border-color: transparent;
+  background-color: #28566c;
+  color: #fff;
+  margin-top: 10px;
+  min-height: 30px;
+  line-height: 30px;
+  border-radius: 0px;
+  padding: 0 15px;
+}
+
+.button.button-crime:active {
+  background-color: #1f4455;
+  border-color: #1f4455;
+}
+
+.decline-btn {
+  text-align: center !important;
+  color: #444;
+}
+
+.accept-btn {
+  text-align: center !important;
+  color: #007aff;
+}

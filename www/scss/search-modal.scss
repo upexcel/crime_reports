@@ -1,0 +1,192 @@
+.scale-in {
+  -webkit-transform: scale(0.0);
+  transform: scale(0.0);
+  opacity: 0;
+}
+
+.scale-in.ng-enter,
+.scale-in > .ng-enter {
+  -webkit-transition: all cubic-bezier(.1, .7, .1, 1) 650ms;
+  transition: all cubic-bezier(.1, .7, .1, 1) 650ms;
+}
+
+.scale-in.ng-enter-active,
+.scale-in > .ng-enter-active {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+
+.scale-in.ng-leave,
+.scale-in > .ng-leave {
+  -webkit-transition: all ease-in-out 300ms;
+  transition: all ease-in-out 300ms;
+}
+
+.search-header.bar-header {
+  background-color: transparent;
+}
+
+.search-layout {
+  position: inherit;
+  width: 100%;
+  color: #58585b;
+  .back-div {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+  .search-div {
+    background-color: #fff;
+    #srcTextbox {
+      width: 100%;
+    }
+  }
+  .search i {
+    height: 20px;
+    line-height: 32px;
+    font-size: 1.8rem;
+  }
+  .ios-search {
+    padding: 5px;
+    background-color: #f1f1f1;
+    icon-search {
+      line-height: 2rem;
+    }
+    .row {
+      padding: 2px;
+      box-shadow: 0 0 0 1px #dcdcdc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+  }
+}
+
+.ios-back {
+  font-size: 2rem !important;
+  line-height: 1.5rem !important;
+  z-index: 1;
+}
+
+.my-head-title {
+  text-align: center;
+  position: absolute;
+  top: 0px !important;
+  left: 0px;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.search-results {
+  max-height: 333px;
+  position: absolute;
+  left: 0px;
+  top: 44px;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+  background-color: #fff;
+  z-index: 1111;
+  font-size: 0.9rem;
+  li {
+    border-top: 1px solid #e6e6e6;
+    padding: 10px 0px;
+    a {
+      padding: 9px 10px;
+      outline: 0 none;
+      color: #58585b;
+      box-shadow: inset 0 1px 0px #fff;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      text-decoration: inherit;
+    }
+  }
+}
+
+/*headers scsss*/
+.cancelbt {
+  text-align: center;
+  width: 10%;
+  font-size: 24px;
+  color: #fff;
+  padding: 6px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 111111;
+}
+
+.main_title {
+  width: 100%;
+  font-size: 1.2em;
+  color: #fff;
+  font-weight: 600;
+  padding: 5px 10px;
+  line-height: 1.6;
+}
+
+.buttons.buttons-left.header-item {
+  width: 100%;
+  margin-left: 5px;
+}
+
+.bar .buttons-left span {
+  width: 100%;
+}
+
+/*side-menu scss*/
+.navbar-collapse {
+  .partner-logos {
+    height: 50px;
+    padding: 0 0.2rem;
+    background-color: #e6e7e8;
+    color: #28566C;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    .motorola-logo {
+      float: left;
+      max-width: 50%;
+      height: 30px;
+      margin: 10px 0;
+    }
+    .powered-by-socrata {
+      float: right;
+      width: 50%;
+    }
+    .socrata-logo {
+      float: right;
+      height: 2rem;
+      margin: 10px 0;
+      max-width: 47%;
+    }
+    .powered-by-text {
+      float: right;
+      height: 50px;
+      line-height: 50px;
+      margin-right: 5px;
+      font-size: 0.8rem;
+      max-width: 50%;
+    }
+  }
+  .item {
+    border-bottom: 1px solid #ccc;
+    color: #58595b;
+    .item-content {
+      padding: 16px;
+      cursor: pointer;
+    }
+    i {
+      padding-right: 15px;
+    }
+  }
+  .item-account {
+    background-color: #e6e7e8;
+    padding: 10px 16px;
+    .account-icon {
+      font-size: 22px;
+      line-height: initial;
+      float: right;
+    }
+  }
+}

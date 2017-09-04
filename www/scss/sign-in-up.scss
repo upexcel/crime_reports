@@ -1,0 +1,143 @@
+.container_mian {
+  width: 95%;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  .con_signup {
+    margin-bottom: 25px;
+  }
+  .clbt1 {
+    border: 2px solid #0382ca;
+    color: #0382ca;
+    background-color: #fff;
+  }
+  .clbt2 {
+    background-color: #d84930;
+    color: #fff;
+  }
+  .clbt3 {
+    background-color: #507bb9;
+    color: #fff;
+  }
+  .clbt4 {
+    background-color: #64c5ea;
+    color: #fff;
+  }
+  .clbt5 {
+    background-color: #4b7184;
+    color: #fff;
+    font-weight: 600;
+  }
+  .bt1 {
+    border-radius: 0px !important;
+    font-size: 1.1em !important;
+    height: 45px;
+  }
+  .platform-ios {
+    .bt1 {
+      border-radius: 20px !important;
+      font-size: 1.1em !important;
+      height: 45px;
+    }
+  }
+  .con_signin {
+    .sign_input {
+      margin-top: 10px;
+      .state {
+        width: 63%;
+        float: left;
+        margin-right: 2%;
+      }
+      .zip {
+        width: 35%;
+      }
+    }
+    a {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+  }
+  .heading {
+    color: #374045;
+    padding-top: 5px;
+    font-size: 1rem;
+    .icon-cross {
+      line-height: 1rem !important;
+    }
+  }
+  .errmsg {
+    color: red;
+  }
+  .color-matched {
+    color: green;
+  }
+  input[type="text"], input[type="password"] {
+    border: 1px solid #B5B4B4;
+    border-radius: 0px;
+    box-shadow: none;
+    padding-left: 5px;
+    height: 45px;
+    width: 100%;
+  }
+}
+
+.forgot-password {
+  .modal-body {
+    width: 95%;
+    margin: 10px;
+    color: #374045;
+    p {
+      margin: 0 0 20px;
+    }
+  }
+  input {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 5px;
+  }
+}
+
+.signup-btn-group {
+  margin-bottom: 30px;
+}
+
+button.button.mybt {
+  background-color: #0372b1;
+  color: #fff;
+  min-height: 0px !important;
+  height: 30px;
+  width: 88px;
+  line-height: 0px;
+  border-radius: 0px;
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+.modal-btn {
+  padding: 0 1.5rem;
+  float: right;
+  height: 2rem;
+  line-height: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  &.pull-left {
+    float: left;
+  }
+  &.disabled {
+    cursor: default;
+    opacity: .5;
+  }
+  &.primary {
+    background-color: #0382ca;
+    color: #fff;
+    font-size: 1rem;
+    margin: 10px 0px;
+    text-decoration: inherit;
+  }
+}
+
+i.italic {
+  font-style: italic;
+  color: #444;
+  font-size: 0.8em;
+  line-height: 0;
+}

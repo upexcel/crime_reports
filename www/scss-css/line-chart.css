@@ -1,0 +1,84 @@
+.line-chart {
+    -webkit-overflow-scrolling: auto;
+    overflow: visible;
+    padding-top: 10px;
+    padding-left: 12px;
+}
+
+svg.ct-chart-line {
+    overflow: visible;
+}
+
+.line-chart .ct-chart {
+    height: 250px;
+}
+
+.line-chart .ct-chart .ct-label.ct-horizontal.ct-end {
+    margin-left: -35%;
+}
+
+.line-chart .ct-chart .ct-area {
+    fill-opacity: 0.5;
+}
+
+.line-chart .ct-chart .other .ct-line {
+    stroke: gainsboro;
+}
+
+.line-chart .ct-chart .violent .ct-line {
+    stroke: #c83232;
+}
+
+.line-chart .ct-chart .property .ct-line {
+    stroke: #32c8c8;
+}
+
+.line-chart .ct-chart .quality-of-life .ct-line {
+    stroke: #3232c8;
+}
+
+.line-chart .ct-chart .property .ct-line {
+    stroke: #0e499a;
+}
+
+.line-chart .ct-chart .property .ct-point {
+    stroke: #0e499a;
+}
+
+.line-chart .ct-chart .violent .ct-line {
+    stroke: #066349;
+}
+
+.line-chart .ct-chart .violent .ct-point {
+    stroke: #066349;
+}
+
+.line-chart .ct-chart .quality-of-life .ct-line {
+    stroke: #919100;
+}
+
+.line-chart .ct-chart g[class*='911-'] .ct-line {
+    stroke: #4d3279;;
+}
+
+.line-chart .ct-chart .quality-of-life .ct-point {
+    stroke: #919100;
+}
+
+.line-chart .ct-chart .stops---911 .ct-line {
+    stroke: #4d3279;
+}
+
+.line-chart .ct-chart .stops---911 .ct-point {
+    stroke: #4d3279;
+}
+
+.line-chart .ct-chart .sex-offender .ct-line {
+    stroke: #b57426;
+}
+
+.line-chart .ct-chart .sex-offender .ct-point {
+    stroke: #b57426;
+}
+
+/*# sourceMappingURL=line-chart.css.map */

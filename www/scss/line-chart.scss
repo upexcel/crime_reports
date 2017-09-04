@@ -1,0 +1,40 @@
+@import "util";
+@import "cluster-map-variables";
+
+.line-chart {
+  -webkit-overflow-scrolling: auto;
+  .ct-chart {
+    height: 250px;
+
+    .ct-label.ct-horizontal.ct-end {
+      margin-left: -35%
+    }
+    .ct-area {
+      fill-opacity: .5
+    }
+
+    .other .ct-line {
+      stroke: rgb(220, 220, 220)
+    }
+    .violent .ct-line {
+      stroke: rgb(200, 50, 50)
+    }
+    .property .ct-line {
+      stroke: rgb(50, 200, 200)
+    }
+    .quality-of-life .ct-line {
+      stroke: rgb(50, 50, 200)
+    }
+
+    @each $category in (property, violent, quality-of-life, stops---911, sex-offender) {
+      .#{$category} {
+        .ct-line {
+          stroke: crime-marker-color($category, 1)
+        }
+        .ct-point {
+          stroke: crime-marker-color($category, 1)
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+<div class="days-of-week-selector">
+  <div class="checkbox-group clearfix">
+    <label ng-repeat="dayOfWeek in ::daysOfWeekSelector.daysOfWeek"
+           ng-attr-for="{{::'day-of-week-' + $index}}">
+      <ion-checkbox ng-model="daysOfWeekSelector.days[$index]"
+                    ng-attr-id="{{::'day-of-week-' + $index}}"></ion-checkbox>
+      <span style="display:inline-block;" ng-bind="::dayOfWeek.label">S</span>
+    </label>
+  </div>
+</div>

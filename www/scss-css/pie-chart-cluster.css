@@ -1,0 +1,416 @@
+.pie-chart-cluster .pie {
+  position: absolute;
+  overflow: hidden;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -ms-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+.pie-chart-cluster .pie.property strong,
+.pie-chart-cluster .pie.property em {
+  background-color: #1161a3;
+}
+
+.pie-chart-cluster .pie.violent strong,
+.pie-chart-cluster .pie.violent em {
+  background-color: #1f6310;
+}
+
+.pie-chart-cluster .pie.quality-of-life strong,
+.pie-chart-cluster .pie.quality-of-life em {
+  background-color: #919100;
+}
+
+.pie-chart-cluster .pie.sex-offender strong,
+.pie-chart-cluster .pie.sex-offender em {
+  background-color: #b57426;
+}
+
+.pie-chart-cluster .pie.stops---911 strong,
+.pie-chart-cluster .pie.stops---911 em {
+  background-color: #4d3279;
+}
+
+.pie-chart-cluster .pie.cluster strong,
+.pie-chart-cluster .pie.cluster em {
+  background-color: #7b8082;
+}
+
+.pie-chart-cluster .pie strong {
+  content: "";
+  position: absolute;
+  -webkit-transform-origin: right center;
+  -moz-transform-origin: right center;
+  -ms-transform-origin: right center;
+  -o-transform-origin: right center;
+  transform-origin: right center;
+}
+
+.pie-chart-cluster .pie.hero {
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -ms-transform-origin: center center;
+  -o-transform-origin: center center;
+  transform-origin: center center;
+}
+
+.pie-chart-cluster .pie.hero em {
+  content: "";
+  position: absolute;
+}
+
+.pie-chart-cluster .donut {
+  position: absolute;
+  list-style: none;
+  background: #fff;
+  font-weight: 700;
+  text-align: center;
+  color: #374045;
+  -webkit-box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.25);
+  -ms-box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.25);
+  -o-box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.25);
+}
+
+.pie-chart-cluster.high-density {
+  height: 50px;
+  width: 50px;
+  margin-top: -15px;
+  margin-left: -15px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  border-radius: 25px;
+}
+
+.pie-chart-cluster.high-density .pie {
+  width: 25px;
+  height: 50px;
+  left: 10px;
+}
+
+.pie-chart-cluster.high-density .pie strong {
+  width: 25px;
+  height: 50px;
+  left: -25px;
+  -webkit-border-radius: 25px 0 0 25px;
+  -moz-border-radius: 25px 0 0 25px;
+  -ms-border-radius: 25px 0 0 25px;
+  -o-border-radius: 25px 0 0 25px;
+  border-radius: 25px 0 0 25px;
+}
+
+.pie-chart-cluster.high-density .pie.hero {
+  width: 50px;
+  height: 50px;
+  left: -15px;
+}
+
+.pie-chart-cluster.high-density .pie.hero strong {
+  left: 0;
+}
+
+.pie-chart-cluster.high-density .pie.hero em {
+  width: 25px;
+  height: 50px;
+  left: 25px;
+  -webkit-border-radius: 0 25px 25px 0;
+  -moz-border-radius: 0 25px 25px 0;
+  -ms-border-radius: 0 25px 25px 0;
+  -o-border-radius: 0 25px 25px 0;
+  border-radius: 0 25px 25px 0;
+}
+
+.pie-chart-cluster.high-density .donut {
+  width: 35px;
+  height: 35px;
+  line-height: 40px;
+  top: -7.5px;
+  left: -7.5px;
+  font-size: 1rem;
+  -webkit-border-radius: 17.5px;
+  -moz-border-radius: 17.5px;
+  -ms-border-radius: 17.5px;
+  -o-border-radius: 17.5px;
+  border-radius: 17.5px;
+}
+
+.pie-chart-cluster.medium-density {
+  height: 34px;
+  width: 34px;
+  margin-top: -10.2px;
+  margin-left: -10.2px;
+  -webkit-border-radius: 17px;
+  -moz-border-radius: 17px;
+  -ms-border-radius: 17px;
+  -o-border-radius: 17px;
+  border-radius: 17px;
+}
+
+.pie-chart-cluster.medium-density .pie {
+  width: 17px;
+  height: 34px;
+  left: 6.8px;
+}
+
+.pie-chart-cluster.medium-density .pie strong {
+  width: 17px;
+  height: 34px;
+  left: -17px;
+  -webkit-border-radius: 17px 0 0 17px;
+  -moz-border-radius: 17px 0 0 17px;
+  -ms-border-radius: 17px 0 0 17px;
+  -o-border-radius: 17px 0 0 17px;
+  border-radius: 17px 0 0 17px;
+}
+
+.pie-chart-cluster.medium-density .pie.hero {
+  width: 34px;
+  height: 34px;
+  left: -10.2px;
+}
+
+.pie-chart-cluster.medium-density .pie.hero strong {
+  left: 0;
+}
+
+.pie-chart-cluster.medium-density .pie.hero em {
+  width: 17px;
+  height: 34px;
+  left: 17px;
+  -webkit-border-radius: 0 17px 17px 0;
+  -moz-border-radius: 0 17px 17px 0;
+  -ms-border-radius: 0 17px 17px 0;
+  -o-border-radius: 0 17px 17px 0;
+  border-radius: 0 17px 17px 0;
+}
+
+.pie-chart-cluster.medium-density .donut {
+  width: 23.8px;
+  height: 23.8px;
+  line-height: 27.2px;
+  top: -5.1px;
+  left: -5.1px;
+  font-size: 0.9rem;
+  -webkit-border-radius: 11.9px;
+  -moz-border-radius: 11.9px;
+  -ms-border-radius: 11.9px;
+  -o-border-radius: 11.9px;
+  border-radius: 11.9px;
+}
+
+.pie-chart-cluster.low-density {
+  height: 26px;
+  width: 26px;
+  margin-top: -7.8px;
+  margin-left: -7.8px;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  -ms-border-radius: 13px;
+  -o-border-radius: 13px;
+  border-radius: 13px;
+}
+
+.pie-chart-cluster.low-density .pie {
+  width: 13px;
+  height: 26px;
+  left: 5.2px;
+}
+
+.pie-chart-cluster.low-density .pie strong {
+  width: 13px;
+  height: 26px;
+  left: -13px;
+  -webkit-border-radius: 13px 0 0 13px;
+  -moz-border-radius: 13px 0 0 13px;
+  -ms-border-radius: 13px 0 0 13px;
+  -o-border-radius: 13px 0 0 13px;
+  border-radius: 13px 0 0 13px;
+}
+
+.pie-chart-cluster.low-density .pie.hero {
+  width: 26px;
+  height: 26px;
+  left: -7.8px;
+}
+
+.pie-chart-cluster.low-density .pie.hero strong {
+  left: 0;
+}
+
+.pie-chart-cluster.low-density .pie.hero em {
+  width: 13px;
+  height: 26px;
+  left: 13px;
+  -webkit-border-radius: 0 13px 13px 0;
+  -moz-border-radius: 0 13px 13px 0;
+  -ms-border-radius: 0 13px 13px 0;
+  -o-border-radius: 0 13px 13px 0;
+  border-radius: 0 13px 13px 0;
+}
+
+.pie-chart-cluster.low-density .donut {
+  width: 18.2px;
+  height: 18.2px;
+  line-height: 20.8px;
+  top: -3.9px;
+  left: -3.9px;
+  font-size: 0.8rem;
+  -webkit-border-radius: 9.1px;
+  -moz-border-radius: 9.1px;
+  -ms-border-radius: 9.1px;
+  -o-border-radius: 9.1px;
+  border-radius: 9.1px;
+}
+
+.donut-marker-cluster .cluster-pie-tooltip {
+  display: none;
+  position: absolute;
+  left: -10rem;
+  bottom: 1rem;
+  z-index: -1;
+  width: 10rem;
+  padding: 0.4rem;
+  margin: 0;
+  background-color: #fff;
+  -webkit-border-radius: 0.1rem;
+  -moz-border-radius: 0.1rem;
+  -ms-border-radius: 0.1rem;
+  -o-border-radius: 0.1rem;
+  border-radius: 0.1rem;
+  -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25);
+  -ms-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25);
+  -o-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.donut-marker-cluster .cluster-pie-tooltip li {
+  font-size: 0.7rem;
+  text-align: left;
+  color: #374045;
+  list-style-type: none;
+  padding: 7px 0 0 1.8rem;
+  line-height: 2;
+  margin-bottom: 0.5rem;
+  position: relative;
+  text-transform: capitalize;
+  -webkit-text-shadow: 0 0 0 transparent;
+  -moz-text-shadow: 0 0 0 transparent;
+  -ms-text-shadow: 0 0 0 transparent;
+  -o-text-shadow: 0 0 0 transparent;
+  text-shadow: 0 0 0 transparent;
+}
+
+.donut-marker-cluster .cluster-pie-tooltip li:before {
+  content: '';
+  position: absolute;
+  height: 1.2rem;
+  width: 1.2rem;
+  border: 1px solid;
+  left: 0;
+  top: 0.5rem;
+  -webkit-border-radius: 0.6rem;
+  -moz-border-radius: 0.6rem;
+  -ms-border-radius: 0.6rem;
+  -o-border-radius: 0.6rem;
+  border-radius: 0.6rem;
+  -webkit-box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.4);
+  -ms-box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.4);
+  -o-box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.4);
+}
+
+.donut-marker-cluster .cluster-pie-tooltip li.property:before {
+  background-color: #1161a3;
+  border-color: #0f538c;
+}
+
+.donut-marker-cluster .cluster-pie-tooltip li.violent:before {
+  background-color: #1f6310;
+  border-color: #184d0c;
+}
+
+.donut-marker-cluster .cluster-pie-tooltip li.quality-of-life:before {
+  background-color: #919100;
+  border-color: #777700;
+}
+
+.donut-marker-cluster .cluster-pie-tooltip li.sex-offender:before {
+  background-color: #b57426;
+  border-color: #a06622;
+}
+
+.donut-marker-cluster .cluster-pie-tooltip li.stops---911:before {
+  background-color: #4d3279;
+  border-color: #422b67;
+}
+
+.donut-marker-cluster .cluster-pie-tooltip li.cluster:before {
+  background-color: #7b8082;
+  border-color: #6f7375;
+}
+
+.donut-marker-cluster:hover {
+  /*.cluster-pie-tooltip { display: block }*/
+}
+
+.donut-marker-cluster svg {
+  overflow: visible;
+  margin-left: -4px;
+  margin-top: -4px;
+}
+
+.donut-marker-cluster svg circle.hole {
+  fill: white;
+  stroke: none;
+}
+
+.donut-marker-cluster svg text.count {
+  fill: #374045;
+  text-anchor: middle;
+  font-size: 0.65rem;
+  letter-spacing: -0.015rem;
+  font-weight: 500;
+}
+
+.donut-marker-cluster svg path.pie {
+  fill: rgb(77, 50, 121);
+  fill-opacity: 0.7;
+  stroke-width: 1px;
+}
+
+.donut-marker-cluster svg path.property {
+  fill: rgb(17, 97, 163);
+  stroke: rgb(17, 97, 163);
+}
+
+.donut-marker-cluster svg path.violent {
+  fill: rgb(31, 99, 16);
+  stroke: rgb(31, 99, 16);
+}
+
+.donut-marker-cluster svg path.quality-of-life {
+  fill: rgb(145, 145, 0);
+  stroke: rgb(145, 145, 0);
+}
+
+.donut-marker-cluster svg path.sex-offender {
+  fill: rgb(181, 116, 38);
+  stroke: rgb(181, 116, 38);
+}
+
+.donut-marker-cluster svg path.stops---911 {
+  fill: rgb(77, 50, 121);
+  stroke: rgb(77, 50, 121);
+}
+
+.donut-marker-cluster svg path.cluster {
+  fill: rgb(123, 128, 130);
+  stroke: rgb(123, 128, 130);
+}

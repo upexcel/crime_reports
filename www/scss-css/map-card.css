@@ -1,0 +1,273 @@
+.bar {
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
+.bar-header {
+  top: 0;
+  border-top-width: 0;
+  border-bottom-width: 1px;
+  background-color: #28566c;
+}
+
+.bar-footer {
+  bottom: 44px;
+}
+
+.bar-footer .item {
+  padding: 0px;
+  border: none;
+  margin: 0px;
+  color: #717375;
+}
+
+.bar-footer .item .map-card-header {
+  -moz-width: calc(100% - 3rem - 2.5rem);
+  -webkit-width: calc(100% - 3rem - 2.5rem);
+  width: calc(100% - 3rem - 2.5rem);
+}
+.bar-footer .item .pad-0 {
+  padding: 0px !important;
+}
+
+.bar-footer .item .border {
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 0px !important;
+}
+
+.bar-footer .item .grp_list {
+  color: #ccc;
+}
+
+.bar-footer .item .grp_list .agency-div {
+  line-height: 2.2;
+  padding: 8px 5px 0px;
+}
+
+.bar-footer .item .grp_list .agency-div .leaflet-marker-icon {
+  margin: 10px 12px;
+}
+
+.bar-footer .item .grp_list .crime-header {
+  max-width: 3rem;
+}
+
+.bar-footer .item .grp_list .crime-header .leaflet-marker-icon {
+  margin: 10px 12px !important;
+}
+
+.bar-footer .item .grp_list h3 {
+  color: #374045;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1rem;
+  margin-top: 12px;
+}
+
+.bar-footer .item .grp_list .media-left, .bar-footer .item .grp_list .media-right, .bar-footer .item .grp_list .media-body {
+  display: table-cell;
+  vertical-align: top;
+  padding: 0px 0px 0px 10px;
+}
+
+.bar-footer .item .grp_list .media-left p, .bar-footer .item .grp_list .media-right p, .bar-footer .item .grp_list .media-body p {
+  font-size: 0.8rem !important;
+  color: #717375 !important;
+  margin: 0 !important;
+  padding: 0px !important;
+}
+
+.bar-footer .item .grp_list .date {
+  display: inline-block;
+  float: right;
+  font-size: 12px;
+  text-align: right;
+  color: #717375;
+}
+
+.bar-footer .item .grp_list .footer-with-links {
+  border-top: 1px solid #e5e5e5;
+  text-align: right;
+}
+
+.bar-footer .item .grp_list .footer-with-links a {
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.034rem;
+}
+
+.bar-footer .item .agency-addressc {
+  padding: 5px 10px;
+  font-size: 0.8rem;
+}
+
+.bar-footer .item .agency-typec {
+  text-align: right;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+}
+
+.bar-footer .item .list-inline li {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1B86C8;
+  cursor: pointer;
+  box-shadow: 0 0 transparent;
+  font-size: 0.8rem !important;
+  margin-bottom: 5px;
+}
+
+.bar-footer .item .list-inline li .go-web {
+  padding: 0px 15px;
+  line-height: 2rem;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.bar-footer .item .list-inline li .share-icons {
+  font-size: 0.8em;
+  padding: 0px 10px 0px 0px;
+}
+
+.bar-footer .item .list-inline li .share-icons span {
+  font-size: 1.5rem;
+  padding: 0px 5px;
+  color: #4b7184 !important;
+  line-height: 2.2rem;
+  text-align: center;
+  float: right;
+}
+
+.bar-footer .item .list-inline .highlight {
+  background-color: #4b7184;
+  color: #fff;
+  display: block;
+  text-align: center;
+  padding: 0.2rem;
+  margin: 5px 10px;
+  font-size: 0.8rem !important;
+}
+
+.bar-footer .item .list-inline .highlight:active {
+  background-color: #1f4455;
+}
+
+.show-card {
+  background: transparent;
+  visiblity: visible;
+  display: block !important;
+  padding: 0;
+  max-height: 310px;
+  transition: max-height 0.5s ease-in-out;
+  z-index: 1;
+  height: auto;
+}
+
+.hide-card {
+  background: transparent;
+  height: auto;
+  width: 100%;
+  max-height: 0px;
+  padding: 0;
+  overflow-y: hidden;
+  display: block !important;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.max-5em {
+  max-width: 3rem;
+}
+
+.max-5em .plus_img {
+  max-width: 40px;
+  display: inline-block;
+  margin-left: -12px;
+}
+
+.card-close {
+  /* float: right; */
+  text-align: center;
+  color: #828587;
+  line-height: 45px;
+  font-size: 1.2rem;
+}
+
+.card-close .cross {
+  float: right;
+  width: 100%;
+  height: 100%;
+  line-height: 1.3 !important;
+}
+
+.cross {
+  padding: 3px;
+  float: right;
+  font-size: 1.8rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.round {
+  width: 40px;
+  height: 40px;
+  line-height: 1.45rem;
+  text-align: center;
+  border-radius: 20px;
+  /* z-index: 1000; */
+}
+
+.pad_row {
+  padding: 0px 10px;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer:hover strong span, .cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer:hover strong span {
+  display: none !important;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer:hover strong, .cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer:hover strong {
+  width: 56px !important;
+  left: -16px !important;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer:hover strong:after, .cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer:hover strong:after {
+  bottom: -2px !important;
+  left: 33px !important;
+  -webkit-transform: rotate(-21deg) !important;
+  -moz-transform: rotate(-21deg) !important;
+  -ms-transform: rotate(-21deg) !important;
+  -o-transform: rotate(-21deg) !important;
+  transform: rotate(-21deg) !important;
+  width: 23px !important;
+}
+
+.cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-agency.plus-customer:hover strong:before, .cluster-map:not(.persistent-marker-clustered) .leaflet-marker-icon.icon-sheriff.plus-customer:hover strong:before {
+  bottom: -2px;
+  -webkit-transform: rotate(21deg);
+  -moz-transform: rotate(21deg);
+  -ms-transform: rotate(21deg);
+  -o-transform: rotate(21deg);
+  transform: rotate(21deg);
+  content: '';
+  position: absolute;
+  height: 14px;
+  width: 23px;
+  z-index: -1;
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  -ms-border-radius: 0 0 6px 6px;
+  -o-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+}
+
+.col-70 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 70%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 70%;
+  -ms-flex: 0 0 70%;
+  flex: 0 0 70%;
+  max-width: 70%;
+}

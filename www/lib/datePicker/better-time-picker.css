@@ -1,0 +1,148 @@
+.better-time-picker{
+    width: 280px;
+    height: 370px;
+    color:rgba(98, 98, 98, 1);
+    text-shadow: 1px 1px 3px rgba(215, 215, 233, 1);
+    display: inline-table;
+    z-index: 100;
+    padding: 0;
+    opacity: 1;
+    border: 1px solid #ccc;
+}
+
+.highlighted{
+    color: #0288d1;
+}
+.popup-container.time-picker .popup{
+    width: 280px;
+}
+.popup-container.time-picker .popup-buttons{
+    min-height: 50px;
+}
+.time-picker-div{
+    border: 0.1rem solid #DCDBDB;
+    width: 100%;
+    float: left;
+    padding:5px 10px;
+    font-size: 0.9rem;
+}
+.time-icon {
+    float: left;
+}
+.time-unit{
+    cursor: pointer;
+    position: absolute;
+    color: #58585b;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 20px;
+    margin-left: 10px;
+    text-align: center;
+    margin: 10px;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+.minute {
+    color:red;
+}
+
+.second {
+    font-size:40px;
+}
+.time-unit-body .active{
+    background-color: #9acfed;
+}
+.time-unit-circle{
+    width:240px;
+    height:240px;
+    position:relative;
+    /*left:50px;*/
+    background-color: #fff;
+    margin: 0px auto;
+    top:20px;
+    border: 1px solid #ccc;
+    border-radius: 130px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.time-unit-body{
+    background-color: #f3f3f3;
+    padding-bottom: 40px;
+}
+
+.hour:hover{
+    color: #0288d1;
+}
+
+.selected-hour{
+    font-size: 60px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-left:17%;
+}
+
+.selected-minute{
+    font-size: 60px;
+    cursor: pointer;
+    font-weight: 100;
+}
+
+.selected-second{
+    cursor: pointer;
+    font-weight: 100;
+}
+
+.selected-am-pm-toggle{
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.time-header{
+    height: 80px;
+    line-height: 80px;
+    width: 100%;
+    font-size: 27px;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    background-color: #fff;
+}
+
+.time-header > span{
+    font-weight: 300;
+}
+
+.time-header > span:hover{
+    /*color: rgba(111,1,1,0.9);*/
+}
+.time-header .time-meridian{
+    top: 15px;
+    position: absolute;
+    left: 210px;
+    font-size: 1.2rem;
+}
+.time-meridian{
+    background-color: #ffffff;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 15px;
+    line-height: 30px;
+    color:rgba(98, 98, 98, 1);
+}
+.time-meridian.activated{
+    background-color: #9acfed;
+}
+.am{
+    float: left;
+    margin-left: 30px;
+}
+.pm{
+    float: right;
+    margin-right: 30px;
+}
+
